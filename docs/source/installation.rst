@@ -6,6 +6,8 @@ Installation
 
 In order to run **mTree** we need to install `Docker Desktop <https://www.docker.com>`_  first.  
 
+.. _install-docker-desk:
+
 Installing Docker Desktop
 -------------------------
 
@@ -15,6 +17,7 @@ The links for **Docker Desktop** installation for different os can be found belo
 
 After completing the **Docker Desktop** installation, we can start installing **mTree**
 
+.. _install-mTree:
 
 Installing mTree
 ----------------
@@ -32,28 +35,25 @@ the latest version of **mTree** `here <https://hub.docker.com/r/mtree/mtree/tags
     The command prompt should be based in the same virtual environment where you
     have **Docker Desktop** installed. 
 
-
- 
-
 After pasting and running the command in your command prompt, your screen should look
 some version of this - 
-
-.. figure:: _static/docker_hub_mTree.png
-        :align: center
-
-After hitting enter, your commant prompt should look as follows 
 
 .. figure:: _static/terminal.png
         :align: center
 
-After running that command, you should open **Docker Desktop** app on your computer and click
+.. _mTree-container-setup:
+
+mTree Container Setup
+----------------------
+
+Open **Docker Desktop** app on your computer and click
 images on the sidebar. 
 
 .. figure:: _static/mTree_image.png
         :align: center
 
-This is the **mTree** image we just downloaded through docker hub. We are going to run this 
-image within a small virtualization of the os called a 'container'. We can set our docker 
+This is the **mTree** image we just downloaded through docker hub in the previous step. We are going to run this 
+image within a small virtualization of the os called a 'container'. We can create our docker 
 container by clicking "Run" on the mTree image. 
 
 After that you should see the following window.
@@ -77,6 +77,9 @@ A running docker container should have a green symbol on the left side.
 .. figure:: _static/started_container.png
         :align: center
 
+
+Container Options
+^^^^^^^^^^^^^^^^^
 Your container comes with several options that can be executed to change its 
 state. 
 
