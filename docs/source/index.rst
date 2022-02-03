@@ -29,6 +29,7 @@ Contents
    quick_start
    reference
    contributor_guide
+   learning_paths
 
 
 Indices and tables

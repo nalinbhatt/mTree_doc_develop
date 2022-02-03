@@ -8,7 +8,7 @@ without error. The goal of this guide is to show you how to run an mTree simulat
 start to finish and point out the vital indicators that convey a simulation has run properly. 
 
 Cloning mTree_auction_examples
-================================
+==============================
 
 
 We are going to clone the **mTree_auction_examples** repository, which can
@@ -34,7 +34,109 @@ In order to run this simulation we need to create a **docker container** using
 the **Docker Desktop** app that we downloaded in  :doc:`installation` section. 
 
 Follow all the steps highlighted in the :ref:`mTree-container-setup` section 
-and set the **Host Path** to the folder where you downloaded 
+and set the **Host Path** to the mTree_auction_examples folder (which you cloned in the previous step)
+
+If you setup the container correctly, click "Container/Apps" on the sidebar of 
+**Docker Desktop**. There should be a container by the name **mTree_auction_examples**
+present. 
+
+.. figure:: _static/mTree_auction_examples_comp_setup.png
+        :align: center
+
+Start the container and open the shell. More details on how to do this are 
+covered in :ref:`mTree-container-options` under :ref:`mTree-container-start`
+and :ref:`mTree-container-cli`. 
+
+Your shell should look some version of this - 
+
+.. figure:: _static/mTree_auction_examples_shell.png
+        :align: center
+
+Run the following commands to view the underlying files in the folder.  
+
+| **Mac** 
+
+.. code-block:: console
+
+    $ ls 
+
+| **Windows**
+
+.. code-block:: console
+
+    $ dir
+
+You should see the following subfolders in your command prompt -
+
+.. figure:: _static/quick_start_ls.png
+        :align: center
+
+Tatonnement
+-----------
+
+One of the subfolders present should have the name **tatonnement** which refers to 
+the famous :ref:`learning_path_tatonnement`  auction. Further information about the 
+auction style and description can be found in the :doc:`learning_paths`.
+
+In your **mTree_auction_examples** container shell type in the following command to set 
+the current directory to **tatonnement**.
+
+.. code-block:: console
+    
+    $ cd tatonnement
+
+File Structure
+--------------
+
+After setting tatonnement as the current directory, run **ls** or **dir** and 
+you should see the following folders. 
+
+
+
+.. note::
+    In order to properly run an mTree simulation you need to set the current 
+    directory to the folder which contains a **config**, **mes**, and a **logs** folder.
+    **mTree** looks for these particular folders to run the simulation. For our example, this is the **tatonnement**
+    folder inside **mTree_auction_examples**.
+
+.. tip:: 
+    In the future, when designing your own container, you can set the **Host Path**
+    directly to the folder containing the **config** and **mes** folder. That way 
+    you don't have to navigate to the desired directory within the docker shell. 
+
+
+config
+^^^^^^
+
+mes
+^^^
+
+Running simulation
+------------------
+
+What to expect?
+---------------
+
+logs
+^^^^
+
+Quitting
+--------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

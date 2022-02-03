@@ -61,11 +61,24 @@ After that you should see the following window.
 .. figure:: _static/mTree_container_setup.png
         :align: center
 
-Once all the instructions in the image are completed, you should click "Containers"
-on the sidebar. After hitting "Containers" you should see the following container -
+Once all the instructions in the image are completed, you should click "Containers/Apps"
+on the sidebar. After hitting "Containers/Apps", you should see the following container -
 
 .. figure:: _static/unstarted_container.png
         :align: center
+
+
+.. _mTree-container-options:
+
+Container Options
+^^^^^^^^^^^^^^^^^
+Your container comes with several options that can be executed to change its 
+state. 
+
+.. _mTree-container-start:
+
+Start
+*****
 
 Click "Start" to start your container. 
 
@@ -77,29 +90,40 @@ A running docker container should have a green symbol on the left side.
 .. figure:: _static/started_container.png
         :align: center
 
+.. _mTree-container-stop:
 
-Container Options
-^^^^^^^^^^^^^^^^^
-Your container comes with several options that can be executed to change its 
-state. 
-
+Stop
+****
 You can stop running your container by pressing "stop" button
 
 .. figure:: _static/stop_button.png
         :align: center
+
+.. _mTree-container-restart:
+
+Restart
+*******
 
 You can restart your container by pressing the "restart" button 
 
 .. figure:: _static/restart_button.png
         :align: center
 
+.. _mTree-container-delete:
+
+Delete
+******
 If you want to delete the image, you can press the "delete" button
 
 .. figure:: _static/delete_button.png
         :align: center
 
+.. _mTree-container-cli:
 
-Once your container is running, you should click "CLI" button to open the command prompt
+Open Shell
+**********
+
+Once your container is running, you should click "CLI" button to open the command prompt/shell
 linked to your container. 
 
 .. figure:: _static/shell_button.png
