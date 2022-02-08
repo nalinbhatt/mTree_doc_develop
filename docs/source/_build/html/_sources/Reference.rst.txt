@@ -2,48 +2,139 @@
 Reference (Main Heading)
 ========================
 
-Sub Heading
+=========
+Reference
+=========
+
+.. _theory_of_operations:
+
+Theory of Operations
+====================
+
+
+- Contains a description and background of Microeconomic Systems and how mTree allows you to define different actors 
+- Goes in depth as to why mTree. 
+- Need to define why messages are necessary 
+
+.. _messages: 
+
+messages
+========
+
+Directives 
+----------
+
+First Message - start
+---------------------
+
+Sending a message 
+-----------------
+
+Receiving a message 
+-------------------
+
+Reminder Messages
+-----------------
+
+
+Actor Description
+=================
+
+.. _environment:
+
+Environment
+-----------
+
+.. _institution:
+
+Institution
+-----------
+
+.. _agent:
+
+Agent 
+-----
+
+.. _config:
+
+config file
 ===========
 
-Sub Sub Heading 
----------------
+- Description and general layout
 
-Sub Sub Sub Heading 
-^^^^^^^^^^^^^^^^^^^
+mTree use 
+---------
+- Description of variables used by mTree 
+  
+Experiment Specific
+-------------------
+- variables set in properties that can be accesssed by the environment
+  
+running multiple
+----------------
+
+.. _address_book:
+
+address book 
+============
+
+Structure
+---------
+
+Methods 
+-------
+
+How to Distribute and default access 
+------------------------------------
 
 
-More rst related stuff can be found at 
-- `RST cheatsheet <https://docutils.sourceforge.io/docs/ref/rst/directives.html#code>`_
+Logs
+====
+
+- Desription of the 2 types of logging capability that mTree provides 
+
+.. _experiment_log:
+
+Log File
+--------
+
+.. _log_message:
+
+self.log_message(input)
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Example 
+^^^^^^^
+- Shows what a sample log output looks like 
+- What all can the log message log.
+
+Best Practice Suggestion
+^^^^^^^^^^^^^^^^^^^^^^^^
+- Include entry and exit logs. Log variable when certiain important state changes happen. 
+
+.. _data_log:
+
+Data Log 
+--------
+
+.. _log_data:
+
+self.log_data(input)
+
+Example
+^^^^^^^
+- Shows sample output from the .data file 
+
+Interpret into Jupyter notebook
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Simple suggestions on how to log data using dictionaries and little code on how pandas could 
+be used to read the dataframe. 
 
 
-.. topic:: Topic Title
-
-    Subsequent indented lines comprise
-    the body of the topic, and are
-    interpreted as body elements.
 
 
-.. sidebar:: Optional Sidebar Title
-   :subtitle: Optional Sidebar Subtitle
-
-   Subsequent indented lines comprise
-   the body of the sidebar, and are
-   interpreted as body elements.
 
 
-.. code:: python
 
-    def my_function():
-        "just a test"
-        print 8/2
 
-.. math::
-
-  α_t(i) = P(O_1, O_2, … O_t, q_t = S_i λ)
-
-.. epigraph::
-   No matter where you go, there you are.
-
-.. highlights::
-   No matter where you go, there you are.
 

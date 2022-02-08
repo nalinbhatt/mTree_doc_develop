@@ -82,6 +82,7 @@ In your **mTree_auction_examples** container shell type in the following command
 the current directory to **tatonnement**.
 
 .. code-block:: console
+    
     $ cd tatonnement
 
 File Structure
@@ -90,11 +91,13 @@ File Structure
 After setting tatonnement as the current directory, run **ls** or **dir** and 
 you should see the following folders. 
 
-
+1. **config**
+2. **mes**
+3. **logs**
 
 .. note::
     In order to properly run an mTree simulation you need to set the current 
-    directory to the folder which contains a **config** folder and an **mes**.
+    directory to the folder which contains a **config**, **mes**, and a **logs** folder.
     **mTree** looks for these particular folders to run the simulation. For our example, this is the **tatonnement**
     folder inside **mTree_auction_examples**.
 
@@ -103,21 +106,62 @@ you should see the following folders.
     directly to the folder containing the **config** and **mes** folder. That way 
     you don't have to navigate to the desired directory within the docker shell. 
 
-
 config
 ^^^^^^
+The :ref:`config` folder contains your **json config files** which are used to instantiate mTree actors defined in 
+the **mes** folder. 
 
 mes
 ^^^
+The **mes** folder (short for Microeconomic System) containes the python files where you define the different 
+Actor classes, namely - the :ref:`environment` , :ref:`institution` and :ref:`agent`. 
+
+.. warning:: 
+
+    It is critical that your **simulation folder** contain a **config** folder with a **json config file** inside it 
+    and a separate **mes** folder with python files inside, which contain :ref:`environment` , :ref:`institution` and :ref:`agent` code.
+    In the absence of **any** of these your mTree simulation **will not run**. 
+
+
+Inside the **config** folder in the **tatonnement** auction example, you should see a **basic_simulation.json** file. 
+This is the config file which we will. 
+
+For the next step we want to make sure that our current directory is **tatonnement** so if you used the **cd** command to 
+change the directory to **config** and view its contents, we want to go up a directory using the following command to make sure 
+we are in the right directory 
+
+.. code-block:: console 
+
+    $ cd .. 
+
+.. _run_config:
 
 Running simulation
 ------------------
+
+We can type the following command into the shell to run the simulation 
+
+.. code-block:: console 
+
+    $ mTree_runner 
+
+
+.. code-block:: console 
+
+    mTree> run_simulation
+
+
+
+
+
+
 
 What to expect?
 ---------------
 
 logs
 ^^^^
+The **logs** folder is where the output from your simulation gets stored.
 
 Quitting
 --------

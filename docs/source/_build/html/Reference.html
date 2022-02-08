@@ -14,7 +14,6 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -43,10 +42,45 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start.html">Quick Start Guide</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Reference (Main Heading)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#sub-heading">Sub Heading</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#sub-sub-heading">Sub Sub Heading</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#sub-sub-sub-heading">Sub Sub Sub Heading</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reference (Main Heading)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#reference">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#theory-of-operations">Theory of Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#messages">messages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#directives">Directives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#first-message-start">First Message - start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sending-a-message">Sending a message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#receiving-a-message">Receiving a message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reminder-messages">Reminder Messages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#actor-description">Actor Description</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#environment">Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#institution">Institution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#agent">Agent</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#config-file">config file</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mtree-use">mTree use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#experiment-specific">Experiment Specific</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-multiple">running multiple</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#address-book">address book</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-distribute-and-default-access">How to Distribute and default access</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#logs">Logs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#log-file">Log File</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#self-log-message-input">self.log_message(input)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#best-practice-suggestion">Best Practice Suggestion</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#data-log">Data Log</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interpret-into-jupyter-notebook">Interpret into Jupyter notebook</a></li>
 </ul>
 </li>
 </ul>
@@ -54,6 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contributor_guide.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning_paths.html">Learning Paths</a></li>
 </ul>
 
         </div>
@@ -82,40 +117,117 @@
              
   <div class="section" id="reference-main-heading">
 <h1>Reference (Main Heading)<a class="headerlink" href="#reference-main-heading" title="Permalink to this headline"></a></h1>
-<div class="section" id="sub-heading">
-<h2>Sub Heading<a class="headerlink" href="#sub-heading" title="Permalink to this headline"></a></h2>
-<div class="section" id="sub-sub-heading">
-<h3>Sub Sub Heading<a class="headerlink" href="#sub-sub-heading" title="Permalink to this headline"></a></h3>
-<div class="section" id="sub-sub-sub-heading">
-<h4>Sub Sub Sub Heading<a class="headerlink" href="#sub-sub-sub-heading" title="Permalink to this headline"></a></h4>
-<p>More rst related stuff can be found at
-- <a class="reference external" href="https://docutils.sourceforge.io/docs/ref/rst/directives.html#code">RST cheatsheet</a></p>
-<div class="topic">
-<p class="topic-title">Topic Title</p>
-<p>Subsequent indented lines comprise
-the body of the topic, and are
-interpreted as body elements.</p>
 </div>
-<div class="sidebar">
-<p class="sidebar-title">Optional Sidebar Title</p>
-<p class="sidebar-subtitle">Optional Sidebar Subtitle</p>
-<p>Subsequent indented lines comprise
-the body of the sidebar, and are
-interpreted as body elements.</p>
+<div class="section" id="reference">
+<h1>Reference<a class="headerlink" href="#reference" title="Permalink to this headline"></a></h1>
+<div class="section" id="theory-of-operations">
+<span id="id1"></span><h2>Theory of Operations<a class="headerlink" href="#theory-of-operations" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Contains a description and background of Microeconomic Systems and how mTree allows you to define different actors</p></li>
+<li><p>Goes in depth as to why mTree.</p></li>
+<li><p>Need to define why messages are necessary</p></li>
+</ul>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
-    <span class="s2">&quot;just a test&quot;</span>
-    <span class="nb">print</span> <span class="mi">8</span><span class="o">/</span><span class="mi">2</span>
-</pre></div>
+<div class="section" id="messages">
+<span id="id2"></span><h2>messages<a class="headerlink" href="#messages" title="Permalink to this headline"></a></h2>
+<div class="section" id="directives">
+<h3>Directives<a class="headerlink" href="#directives" title="Permalink to this headline"></a></h3>
 </div>
-<div class="math notranslate nohighlight">
-\[α_t(i) = P(O_1, O_2, … O_t, q_t = S_i λ)\]</div>
-<blockquote class="epigraph">
-<div><p>No matter where you go, there you are.</p>
-</div></blockquote>
-<blockquote class="highlights">
-<div><p>No matter where you go, there you are.</p>
-</div></blockquote>
+<div class="section" id="first-message-start">
+<h3>First Message - start<a class="headerlink" href="#first-message-start" title="Permalink to this headline"></a></h3>
+</div>
+<div class="section" id="sending-a-message">
+<h3>Sending a message<a class="headerlink" href="#sending-a-message" title="Permalink to this headline"></a></h3>
+</div>
+<div class="section" id="receiving-a-message">
+<h3>Receiving a message<a class="headerlink" href="#receiving-a-message" title="Permalink to this headline"></a></h3>
+</div>
+<div class="section" id="reminder-messages">
+<h3>Reminder Messages<a class="headerlink" href="#reminder-messages" title="Permalink to this headline"></a></h3>
+</div>
+</div>
+<div class="section" id="actor-description">
+<h2>Actor Description<a class="headerlink" href="#actor-description" title="Permalink to this headline"></a></h2>
+<div class="section" id="environment">
+<span id="id3"></span><h3>Environment<a class="headerlink" href="#environment" title="Permalink to this headline"></a></h3>
+</div>
+<div class="section" id="institution">
+<span id="id4"></span><h3>Institution<a class="headerlink" href="#institution" title="Permalink to this headline"></a></h3>
+</div>
+<div class="section" id="agent">
+<span id="id5"></span><h3>Agent<a class="headerlink" href="#agent" title="Permalink to this headline"></a></h3>
+</div>
+</div>
+<div class="section" id="config-file">
+<span id="config"></span><h2>config file<a class="headerlink" href="#config-file" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Description and general layout</p></li>
+</ul>
+<div class="section" id="mtree-use">
+<h3>mTree use<a class="headerlink" href="#mtree-use" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>Description of variables used by mTree</p></li>
+</ul>
+</div>
+<div class="section" id="experiment-specific">
+<h3>Experiment Specific<a class="headerlink" href="#experiment-specific" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>variables set in properties that can be accesssed by the environment</p></li>
+</ul>
+</div>
+<div class="section" id="running-multiple">
+<h3>running multiple<a class="headerlink" href="#running-multiple" title="Permalink to this headline"></a></h3>
+</div>
+</div>
+<div class="section" id="address-book">
+<span id="id6"></span><h2>address book<a class="headerlink" href="#address-book" title="Permalink to this headline"></a></h2>
+<div class="section" id="structure">
+<h3>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h3>
+</div>
+<div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this headline"></a></h3>
+</div>
+<div class="section" id="how-to-distribute-and-default-access">
+<h3>How to Distribute and default access<a class="headerlink" href="#how-to-distribute-and-default-access" title="Permalink to this headline"></a></h3>
+</div>
+</div>
+<div class="section" id="logs">
+<h2>Logs<a class="headerlink" href="#logs" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Desription of the 2 types of logging capability that mTree provides</p></li>
+</ul>
+<div class="section" id="log-file">
+<span id="experiment-log"></span><h3>Log File<a class="headerlink" href="#log-file" title="Permalink to this headline"></a></h3>
+<div class="section" id="self-log-message-input">
+<span id="log-message"></span><h4>self.log_message(input)<a class="headerlink" href="#self-log-message-input" title="Permalink to this headline"></a></h4>
+</div>
+<div class="section" id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>Shows what a sample log output looks like</p></li>
+<li><p>What all can the log message log.</p></li>
+</ul>
+</div>
+<div class="section" id="best-practice-suggestion">
+<h4>Best Practice Suggestion<a class="headerlink" href="#best-practice-suggestion" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>Include entry and exit logs. Log variable when certiain important state changes happen.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="data-log">
+<span id="id7"></span><h3>Data Log<a class="headerlink" href="#data-log" title="Permalink to this headline"></a></h3>
+<p id="log-data">self.log_data(input)</p>
+<div class="section" id="id8">
+<h4>Example<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>Shows sample output from the .data file</p></li>
+</ul>
+</div>
+<div class="section" id="interpret-into-jupyter-notebook">
+<h4>Interpret into Jupyter notebook<a class="headerlink" href="#interpret-into-jupyter-notebook" title="Permalink to this headline"></a></h4>
+<p>Simple suggestions on how to log data using dictionaries and little code on how pandas could
+be used to read the dataframe.</p>
 </div>
 </div>
 </div>

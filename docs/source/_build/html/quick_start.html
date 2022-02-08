@@ -61,7 +61,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reference.html">Reference (Main Heading)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html#reference">Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributor_guide.html">Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning_paths.html">Learning Paths</a></li>
 </ul>
 
         </div>
@@ -150,15 +152,23 @@ the famous <a class="reference internal" href="learning_paths.html#learning-path
 auction style and description can be found in the <a class="reference internal" href="learning_paths.html"><span class="doc">Learning Paths</span></a>.</p>
 <p>In your <strong>mTree_auction_examples</strong> container shell type in the following command to set
 the current directory to <strong>tatonnement</strong>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> tatonnement
+</pre></div>
+</div>
 </div>
 <div class="section" id="file-structure">
 <h3>File Structure<a class="headerlink" href="#file-structure" title="Permalink to this headline"></a></h3>
 <p>After setting tatonnement as the current directory, run <strong>ls</strong> or <strong>dir</strong> and
 you should see the following folders.</p>
+<ol class="arabic simple">
+<li><p><strong>config</strong></p></li>
+<li><p><strong>mes</strong></p></li>
+<li><p><strong>logs</strong></p></li>
+</ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In order to properly run an mTree simulation you need to set the current
-directory to the folder which contains a <strong>config</strong> folder and an <strong>mes</strong>.
+directory to the folder which contains a <strong>config</strong>, <strong>mes</strong>, and a <strong>logs</strong> folder.
 <strong>mTree</strong> looks for these particular folders to run the simulation. For our example, this is the <strong>tatonnement</strong>
 folder inside <strong>mTree_auction_examples</strong>.</p>
 </div>
@@ -170,18 +180,44 @@ you don’t have to navigate to the desired directory within the docker shell.</
 </div>
 <div class="section" id="config">
 <h4>config<a class="headerlink" href="#config" title="Permalink to this headline"></a></h4>
+<p>The <a class="reference internal" href="reference.html#config"><span class="std std-ref">config file</span></a> folder contains your <strong>json config files</strong> which are used to instantiate mTree actors defined in
+the <strong>mes</strong> folder.</p>
 </div>
 <div class="section" id="mes">
 <h4>mes<a class="headerlink" href="#mes" title="Permalink to this headline"></a></h4>
+<p>The <strong>mes</strong> folder (short for Microeconomic System) containes the python files where you define the different
+Actor classes, namely - the <a class="reference internal" href="reference.html#environment"><span class="std std-ref">Environment</span></a> , <a class="reference internal" href="reference.html#institution"><span class="std std-ref">Institution</span></a> and <a class="reference internal" href="reference.html#agent"><span class="std std-ref">Agent</span></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is critical that your <strong>simulation folder</strong> contain a <strong>config</strong> folder with a <strong>json config file</strong> inside it
+and a separate <strong>mes</strong> folder with python files inside, which contain <a class="reference internal" href="reference.html#environment"><span class="std std-ref">Environment</span></a> , <a class="reference internal" href="reference.html#institution"><span class="std std-ref">Institution</span></a> and <a class="reference internal" href="reference.html#agent"><span class="std std-ref">Agent</span></a> code.
+In the absence of <strong>any</strong> of these your mTree simulation <strong>will not run</strong>.</p>
+</div>
+<p>Inside the <strong>config</strong> folder in the <strong>tatonnement</strong> auction example, you should see a <strong>basic_simulation.json</strong> file.
+This is the config file which we will.</p>
+<p>For the next step we want to make sure that our current directory is <strong>tatonnement</strong> so if you used the <strong>cd</strong> command to
+change the directory to <strong>config</strong> and view its contents, we want to go up a directory using the following command to make sure
+we are in the right directory</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> ..
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="running-simulation">
-<h3>Running simulation<a class="headerlink" href="#running-simulation" title="Permalink to this headline"></a></h3>
+<span id="run-config"></span><h3>Running simulation<a class="headerlink" href="#running-simulation" title="Permalink to this headline"></a></h3>
+<p>We can type the following command into the shell to run the simulation</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> mTree_runner
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mTree&gt; run_simulation</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="what-to-expect">
 <h3>What to expect?<a class="headerlink" href="#what-to-expect" title="Permalink to this headline"></a></h3>
 <div class="section" id="logs">
 <h4>logs<a class="headerlink" href="#logs" title="Permalink to this headline"></a></h4>
+<p>The <strong>logs</strong> folder is where the output from your simulation gets stored.</p>
 </div>
 </div>
 <div class="section" id="quitting">
