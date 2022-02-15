@@ -75,7 +75,7 @@ Tatonnement
 -----------
 
 One of the subfolders present should have the name **tatonnement** which refers to 
-the famous :ref:`learning_path_tatonnement`  auction. Further information about the 
+the famous :ref:`tatonnement`  auction. Further information about the 
 auction style and description can be found in the :doc:`learning_paths`.
 
 In your **mTree_auction_examples** container shell type in the following command to set 
@@ -91,9 +91,9 @@ File Structure
 After setting tatonnement as the current directory, run **ls** or **dir** and 
 you should see the following folders. 
 
-1. **config**
-2. **mes**
-3. **logs**
+1. :ref:`config <config>`
+2. :ref:`mes <Actors>`
+3. :ref:`logs <logs>`
 
 .. note::
     In order to properly run an mTree simulation you need to set the current 
@@ -108,27 +108,27 @@ you should see the following folders.
 
 config
 ^^^^^^
-The :ref:`config` folder contains your **json config files** which are used to instantiate mTree actors defined in 
+The :ref:`config` folder contains your **json config files** which are used to instantiate **mTree** *Actors* defined in 
 the **mes** folder. 
 
 mes
 ^^^
 The **mes** folder (short for Microeconomic System) containes the python files where you define the different 
-Actor classes, namely - the :ref:`environment` , :ref:`institution` and :ref:`agent`. 
+*Actor* classes, namely - the :ref:`environment` , :ref:`institution` and :ref:`agent`. 
 
 .. warning:: 
 
     It is critical that your **simulation folder** contain a **config** folder with a **json config file** inside it 
     and a separate **mes** folder with python files inside, which contain :ref:`environment` , :ref:`institution` and :ref:`agent` code.
-    In the absence of **any** of these your mTree simulation **will not run**. 
+    ``In the absence of any of these your mTree simulation will not run``
 
 
 Inside the **config** folder in the **tatonnement** auction example, you should see a **basic_simulation.json** file. 
-This is the config file which we will. 
+This is the config file which we will run. 
 
 For the next step we want to make sure that our current directory is **tatonnement** so if you used the **cd** command to 
 change the directory to **config** and view its contents, we want to go up a directory using the following command to make sure 
-we are in the right directory 
+we are in the right directory.
 
 .. code-block:: console 
 
@@ -139,32 +139,118 @@ we are in the right directory
 Running simulation
 ------------------
 
-We can type the following command into the shell to run the simulation 
+We can type the following command into the shell to start mTree.  
 
 .. code-block:: console 
 
     $ mTree_runner 
 
+You should see something similar to this in your shell 
+
+.. figure:: _static/quick_start_mTree_runner.png
+        :align: center
+
+Type the following in your shell to start the selection process for a config file 
 
 .. code-block:: console 
 
-    mTree> run_simulation
+    $ run_simulation
 
+|
+| You should see something similar to this in your shell.
 
+.. figure:: _static/quick_start_run_simulation.png
+        :align: center
 
+Click **<enter>** to select and run the **basic_simulation.json** file. 
+Your output should look something similar to this. 
 
-
+.. figure:: _static/quick_start_run_config.png
+        :align: center
 
 
 What to expect?
 ---------------
 
+Ideally when a simulation is run, you should setup :ref:`Actors <Actors>` in such a way that 
+they constantly :ref:`log <logs>`  their states to :ref:`.log <log_file>`  and  :ref:`.data <data_log>` files. 
+
+
 logs
 ^^^^
-The **logs** folder is where the output from your simulation gets stored.
+The **logs** folder, inside your simulation folder (which in our case is **tatonnement**), is where the 
+output from your simulation gets stored. You should see a file ending in ``.log`` and a file ending in ``.data``. 
+
+More on how these files are named can be found :ref:`here<log_file>`. 
+
+The first few lines of you ``.log`` file document the config file parameters which were used to run the simulation
+
+.. figure:: _static/quick_start_log_config.png
+        :align: center
+
+The rest of your log file should look as follows. - 
+
+.. figure:: _static/quick_start_log_rest.png
+        :align: center
+
+Your ``.data``  file should look something like this - 
+
+.. figure:: _static/quick_start_data_log.png
+        :align: center
+
+.. note:: 
+
+    Don't worry if the log files on your end don't match the ones shown here word for word. Since **mTree** is a 
+    concurrent Agent-Based Modelling software, it is common for different *:ref:`Actors <Actors>`* to log asynchronously to the
+    same ``.log`` file, giving it an out of order look. 
+    
+
+How to know your simulation has ended? 
+--------------------------------------
+(Under development)
+
+
+Checking for Errors
+-------------------
+
+Use the ``ctrl F`` (Windows) or  ``cmd F`` (Mac) command to search for ``Error`` messages in the log file. If there are 0 results then it is likely 
+that your simulation has run properly. If there are instances of ``Error`` messages then check out the :ref:`error` section to help solve the problem. 
+
+.. warning::
+
+    If you see 0 results for ``Error`` but your mTree log stops logging in the middle of the simulation, then it is still 
+    possible you have logic errors that don't terminate the process.
 
 Quitting
 --------
+
+Once the simulation has ended, you can run ``quit`` command in the **docker** shell to kill mTree. The ``quit`` command 
+is used to kill all mTree processes as well as **delete** all *Actor* instances previously created to run the simulation. 
+
+.. code-block:: console 
+
+    $ quit
+
+Your console should look like some version of this - 
+
+.. figure:: _static/quick_start_quitting_mTree.png
+        :align: center
+
+Conclusion
+----------
+
+Congratulations on successfully running your first mTree simulation. If you want to know how this example was built or you want to find more 
+projects like this, checkout :ref:`tatonnement` or :doc:`learning_paths` sections. If you want to view a more in-depth case which builds 
+an mTree project from scratch, checkout :doc:`quick_build`. 
+
+
+
+
+
+
+
+
+
 
 
 

@@ -27,6 +27,7 @@ Contents
    
    installation
    quick_start
+   quick_build
    reference
    contributor_guide
    learning_paths

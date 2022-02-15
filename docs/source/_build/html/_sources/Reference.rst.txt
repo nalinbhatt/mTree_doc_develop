@@ -1,6 +1,3 @@
-========================
-Reference (Main Heading)
-========================
 
 =========
 Reference
@@ -36,6 +33,7 @@ Receiving a message
 Reminder Messages
 -----------------
 
+.. _Actors:
 
 Actor Description
 =================
@@ -87,13 +85,17 @@ Methods
 How to Distribute and default access 
 ------------------------------------
 
+.. _logs:
 
 Logs
 ====
 
+Logging is a way to output key data from a simulation in order to keep track of what the code is doing at various steps. 
+mTree provides 2 types of logging capabilities.
+
 - Desription of the 2 types of logging capability that mTree provides 
 
-.. _experiment_log:
+.. _log_file:
 
 Log File
 --------
@@ -131,7 +133,10 @@ Simple suggestions on how to log data using dictionaries and little code on how 
 be used to read the dataframe. 
 
 
+.. _error:
 
+Error Handling
+==============
 
 
 

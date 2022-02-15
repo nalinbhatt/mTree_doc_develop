@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reference (Main Heading) &mdash; mTree 1.0 documentation</title>
+  <title>Reference &mdash; mTree 1.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Contribute" href="contributor_guide.html" />
-    <link rel="prev" title="Quick Start Guide" href="quick_start.html" /> 
+    <link rel="prev" title="Quick Build" href="quick_build.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,8 +42,8 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start.html">Quick Start Guide</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Reference (Main Heading)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#reference">Reference</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="quick_build.html">Quick Build</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#theory-of-operations">Theory of Operations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#messages">messages</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#directives">Directives</a></li>
@@ -79,12 +79,13 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#data-log">Data Log</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id8">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Example</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#interpret-into-jupyter-notebook">Interpret into Jupyter notebook</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#error-handling">Error Handling</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contributor_guide.html">Contribute</a></li>
@@ -105,7 +106,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Reference (Main Heading)</li>
+      <li>Reference</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/reference.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -115,10 +116,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="reference-main-heading">
-<h1>Reference (Main Heading)<a class="headerlink" href="#reference-main-heading" title="Permalink to this headline"></a></h1>
-</div>
-<div class="section" id="reference">
+  <div class="section" id="reference">
 <h1>Reference<a class="headerlink" href="#reference" title="Permalink to this headline"></a></h1>
 <div class="section" id="theory-of-operations">
 <span id="id1"></span><h2>Theory of Operations<a class="headerlink" href="#theory-of-operations" title="Permalink to this headline"></a></h2>
@@ -147,7 +145,7 @@
 </div>
 </div>
 <div class="section" id="actor-description">
-<h2>Actor Description<a class="headerlink" href="#actor-description" title="Permalink to this headline"></a></h2>
+<span id="actors"></span><h2>Actor Description<a class="headerlink" href="#actor-description" title="Permalink to this headline"></a></h2>
 <div class="section" id="environment">
 <span id="id3"></span><h3>Environment<a class="headerlink" href="#environment" title="Permalink to this headline"></a></h3>
 </div>
@@ -192,12 +190,14 @@
 </div>
 </div>
 <div class="section" id="logs">
-<h2>Logs<a class="headerlink" href="#logs" title="Permalink to this headline"></a></h2>
+<span id="id7"></span><h2>Logs<a class="headerlink" href="#logs" title="Permalink to this headline"></a></h2>
+<p>Logging is a way to output key data from a simulation in order to keep track of what the code is doing at various steps.
+mTree provides 2 types of logging capabilities.</p>
 <ul class="simple">
 <li><p>Desription of the 2 types of logging capability that mTree provides</p></li>
 </ul>
 <div class="section" id="log-file">
-<span id="experiment-log"></span><h3>Log File<a class="headerlink" href="#log-file" title="Permalink to this headline"></a></h3>
+<span id="id8"></span><h3>Log File<a class="headerlink" href="#log-file" title="Permalink to this headline"></a></h3>
 <div class="section" id="self-log-message-input">
 <span id="log-message"></span><h4>self.log_message(input)<a class="headerlink" href="#self-log-message-input" title="Permalink to this headline"></a></h4>
 </div>
@@ -216,10 +216,10 @@
 </div>
 </div>
 <div class="section" id="data-log">
-<span id="id7"></span><h3>Data Log<a class="headerlink" href="#data-log" title="Permalink to this headline"></a></h3>
+<span id="id9"></span><h3>Data Log<a class="headerlink" href="#data-log" title="Permalink to this headline"></a></h3>
 <p id="log-data">self.log_data(input)</p>
-<div class="section" id="id8">
-<h4>Example<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h4>
+<div class="section" id="id10">
+<h4>Example<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h4>
 <ul class="simple">
 <li><p>Shows sample output from the .data file</p></li>
 </ul>
@@ -231,13 +231,16 @@ be used to read the dataframe.</p>
 </div>
 </div>
 </div>
+<div class="section" id="error-handling">
+<span id="error"></span><h2>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline"></a></h2>
+</div>
 </div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="quick_start.html" class="btn btn-neutral float-left" title="Quick Start Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="quick_build.html" class="btn btn-neutral float-left" title="Quick Build" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="contributor_guide.html" class="btn btn-neutral float-right" title="Contribute" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

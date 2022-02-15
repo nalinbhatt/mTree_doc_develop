@@ -3,22 +3,22 @@
 Learning Paths
 ==============
 
-.. _learning_path_tatonnement:
+.. _tatonnement:
 
 Tatonnement
 ===========
 
-.. _learning_path_sealed_bid:
+.. _sealed_bid:
 
 Sealed Bid Auction
 ==================
 
-.. _learning_path_ascending_price:
+.. _ascending_price:
 
 Ascending Price Auction
 =======================
 
-.. _learning_path_descending_price:
+.. _descending_price:
 
 Descending Price Auction
 ========================
