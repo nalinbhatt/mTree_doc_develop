@@ -1,4 +1,4 @@
 name: docs
 dependencies: 
-- pip:
+  - pip:
     - sphinx_copybutton
