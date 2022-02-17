@@ -108,13 +108,13 @@ you should see the following folders.
 
 config
 ^^^^^^
-The :ref:`config` folder contains your **json config files** which are used to instantiate **mTree** *Actors* defined in 
+The :ref:`config` folder contains your **json config files** which are used to instantiate **mTree** :ref:`Actors <Actors>` defined in 
 the **mes** folder. 
 
 mes
 ^^^
-The **mes** folder (short for Microeconomic System) containes the python files where you define the different 
-*Actor* classes, namely - the :ref:`environment` , :ref:`institution` and :ref:`agent`. 
+The **mes** folder (short for Microeconomic System) containes the python files where you define the different
+:ref:`Actor <Actors>` classes, namely - the :ref:`environment` , :ref:`institution` and :ref:`agent`. 
 
 .. warning:: 
 
@@ -201,7 +201,7 @@ Your ``.data``  file should look something like this -
 .. note:: 
 
     Don't worry if the log files on your end don't match the ones shown here word for word. Since **mTree** is a 
-    concurrent Agent-Based Modelling software, it is common for different *:ref:`Actors <Actors>`* to log asynchronously to the
+    concurrent Agent-Based Modelling software, it is common for different :ref:`Actors <Actors>` to log asynchronously to the
     same ``.log`` file, giving it an out of order look. 
     
 
@@ -213,19 +213,20 @@ How to know your simulation has ended?
 Checking for Errors
 -------------------
 
-Use the ``ctrl F`` (Windows) or  ``cmd F`` (Mac) command to search for ``Error`` messages in the log file. If there are 0 results then it is likely 
-that your simulation has run properly. If there are instances of ``Error`` messages then check out the :ref:`error` section to help solve the problem. 
+You can use the ``ctrl F`` (Windows) or  ``cmd F`` (Mac) command to search for ``Error`` messages in the ``.log`` file. If there are no results then it is likely 
+that your simulation has run properly. If there are instances of ``Error`` messages then check out the :ref:`error` section.
 
 .. warning::
 
-    If you see 0 results for ``Error`` but your mTree log stops logging in the middle of the simulation, then it is still 
-    possible you have logic errors that don't terminate the process.
+    If you see no results for ``Error`` but your mTree log stops logging in the middle of the simulation, then it is still 
+    possible you have logic errors that don't terminate the process. Luckily, you don't have to worry about that in the 
+    **tatonnement** auction example.
 
 Quitting
 --------
 
 Once the simulation has ended, you can run ``quit`` command in the **docker** shell to kill mTree. The ``quit`` command 
-is used to kill all mTree processes as well as **delete** all *Actor* instances previously created to run the simulation. 
+is used to kill all mTree processes as well as **delete** all :ref:`Actor <Actors>` instances previously created to run the simulation. 
 
 .. code-block:: console 
 

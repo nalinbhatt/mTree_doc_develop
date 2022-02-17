@@ -6,6 +6,7 @@
   <title>Reference &mdash; mTree 1.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -14,6 +15,8 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -46,7 +49,11 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#theory-of-operations">Theory of Operations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#messages">messages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#directives">Directives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-environment">start_environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-send-a-message">How to send a message</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#directives">Directives</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#first-message-start">First Message - start</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sending-a-message">Sending a message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#receiving-a-message">Receiving a message</a></li>
@@ -59,7 +66,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#agent">Agent</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#config-file">config file</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#config">config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#mtree-use">mTree use</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#experiment-specific">Experiment Specific</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-multiple">running multiple</a></li>
@@ -79,7 +86,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#data-log">Data Log</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id10">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Example</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#interpret-into-jupyter-notebook">Interpret into Jupyter notebook</a></li>
 </ul>
 </li>
@@ -128,8 +135,78 @@
 </div>
 <div class="section" id="messages">
 <span id="id2"></span><h2>messages<a class="headerlink" href="#messages" title="Permalink to this headline"></a></h2>
+<p>In the <a class="reference internal" href="#actors"><span class="std std-ref">Actor</span></a> system, Actors only have access to their personal states. As a result,
+the only way Actors can change their state is through some constant design or by recieving new
+information from a different Actor.</p>
+<div class="section" id="start-environment">
+<span id="id3"></span><h3>start_environment<a class="headerlink" href="#start-environment" title="Permalink to this headline"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">start_environment</span></code> message is the very first message that gets sent to the <a class="reference internal" href="#environment"><span class="std std-ref">Environment</span></a> Actor (specified in the <a class="reference internal" href="#config"><span class="std std-ref">config</span></a> file)
+after <strong>mTree</strong> initializes everything.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#inside simulation_folder/mes/environment_file.py</span>
+
+<span class="nd">@directive_enabled_class</span>
+<span class="k">class</span> <span class="nc">EnvironmentClass</span><span class="p">(</span><span class="n">Environment</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@directive_decorator</span><span class="p">(</span><span class="s2">&quot;start_environment&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">start_environment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span><span class="n">Message</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">start_environment</span></code> directive can be viewed as the genisis message which gets the ball
+rolling for all other subsequent messages. Therefore, it is recommended that the directive is
+used to initialize the environment state as well as send important state information to other Actors.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>All mTree simulation need to have a <code class="docutils literal notranslate"><span class="pre">start_environment</span></code> <a class="reference internal" href="#directive"><span class="std std-ref">directive</span></a> specified in
+the Environment Actor in order to start their simulation. However, messages sent in the <code class="docutils literal notranslate"><span class="pre">start_environment</span></code>
+directive as well as other directives can be based on your design.</p>
+</div>
+</div>
+<div class="section" id="how-to-send-a-message">
+<span id="send-message"></span><h3>How to send a message<a class="headerlink" href="#how-to-send-a-message" title="Permalink to this headline"></a></h3>
+<p>In order to send a message, the Actor must first receive a message in a <a class="reference internal" href="#directive"><span class="std std-ref">directive</span></a> first.</p>
 <div class="section" id="directives">
-<h3>Directives<a class="headerlink" href="#directives" title="Permalink to this headline"></a></h3>
+<span id="directive"></span><h4>Directives<a class="headerlink" href="#directives" title="Permalink to this headline"></a></h4>
+<p><strong>Directives</strong> are special class methods defined in Actor classes (contained in .py files inside your <strong>mes</strong> folder). They are used to view received messages.
+Actors need to have the following in their classes to recieve a particular message.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the following example our Actor is set as the <a class="reference internal" href="#institution"><span class="std std-ref">Institution</span></a> type, however, the message receiving process is applicable
+for any type.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@directive_enabled_class</span>
+<span class="k">class</span> <span class="nc">InstitutionClass</span><span class="p">(</span><span class="n">Institution</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@directive_decorator</span><span class="p">(</span><span class="s2">&quot;institution_message&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">institution_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span><span class="n">Message</span><span class="p">):</span><span class="c1">#The method name needs to be the same as the directive name set in quotes above</span>
+
+        <span class="n">message_payload</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">get_payload</span><span class="p">()</span> <span class="c1">#accesses the message payload</span>
+        <span class="n">message_sender_address</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">get_sender</span><span class="p">()</span> <span class="c1">#access the sender agent&#39;s address</span>
+
+        <span class="c1">#You can find more on logging in the &lt;logs&gt; section in References</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log_message</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;message_payload = </span><span class="si">{</span><span class="n">message_payload</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;message_sender_address = </span><span class="si">{</span><span class="n">message_sender_address</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this above example, the institution receives a message sent by the Environment in <a class="reference internal" href="#send-message"><span class="std std-ref">send message</span></a></p>
+<p>Your <a class="reference internal" href="#log-message"><span class="std std-ref">log</span></a> file should produce the following output</p>
+<div class="highlight-log notranslate"><div class="highlight"><pre><span></span>1645122024.0900638  message_payload = any_python_data_type_would_do
+
+1645122024.0937853  message_sender_address = ActorAddr-(T|:43253)
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>sdfsdf</p>
+</div>
+</div>
 </div>
 <div class="section" id="first-message-start">
 <h3>First Message - start<a class="headerlink" href="#first-message-start" title="Permalink to this headline"></a></h3>
@@ -147,17 +224,17 @@
 <div class="section" id="actor-description">
 <span id="actors"></span><h2>Actor Description<a class="headerlink" href="#actor-description" title="Permalink to this headline"></a></h2>
 <div class="section" id="environment">
-<span id="id3"></span><h3>Environment<a class="headerlink" href="#environment" title="Permalink to this headline"></a></h3>
+<span id="id4"></span><h3>Environment<a class="headerlink" href="#environment" title="Permalink to this headline"></a></h3>
 </div>
 <div class="section" id="institution">
-<span id="id4"></span><h3>Institution<a class="headerlink" href="#institution" title="Permalink to this headline"></a></h3>
+<span id="id5"></span><h3>Institution<a class="headerlink" href="#institution" title="Permalink to this headline"></a></h3>
 </div>
 <div class="section" id="agent">
-<span id="id5"></span><h3>Agent<a class="headerlink" href="#agent" title="Permalink to this headline"></a></h3>
+<span id="id6"></span><h3>Agent<a class="headerlink" href="#agent" title="Permalink to this headline"></a></h3>
 </div>
 </div>
-<div class="section" id="config-file">
-<span id="config"></span><h2>config file<a class="headerlink" href="#config-file" title="Permalink to this headline"></a></h2>
+<div class="section" id="config">
+<span id="id7"></span><h2>config<a class="headerlink" href="#config" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>Description and general layout</p></li>
 </ul>
@@ -178,7 +255,7 @@
 </div>
 </div>
 <div class="section" id="address-book">
-<span id="id6"></span><h2>address book<a class="headerlink" href="#address-book" title="Permalink to this headline"></a></h2>
+<span id="id8"></span><h2>address book<a class="headerlink" href="#address-book" title="Permalink to this headline"></a></h2>
 <div class="section" id="structure">
 <h3>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h3>
 </div>
@@ -190,14 +267,14 @@
 </div>
 </div>
 <div class="section" id="logs">
-<span id="id7"></span><h2>Logs<a class="headerlink" href="#logs" title="Permalink to this headline"></a></h2>
+<span id="id9"></span><h2>Logs<a class="headerlink" href="#logs" title="Permalink to this headline"></a></h2>
 <p>Logging is a way to output key data from a simulation in order to keep track of what the code is doing at various steps.
 mTree provides 2 types of logging capabilities.</p>
 <ul class="simple">
 <li><p>Desription of the 2 types of logging capability that mTree provides</p></li>
 </ul>
 <div class="section" id="log-file">
-<span id="id8"></span><h3>Log File<a class="headerlink" href="#log-file" title="Permalink to this headline"></a></h3>
+<span id="id10"></span><h3>Log File<a class="headerlink" href="#log-file" title="Permalink to this headline"></a></h3>
 <div class="section" id="self-log-message-input">
 <span id="log-message"></span><h4>self.log_message(input)<a class="headerlink" href="#self-log-message-input" title="Permalink to this headline"></a></h4>
 </div>
@@ -216,10 +293,10 @@ mTree provides 2 types of logging capabilities.</p>
 </div>
 </div>
 <div class="section" id="data-log">
-<span id="id9"></span><h3>Data Log<a class="headerlink" href="#data-log" title="Permalink to this headline"></a></h3>
+<span id="id11"></span><h3>Data Log<a class="headerlink" href="#data-log" title="Permalink to this headline"></a></h3>
 <p id="log-data">self.log_data(input)</p>
-<div class="section" id="id10">
-<h4>Example<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h4>
+<div class="section" id="id12">
+<h4>Example<a class="headerlink" href="#id12" title="Permalink to this headline"></a></h4>
 <ul class="simple">
 <li><p>Shows sample output from the .data file</p></li>
 </ul>
