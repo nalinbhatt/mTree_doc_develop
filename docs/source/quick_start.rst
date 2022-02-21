@@ -57,7 +57,6 @@ present.
 
 .. figure:: _static/mTree_auction_examples_comp_setup.png
         :align: center
-|
 
 Running mTree_auction_examples container
 ----------------------------------------
@@ -70,8 +69,8 @@ Your **shell** should look some version of this -
 
 .. figure:: _static/mTree_auction_examples_shell.png
         :align: center
-|
-Run the following commands to view the underlying files in the folder.  
+
+| Run the following commands to view the underlying files in the folder.  
 
 | **Mac** 
 
@@ -117,6 +116,7 @@ you should see the following folders.
 
 .. figure:: _static/quick_start_tatonnement_ls.png
         :align: center
+
 |
 
 .. note::
@@ -181,6 +181,7 @@ You should see something similar to this.
 .. figure:: _static/quick_start_run_simulation.png
         :align: center
 |
+
 Click **<enter>** to select and run the **basic_simulation.json** file. 
 Your output should look something similar to this. 
 
@@ -207,15 +208,16 @@ The first few lines of you ``.log`` file document the config file parameters whi
 .. figure:: _static/quick_start_log_config.png
         :align: center
 
-The rest of your ``.log`` file should look as follows. 
+| The rest of your ``.log`` file should look as follows. 
 
 .. figure:: _static/quick_start_log_rest.png
         :align: center
 
-Your ``.data``  file should look something like this - 
+| Your ``.data``  file should look something like this - 
 
 .. figure:: _static/quick_start_data_log.png
         :align: center
+|
 
 .. note:: 
 
@@ -255,6 +257,7 @@ Your console should look like some version of this -
 
 .. figure:: _static/quick_start_quitting_mTree.png
         :align: center
+|
 
 Conclusion
 ----------
