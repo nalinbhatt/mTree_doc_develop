@@ -1,0 +1,24 @@
+Simulation Configuration: 	{
+ "mtree_type": "mes_simulation_description",
+ "name": "Basic Simulation Run",
+ "id": "1",
+ "description": null,
+ "environment": "environment_file.EnvironmentClass",
+ "institutions": [
+  {
+   "institution": "institution_file.InstitutionClass"
+  }
+ ],
+ "agents": [
+  {
+   "agent_name": "agent_file.AgentClass",
+   "number": 5
+  }
+ ],
+ "properties": {},
+ "data_logging": null,
+ "source_hash": "2c9468fe2bd2d670543655c29b701d82",
+ "simulation_run_id": "basic_config-2022_02_17-02_59_32_PM",
+ "mes_directory": "/auctions"
+}
+1645109972.2929125	start_environment got triggered

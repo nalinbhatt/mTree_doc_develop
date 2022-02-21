@@ -1,0 +1,9 @@
+{"mtree_type": "mes_simulation_description",
+    "name":"Basic Simulation Run",
+    "id": "1",
+    "environment": "environment_file.EnvironmentClass",
+    "institution": "institution_file.InstitutionClass",
+    "number_of_runs": 1,
+    "agents": [{"agent_name": "agent_file.AgentClass", "number": 5}],
+    "properties": {}
+  }
