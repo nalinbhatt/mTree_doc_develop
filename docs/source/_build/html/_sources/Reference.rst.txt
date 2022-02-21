@@ -1,7 +1,12 @@
 
+
 =========
 Reference
 =========
+
+
+.. role:: python(code)
+   :language: python
 
 .. _theory_of_operations:
 
@@ -61,20 +66,81 @@ How to send a message
 ---------------------
 
 In order to send a message, the Actor must first receive a message in a :ref:`directive <directive>` first.
+Once in a **directive**, the key elements for a message are -
+
+* **Sending Actor's address**: Usually accessed by :code:`self.myAddress` 
+* **Content**: This could be any python data type message (None types also work) that you want the other Actor to recieve. 
+* **Receiving Actor's address**: This could be accessed several ways, see code example in :ref:`directive <directive>` or checkout :ref:`address_book`
+
+Here is how you can define and send a message-
+
+.. code-block:: python
+
+    new_message = Message() #creates a message object 
+    new_message.set_sender(self.myAddress) #self.myAddress is the agent's personal mTree Actor address
+    new_message.set_directive("institution_message") #directives are used by message receiving agents to recieve specific messages
+    new_message.set_payload("any_python_data_type_would_do") #you can set the payload to any python data type
+
+    self.send(reciever_address, new_message) # This method is used to finally send your message 
+
+|
+| In the example below, we continue the ``start_messsage`` directive method in the Environment and send a message 
+| to the Institution.
+| 
+
+.. code-block:: python
+
+    @directive_enabled_class  
+    class EnvironmentClass(Environment):
+        def __init__(self):
+            pass
+
+        @directive_decorator("start_environment")
+        def start_environment(self, message:Message):
+            
+            your_message = Message() #create a message object 
+            your_message.set_sender(self.myAddress) #self.myAddress is the agent's personal mTree Actor address
+            your_message.set_directive("institution_message") #directives are used by message receiving agents to recieve specific messages
+            your_message.set_payload("any_python_data_type_would_do") #you can set the payload to any python data type
+            
+            #checkout the <address_book> section in References to find how different Actors access each other's addresses
+            receiver_address = self.address_book.select_addresses({"short_name":"institution_file.InstitutionClass 1"}) 
+            
+            self.send(receiver_address, your_message) # This method is used to finally send your message 
+        
 
 
 .. _directive:
 
-Directives
-^^^^^^^^^^
+Directives / Receiving Messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Directives** are special class methods defined in Actor classes (contained in .py files inside your **mes** folder). They are used to view received messages. 
-Actors need to have the following in their classes to recieve a particular message. 
+**Directives** are special class methods defined in Actor classes (contained in .py files inside your **mes** folder). 
+They are used to view messages sent to the Actor. 
 
+| Actors need to have the following in their classes to recieve a particular message. 
+|
+
+.. code-block:: python 
+
+    @directive_decorator("directive_name")
+    def directive_name(self, message: Message):
+
+        message_payload = message.get_payload() #accesses the message payload 
+        message_sender_address = message.get_sender() #access the sender agent's address
+
+.. warning::  
+
+    In order to recieve a messsage your directive name and your method name need to be the same, otherwise, 
+    mTree throws the following :ref:`error<directive_error>`.
 
 .. note::
     For the following example our Actor is set as the :ref:`Institution` type, however, the message receiving process is applicable
     for any type. 
+
+
+| In this example below, the institution receives a message sent by the Environment in :ref:`send message <send_message>`.
+
 
 .. code-block:: python 
 
@@ -93,32 +159,14 @@ Actors need to have the following in their classes to recieve a particular messa
             self.log_message(f"message_payload = {message_payload}\n"
                             f"message_sender_address = {message_sender_address}\n")
 
-In this above example, the institution receives a message sent by the Environment in :ref:`send message <send_message>`
+Your :ref:`log<log_message>` file should produce the following output -
 
-Your :ref:`log<log_message>` file should produce the following output
-
-.. code-block:: log
+.. code-block:: ruby
 
     1645122024.0900638	message_payload = any_python_data_type_would_do
 
     1645122024.0937853	message_sender_address = ActorAddr-(T|:43253)
 
-
-.. warning::  
-
-    sdfsdf
-
-First Message - start
----------------------
-
-Sending a message 
------------------
-
-Receiving a message 
--------------------
-
-Reminder Messages
------------------
 
 .. _Actors:
 
@@ -162,6 +210,9 @@ running multiple
 
 address book 
 ============
+
+The **address_book** is an **mTree** object that stores addresses of all the Actors that are initialized in the :ref:`config` file.
+Access to it is limited to the :ref:`Environment` Actor at first, nevertheless, access can be controlled and passed on to different agents
 
 Structure
 ---------
@@ -224,6 +275,11 @@ be used to read the dataframe.
 
 Error Handling
 ==============
+
+.. _directive_error:
+
+Directive name error
+--------------------
 
 
 

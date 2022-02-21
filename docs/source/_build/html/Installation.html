@@ -95,7 +95,7 @@
 <p>In order to run <strong>mTree</strong> we need to install <a class="reference external" href="https://www.docker.com">Docker Desktop</a>  first.</p>
 <div class="section" id="installing-docker-desktop">
 <span id="install-docker-desk"></span><h2>Installing Docker Desktop<a class="headerlink" href="#installing-docker-desktop" title="Permalink to this headline"></a></h2>
-<p>The links for <strong>Docker Desktop</strong> installation for different os can be found below.</p>
+<p>The links for <strong>Docker Desktop</strong> installation for different <strong>os</strong> can be found below.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><a class="reference external" href="https://www.docker.com/products/docker-desktop">Download Docker Desktop</a></p></li>
@@ -105,10 +105,10 @@
 </div>
 <div class="section" id="installing-mtree">
 <span id="install-mtree"></span><h2>Installing mTree<a class="headerlink" href="#installing-mtree" title="Permalink to this headline"></a></h2>
-<p>You can install <strong>mTree</strong> by pasting the following code in your command prompt.
-paste the following in your command prompt, power shell or terminal. You can also check to find
-the latest version of <strong>mTree</strong> <a class="reference external" href="https://hub.docker.com/r/mtree/mtree/tags">here</a></p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> docker pull mtree/mtree:1.0.10
+<p>You can install <strong>mTree</strong> by pasting the following code in your command prompt, power shell or terminal.
+However, make sure to check for the latest version of <strong>mTree</strong> <a class="reference external" href="https://hub.docker.com/r/mtree/mtree/tags">here</a>,
+in case the one below is out of date.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> docker pull mtree/mtree:1.0.11a
 </pre></div>
 </div>
 <div class="admonition note">
@@ -117,29 +117,35 @@ the latest version of <strong>mTree</strong> <a class="reference external" href=
 have <strong>Docker Desktop</strong> installed.</p>
 </div>
 <p>After pasting and running the command in your command prompt, your screen should look
-some version of this -</p>
+like something like this</p>
 <div class="figure align-center">
 <img alt="_images/terminal.png" src="_images/terminal.png" />
 </div>
 </div>
 <div class="section" id="mtree-container-setup">
 <span id="id1"></span><h2>mTree Container Setup<a class="headerlink" href="#mtree-container-setup" title="Permalink to this headline"></a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you don’t have an <strong>mTree</strong> simulation that is ready to run or you are new to <strong>mTree</strong>, visit
+the <a class="reference internal" href="quick_start.html"><span class="doc">Quick Start Guide</span></a> before you do this next step.</p>
+</div>
 <p>Open <strong>Docker Desktop</strong> app on your computer and click
-images on the sidebar.</p>
+<strong>Images</strong> on the sidebar.</p>
 <div class="figure align-center">
 <img alt="_images/mTree_image.png" src="_images/mTree_image.png" />
 </div>
-<p>This is the <strong>mTree</strong> image we just downloaded through docker hub in the previous step. We are going to run this
-image within a small virtualization of the os called a ‘container’. We can create our docker
-container by clicking “Run” on the mTree image.</p>
-<p>After that you should see the following window.</p>
+<p>You should see the <strong>mTree</strong> image we just downloaded through docker hub in the previous step.
+In the next step, we are going to run this image within a small virtualization of the <strong>os</strong> called a
+<strong>container</strong>. We can create our docker <strong>container</strong> by clicking <strong>RUN</strong> on the <strong>mTree</strong> image.</p>
+<p>After that you should see the following window. Follow all the steps, in the image below, before moving
+on to the next step.</p>
 <div class="figure align-center">
 <img alt="_images/mTree_container_setup.png" src="_images/mTree_container_setup.png" />
 </div>
-<p>Once all the instructions in the image are completed, you should click “Containers/Apps”
-on the sidebar. After hitting “Containers/Apps”, you should see the following container -</p>
+<p>Once all the instructions in the above image are completed, you should click <strong>Containers/Apps</strong>
+on the sidebar. After hitting <strong>Containers/Apps</strong>, you should see the following container -</p>
 <div class="figure align-center">
-<img alt="_images/unstarted_container.png" src="_images/unstarted_container.png" />
+<img alt="_images/installation_unstarted_container.png" src="_images/installation_unstarted_container.png" />
 </div>
 <div class="section" id="container-options">
 <span id="mtree-container-options"></span><h3>Container Options<a class="headerlink" href="#container-options" title="Permalink to this headline"></a></h3>
@@ -147,7 +153,7 @@ on the sidebar. After hitting “Containers/Apps”, you should see the followin
 state.</p>
 <div class="section" id="start">
 <span id="mtree-container-start"></span><h4>Start<a class="headerlink" href="#start" title="Permalink to this headline"></a></h4>
-<p>Click “Start” to start your container.</p>
+<p>Click <code class="docutils literal notranslate"><span class="pre">START</span></code> to start your container.</p>
 <div class="figure align-center">
 <img alt="_images/start_button.png" src="_images/start_button.png" />
 </div>
@@ -158,28 +164,28 @@ state.</p>
 </div>
 <div class="section" id="stop">
 <span id="mtree-container-stop"></span><h4>Stop<a class="headerlink" href="#stop" title="Permalink to this headline"></a></h4>
-<p>You can stop running your container by pressing “stop” button</p>
+<p>You can stop running your container by pressing <code class="docutils literal notranslate"><span class="pre">STOP</span></code> button</p>
 <div class="figure align-center">
 <img alt="_images/stop_button.png" src="_images/stop_button.png" />
 </div>
 </div>
 <div class="section" id="restart">
 <span id="mtree-container-restart"></span><h4>Restart<a class="headerlink" href="#restart" title="Permalink to this headline"></a></h4>
-<p>You can restart your container by pressing the “restart” button</p>
+<p>You can restart your container by pressing the <code class="docutils literal notranslate"><span class="pre">RESTART</span></code> button</p>
 <div class="figure align-center">
 <img alt="_images/restart_button.png" src="_images/restart_button.png" />
 </div>
 </div>
 <div class="section" id="delete">
 <span id="mtree-container-delete"></span><h4>Delete<a class="headerlink" href="#delete" title="Permalink to this headline"></a></h4>
-<p>If you want to delete the image, you can press the “delete” button</p>
+<p>If you want to delete the image, you can press the <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> button</p>
 <div class="figure align-center">
 <img alt="_images/delete_button.png" src="_images/delete_button.png" />
 </div>
 </div>
 <div class="section" id="open-shell">
 <span id="mtree-container-cli"></span><h4>Open Shell<a class="headerlink" href="#open-shell" title="Permalink to this headline"></a></h4>
-<p>Once your container is running, you should click “CLI” button to open the command prompt/shell
+<p>Once your container is running, you should click <code class="docutils literal notranslate"><span class="pre">CLI</span></code> button to open the command prompt/shell
 linked to your container.</p>
 <div class="figure align-center">
 <img alt="_images/shell_button.png" src="_images/shell_button.png" />
@@ -188,8 +194,6 @@ linked to your container.</p>
 <div class="figure align-center">
 <img alt="_images/container_command_prompt.png" src="_images/container_command_prompt.png" />
 </div>
-<p>If your Docker shell looks as above, then you have correctly installed <strong>mTree</strong> and you should
-move to the <a class="reference internal" href="quick_start.html"><span class="doc">Quick Start Guide</span></a> section to run an example.</p>
 </div>
 </div>
 </div>

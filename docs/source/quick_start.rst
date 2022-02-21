@@ -2,9 +2,9 @@
 Quick Start Guide
 =================
 
-In this **Quick Start Guide**, we are going to run a simple **mTree** simulation 
+In this **Quick Start Guide**, we are going to run a simple **mTree simulation**
 while giving an overview of key components that are necessary for **mTree** to execute 
-without error. The goal of this guide is to show you how to run an mTree simulation from 
+without error. The goal of this guide is to show you how to run an **mTree simulation** from 
 start to finish and point out the vital indicators that convey a simulation has run properly. 
 
 Cloning mTree_auction_examples
@@ -13,18 +13,29 @@ Cloning mTree_auction_examples
 
 We are going to clone the **mTree_auction_examples** repository, which can
 be found `here <https://github.com/gmucsn/mTree_learning_exercises>`_, and run one 
-of the examples to  **mTree** is running properly. 
+of the examples to make sure **mTree** is running properly. 
 
 
-Open your command prompt and navigate to an apporpriate place using  within your 
-file system where you want to clone the repository and run the following code - 
+Open your command prompt and navigate to an apporpriate place within your file system  
+using the ``cd`` command and run the following code. 
+
 
 .. code-block:: console
 
     $ git clone https://github.com/gmucsn/mTree_auction_examples.git
 
-This will create a **mTree_auction_examples** folder at your specified 
+This will create an **mTree_auction_examples** folder at your specified 
 location.
+
+.. tip:: 
+    If you are new to **command line** you can check out the following links on 
+    how to navigate your file system -
+
+    | `Terminal for Beginners <https://medium.com/@grace.m.nolan/terminal-for-beginners-e492ba10902a>`_ (Macs) 
+    | `A Beginner's Guide to the Windows Command Prompt <https://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line/>`_ (Windows)
+
+    Although, the following resources provide a great background which might be helpful later, nevertheless, 
+    for these next few steps, you only need to know how the ``cd`` command works.  
 
 
 Running mTree_auction_examples 
@@ -33,21 +44,29 @@ Running mTree_auction_examples
 In order to run this simulation we need to create a **docker container** using 
 the **Docker Desktop** app that we downloaded in  :doc:`installation` section. 
 
-Follow all the steps highlighted in the :ref:`mTree-container-setup` section 
-and set the **Host Path** to the mTree_auction_examples folder (which you cloned in the previous step)
 
-If you setup the container correctly, click "Container/Apps" on the sidebar of 
+mTree_auction_examples container setup
+--------------------------------------
+
+Follow all the steps highlighted in the :ref:`mTree-container-setup` section 
+and set the **Host Path** to the **mTree_auction_example folder** (which you cloned in the previous step)
+
+After finishing the setup process, click **Container/Apps** on the sidebar of 
 **Docker Desktop**. There should be a container by the name **mTree_auction_examples**
 present. 
 
 .. figure:: _static/mTree_auction_examples_comp_setup.png
         :align: center
 
-Start the container and open the shell. More details on how to do this are 
+
+Running mTree_auction_examples container
+----------------------------------------
+
+Start the container and open the **shell**. More details on how to do this are 
 covered in :ref:`mTree-container-options` under :ref:`mTree-container-start`
 and :ref:`mTree-container-cli`. 
 
-Your shell should look some version of this - 
+Your **shell** should look some version of this - 
 
 .. figure:: _static/mTree_auction_examples_shell.png
         :align: center
@@ -66,7 +85,7 @@ Run the following commands to view the underlying files in the folder.
 
     $ dir
 
-You should see the following subfolders in your command prompt -
+You should see the following subfolders-
 
 .. figure:: _static/quick_start_ls.png
         :align: center
@@ -75,10 +94,10 @@ Tatonnement
 -----------
 
 One of the subfolders present should have the name **tatonnement** which refers to 
-the famous :ref:`tatonnement`  auction. Further information about the 
+the famous `Tatonnement <https://en.wikipedia.org/wiki/Walrasian_auction>`_ auction. Further information about the 
 auction style and description can be found in the :doc:`learning_paths`.
 
-In your **mTree_auction_examples** container shell type in the following command to set 
+In your **mTree_auction_examples** container **shell** type in the following command to set 
 the current directory to **tatonnement**.
 
 .. code-block:: console
@@ -95,8 +114,12 @@ you should see the following folders.
 2. :ref:`mes <Actors>`
 3. :ref:`logs <logs>`
 
+
+.. figure:: _static/quick_start_tatonnement_ls.png
+        :align: center
+
 .. note::
-    In order to properly run an mTree simulation you need to set the current 
+    In order to properly run an **mTree simulation** you need to set the current 
     directory to the folder which contains a **config**, **mes**, and a **logs** folder.
     **mTree** looks for these particular folders to run the simulation. For our example, this is the **tatonnement**
     folder inside **mTree_auction_examples**.
@@ -104,23 +127,19 @@ you should see the following folders.
 .. tip:: 
     In the future, when designing your own container, you can set the **Host Path**
     directly to the folder containing the **config** and **mes** folder. That way 
-    you don't have to navigate to the desired directory within the docker shell. 
+    you don't have to navigate to the desired directory within the docker **shell**. 
 
-config
-^^^^^^
-The :ref:`config` folder contains your **json config files** which are used to instantiate **mTree** :ref:`Actors <Actors>` defined in 
+The :ref:`config` folder (short for configurations) contains your **JSON config files** which are used to instantiate **mTree** :ref:`Actors <Actors>` defined in 
 the **mes** folder. 
 
-mes
-^^^
 The **mes** folder (short for Microeconomic System) containes the python files where you define the different
 :ref:`Actor <Actors>` classes, namely - the :ref:`environment` , :ref:`institution` and :ref:`agent`. 
 
 .. warning:: 
 
-    It is critical that your **simulation folder** contain a **config** folder with a **json config file** inside it 
+    It is critical that your **simulation folder** contains a **config** folder, with a **JSON config file** inside,
     and a separate **mes** folder with python files inside, which contain :ref:`environment` , :ref:`institution` and :ref:`agent` code.
-    ``In the absence of any of these your mTree simulation will not run``
+    **In the absence of any of these your mTree simulation will not run.**
 
 
 Inside the **config** folder in the **tatonnement** auction example, you should see a **basic_simulation.json** file. 
@@ -128,7 +147,7 @@ This is the config file which we will run.
 
 For the next step we want to make sure that our current directory is **tatonnement** so if you used the **cd** command to 
 change the directory to **config** and view its contents, we want to go up a directory using the following command to make sure 
-we are in the right directory.
+we are in the right directory. 
 
 .. code-block:: console 
 
@@ -136,28 +155,27 @@ we are in the right directory.
 
 .. _run_config:
 
-Running simulation
-------------------
+Running mTree_auctions_examples simulation
+------------------------------------------
 
-We can type the following command into the shell to start mTree.  
+We can type the following command into the **shell** to start **mTree**.  
 
 .. code-block:: console 
 
     $ mTree_runner 
 
-You should see something similar to this in your shell 
+You should see something similar to this.
 
 .. figure:: _static/quick_start_mTree_runner.png
         :align: center
 
-Type the following in your shell to start the selection process for a config file 
+Enter the following to start the selection process for the config file.
 
 .. code-block:: console 
 
     $ run_simulation
 
-|
-| You should see something similar to this in your shell.
+| Your window should look like this. 
 
 .. figure:: _static/quick_start_run_simulation.png
         :align: center
@@ -188,7 +206,7 @@ The first few lines of you ``.log`` file document the config file parameters whi
 .. figure:: _static/quick_start_log_config.png
         :align: center
 
-The rest of your log file should look as follows. - 
+The rest of your ``.log`` file should look as follows. 
 
 .. figure:: _static/quick_start_log_rest.png
         :align: center
@@ -202,7 +220,7 @@ Your ``.data``  file should look something like this -
 
     Don't worry if the log files on your end don't match the ones shown here word for word. Since **mTree** is a 
     concurrent Agent-Based Modelling software, it is common for different :ref:`Actors <Actors>` to log asynchronously to the
-    same ``.log`` file, giving it an out of order look. 
+    same ``.log`` and ``.data`` files, giving them an out of order look. 
     
 
 How to know your simulation has ended? 
@@ -225,7 +243,7 @@ that your simulation has run properly. If there are instances of ``Error`` messa
 Quitting
 --------
 
-Once the simulation has ended, you can run ``quit`` command in the **docker** shell to kill mTree. The ``quit`` command 
+Once the simulation has ended, you can run ``quit`` command in the **docker shell** to kill mTree. The ``quit`` command 
 is used to kill all mTree processes as well as **delete** all :ref:`Actor <Actors>` instances previously created to run the simulation. 
 
 .. code-block:: console 
@@ -240,9 +258,9 @@ Your console should look like some version of this -
 Conclusion
 ----------
 
-Congratulations on successfully running your first mTree simulation. If you want to know how this example was built or you want to find more 
-projects like this, checkout :ref:`tatonnement` or :doc:`learning_paths` sections. If you want to view a more in-depth case which builds 
-an mTree project from scratch, checkout :doc:`quick_build`. 
+Congratulations on successfully running your first mTree simulation! If you want to know how this example was built
+or you want to find more projects like this, checkout :ref:`tatonnement` or :doc:`learning_paths` sections. 
+If you want to view a more in-depth case which builds an mTree project from scratch, checkout :doc:`quick_build`. 
 
 
 

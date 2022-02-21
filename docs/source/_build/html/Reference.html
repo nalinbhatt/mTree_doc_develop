@@ -51,13 +51,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#messages">messages</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#start-environment">start_environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-send-a-message">How to send a message</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#directives">Directives</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#directives-receiving-messages">Directives / Receiving Messages</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#first-message-start">First Message - start</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sending-a-message">Sending a message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#receiving-a-message">Receiving a message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#reminder-messages">Reminder Messages</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#actor-description">Actor Description</a><ul>
@@ -92,7 +88,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#error-handling">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#error-handling">Error Handling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#directive-name-error">Directive name error</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contributor_guide.html">Contribute</a></li>
@@ -169,15 +168,74 @@ directive as well as other directives can be based on your design.</p>
 </div>
 <div class="section" id="how-to-send-a-message">
 <span id="send-message"></span><h3>How to send a message<a class="headerlink" href="#how-to-send-a-message" title="Permalink to this headline"></a></h3>
-<p>In order to send a message, the Actor must first receive a message in a <a class="reference internal" href="#directive"><span class="std std-ref">directive</span></a> first.</p>
-<div class="section" id="directives">
-<span id="directive"></span><h4>Directives<a class="headerlink" href="#directives" title="Permalink to this headline"></a></h4>
-<p><strong>Directives</strong> are special class methods defined in Actor classes (contained in .py files inside your <strong>mes</strong> folder). They are used to view received messages.
-Actors need to have the following in their classes to recieve a particular message.</p>
+<p>In order to send a message, the Actor must first receive a message in a <a class="reference internal" href="#directive"><span class="std std-ref">directive</span></a> first.
+Once in a <strong>directive</strong>, the key elements for a message are -</p>
+<ul class="simple">
+<li><p><strong>Sending Actor’s address</strong>: Usually accessed by <code class="code docutils literal notranslate"><span class="pre">self.myAddress</span></code></p></li>
+<li><p><strong>Content</strong>: This could be any python data type message (None types also work) that you want the other Actor to recieve.</p></li>
+<li><p><strong>Receiving Actor’s address</strong>: This could be accessed several ways, see code example in <a class="reference internal" href="#directive"><span class="std std-ref">directive</span></a> or checkout <a class="reference internal" href="#address-book"><span class="std std-ref">address book</span></a></p></li>
+</ul>
+<p>Here is how you can define and send a message-</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_message</span> <span class="o">=</span> <span class="n">Message</span><span class="p">()</span> <span class="c1">#creates a message object</span>
+<span class="n">new_message</span><span class="o">.</span><span class="n">set_sender</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">myAddress</span><span class="p">)</span> <span class="c1">#self.myAddress is the agent&#39;s personal mTree Actor address</span>
+<span class="n">new_message</span><span class="o">.</span><span class="n">set_directive</span><span class="p">(</span><span class="s2">&quot;institution_message&quot;</span><span class="p">)</span> <span class="c1">#directives are used by message receiving agents to recieve specific messages</span>
+<span class="n">new_message</span><span class="o">.</span><span class="n">set_payload</span><span class="p">(</span><span class="s2">&quot;any_python_data_type_would_do&quot;</span><span class="p">)</span> <span class="c1">#you can set the payload to any python data type</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">reciever_address</span><span class="p">,</span> <span class="n">new_message</span><span class="p">)</span> <span class="c1"># This method is used to finally send your message</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line">In the example below, we continue the <code class="docutils literal notranslate"><span class="pre">start_messsage</span></code> directive method in the Environment and send a message</div>
+<div class="line">to the Institution.</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@directive_enabled_class</span>
+<span class="k">class</span> <span class="nc">EnvironmentClass</span><span class="p">(</span><span class="n">Environment</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@directive_decorator</span><span class="p">(</span><span class="s2">&quot;start_environment&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">start_environment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span><span class="n">Message</span><span class="p">):</span>
+
+        <span class="n">your_message</span> <span class="o">=</span> <span class="n">Message</span><span class="p">()</span> <span class="c1">#create a message object</span>
+        <span class="n">your_message</span><span class="o">.</span><span class="n">set_sender</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">myAddress</span><span class="p">)</span> <span class="c1">#self.myAddress is the agent&#39;s personal mTree Actor address</span>
+        <span class="n">your_message</span><span class="o">.</span><span class="n">set_directive</span><span class="p">(</span><span class="s2">&quot;institution_message&quot;</span><span class="p">)</span> <span class="c1">#directives are used by message receiving agents to recieve specific messages</span>
+        <span class="n">your_message</span><span class="o">.</span><span class="n">set_payload</span><span class="p">(</span><span class="s2">&quot;any_python_data_type_would_do&quot;</span><span class="p">)</span> <span class="c1">#you can set the payload to any python data type</span>
+
+        <span class="c1">#checkout the &lt;address_book&gt; section in References to find how different Actors access each other&#39;s addresses</span>
+        <span class="n">receiver_address</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">address_book</span><span class="o">.</span><span class="n">select_addresses</span><span class="p">({</span><span class="s2">&quot;short_name&quot;</span><span class="p">:</span><span class="s2">&quot;institution_file.InstitutionClass 1&quot;</span><span class="p">})</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">receiver_address</span><span class="p">,</span> <span class="n">your_message</span><span class="p">)</span> <span class="c1"># This method is used to finally send your message</span>
+</pre></div>
+</div>
+<div class="section" id="directives-receiving-messages">
+<span id="directive"></span><h4>Directives / Receiving Messages<a class="headerlink" href="#directives-receiving-messages" title="Permalink to this headline"></a></h4>
+<p><strong>Directives</strong> are special class methods defined in Actor classes (contained in .py files inside your <strong>mes</strong> folder).
+They are used to view messages sent to the Actor.</p>
+<div class="line-block">
+<div class="line">Actors need to have the following in their classes to recieve a particular message.</div>
+<div class="line"><br /></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@directive_decorator</span><span class="p">(</span><span class="s2">&quot;directive_name&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">directive_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">Message</span><span class="p">):</span>
+
+    <span class="n">message_payload</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">get_payload</span><span class="p">()</span> <span class="c1">#accesses the message payload</span>
+    <span class="n">message_sender_address</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">get_sender</span><span class="p">()</span> <span class="c1">#access the sender agent&#39;s address</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In order to recieve a messsage your directive name and your method name need to be the same, otherwise,
+mTree throws the following <a class="reference internal" href="#directive-error"><span class="std std-ref">error</span></a>.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For the following example our Actor is set as the <a class="reference internal" href="#institution"><span class="std std-ref">Institution</span></a> type, however, the message receiving process is applicable
 for any type.</p>
+</div>
+<div class="line-block">
+<div class="line">In this example below, the institution receives a message sent by the Environment in <a class="reference internal" href="#send-message"><span class="std std-ref">send message</span></a>.</div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@directive_enabled_class</span>
 <span class="k">class</span> <span class="nc">InstitutionClass</span><span class="p">(</span><span class="n">Institution</span><span class="p">):</span>
@@ -195,30 +253,13 @@ for any type.</p>
                         <span class="sa">f</span><span class="s2">&quot;message_sender_address = </span><span class="si">{</span><span class="n">message_sender_address</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>In this above example, the institution receives a message sent by the Environment in <a class="reference internal" href="#send-message"><span class="std std-ref">send message</span></a></p>
-<p>Your <a class="reference internal" href="#log-message"><span class="std std-ref">log</span></a> file should produce the following output</p>
-<div class="highlight-log notranslate"><div class="highlight"><pre><span></span>1645122024.0900638  message_payload = any_python_data_type_would_do
+<p>Your <a class="reference internal" href="#log-message"><span class="std std-ref">log</span></a> file should produce the following output -</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="mi">1645122024</span><span class="o">.</span><span class="mi">0900638</span>  <span class="n">message_payload</span> <span class="o">=</span> <span class="n">any_python_data_type_would_do</span>
 
-1645122024.0937853  message_sender_address = ActorAddr-(T|:43253)
+<span class="mi">1645122024</span><span class="o">.</span><span class="mi">0937853</span>  <span class="n">message_sender_address</span> <span class="o">=</span> <span class="no">ActorAddr</span><span class="o">-</span><span class="p">(</span><span class="n">T</span><span class="o">|</span><span class="p">:</span><span class="mi">43253</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>sdfsdf</p>
 </div>
-</div>
-</div>
-<div class="section" id="first-message-start">
-<h3>First Message - start<a class="headerlink" href="#first-message-start" title="Permalink to this headline"></a></h3>
-</div>
-<div class="section" id="sending-a-message">
-<h3>Sending a message<a class="headerlink" href="#sending-a-message" title="Permalink to this headline"></a></h3>
-</div>
-<div class="section" id="receiving-a-message">
-<h3>Receiving a message<a class="headerlink" href="#receiving-a-message" title="Permalink to this headline"></a></h3>
-</div>
-<div class="section" id="reminder-messages">
-<h3>Reminder Messages<a class="headerlink" href="#reminder-messages" title="Permalink to this headline"></a></h3>
 </div>
 </div>
 <div class="section" id="actor-description">
@@ -256,6 +297,8 @@ for any type.</p>
 </div>
 <div class="section" id="address-book">
 <span id="id8"></span><h2>address book<a class="headerlink" href="#address-book" title="Permalink to this headline"></a></h2>
+<p>The <strong>address_book</strong> is an <strong>mTree</strong> object that stores addresses of all the Actors that are initialized in the <a class="reference internal" href="#config"><span class="std std-ref">config</span></a> file.
+Access to it is limited to the <a class="reference internal" href="#environment"><span class="std std-ref">Environment</span></a> Actor at first, nevertheless, access can be controlled and passed on to different agents</p>
 <div class="section" id="structure">
 <h3>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"></a></h3>
 </div>
@@ -310,6 +353,9 @@ be used to read the dataframe.</p>
 </div>
 <div class="section" id="error-handling">
 <span id="error"></span><h2>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline"></a></h2>
+<div class="section" id="directive-name-error">
+<span id="directive-error"></span><h3>Directive name error<a class="headerlink" href="#directive-name-error" title="Permalink to this headline"></a></h3>
+</div>
 </div>
 </div>
 

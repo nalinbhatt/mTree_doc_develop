@@ -47,12 +47,10 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#cloning-mtree-auction-examples">Cloning mTree_auction_examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-mtree-auction-examples">Running mTree_auction_examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mtree-auction-examples-container-setup">mTree_auction_examples container setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-mtree-auction-examples-container">Running mTree_auction_examples container</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tatonnement">Tatonnement</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#file-structure">File Structure</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#config">config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mes">mes</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#file-structure">File Structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-simulation">Running simulation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#what-to-expect">What to expect?</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#logs">logs</a></li>
@@ -98,39 +96,55 @@
              
   <div class="section" id="quick-start-guide">
 <h1>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Permalink to this headline"></a></h1>
-<p>In this <strong>Quick Start Guide</strong>, we are going to run a simple <strong>mTree</strong> simulation
+<p>In this <strong>Quick Start Guide</strong>, we are going to run a simple <strong>mTree simulation</strong>
 while giving an overview of key components that are necessary for <strong>mTree</strong> to execute
-without error. The goal of this guide is to show you how to run an mTree simulation from
+without error. The goal of this guide is to show you how to run an <strong>mTree simulation</strong> from
 start to finish and point out the vital indicators that convey a simulation has run properly.</p>
 <div class="section" id="cloning-mtree-auction-examples">
 <h2>Cloning mTree_auction_examples<a class="headerlink" href="#cloning-mtree-auction-examples" title="Permalink to this headline"></a></h2>
 <p>We are going to clone the <strong>mTree_auction_examples</strong> repository, which can
 be found <a class="reference external" href="https://github.com/gmucsn/mTree_learning_exercises">here</a>, and run one
-of the examples to  <strong>mTree</strong> is running properly.</p>
-<p>Open your command prompt and navigate to an apporpriate place using  within your
-file system where you want to clone the repository and run the following code -</p>
+of the examples to make sure <strong>mTree</strong> is running properly.</p>
+<p>Open your command prompt and navigate to an apporpriate place within your file system
+using the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command and run the following code.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git clone https://github.com/gmucsn/mTree_auction_examples.git
 </pre></div>
 </div>
-<p>This will create a <strong>mTree_auction_examples</strong> folder at your specified
+<p>This will create an <strong>mTree_auction_examples</strong> folder at your specified
 location.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you are new to <strong>command line</strong> you can check out the following links on
+how to navigate your file system -</p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://medium.com/&#64;grace.m.nolan/terminal-for-beginners-e492ba10902a">Terminal for Beginners</a> (Macs)</div>
+<div class="line"><a class="reference external" href="https://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line/">A Beginner’s Guide to the Windows Command Prompt</a> (Windows)</div>
+</div>
+<p>Although, the following resources provide a great background which might be helpful later, nevertheless,
+for these next few steps, you only need to know how the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command works.</p>
+</div>
 </div>
 <div class="section" id="running-mtree-auction-examples">
 <h2>Running mTree_auction_examples<a class="headerlink" href="#running-mtree-auction-examples" title="Permalink to this headline"></a></h2>
 <p>In order to run this simulation we need to create a <strong>docker container</strong> using
 the <strong>Docker Desktop</strong> app that we downloaded in  <a class="reference internal" href="installation.html"><span class="doc">Installation</span></a> section.</p>
+<div class="section" id="mtree-auction-examples-container-setup">
+<h3>mTree_auction_examples container setup<a class="headerlink" href="#mtree-auction-examples-container-setup" title="Permalink to this headline"></a></h3>
 <p>Follow all the steps highlighted in the <a class="reference internal" href="installation.html#mtree-container-setup"><span class="std std-ref">mTree Container Setup</span></a> section
-and set the <strong>Host Path</strong> to the mTree_auction_examples folder (which you cloned in the previous step)</p>
-<p>If you setup the container correctly, click “Container/Apps” on the sidebar of
+and set the <strong>Host Path</strong> to the <strong>mTree_auction_example folder</strong> (which you cloned in the previous step)</p>
+<p>After finishing the setup process, click <strong>Container/Apps</strong> on the sidebar of
 <strong>Docker Desktop</strong>. There should be a container by the name <strong>mTree_auction_examples</strong>
 present.</p>
 <div class="figure align-center">
 <img alt="_images/mTree_auction_examples_comp_setup.png" src="_images/mTree_auction_examples_comp_setup.png" />
 </div>
-<p>Start the container and open the shell. More details on how to do this are
+</div>
+<div class="section" id="running-mtree-auction-examples-container">
+<h3>Running mTree_auction_examples container<a class="headerlink" href="#running-mtree-auction-examples-container" title="Permalink to this headline"></a></h3>
+<p>Start the container and open the <strong>shell</strong>. More details on how to do this are
 covered in <a class="reference internal" href="installation.html#mtree-container-options"><span class="std std-ref">Container Options</span></a> under <a class="reference internal" href="installation.html#mtree-container-start"><span class="std std-ref">Start</span></a>
 and <a class="reference internal" href="installation.html#mtree-container-cli"><span class="std std-ref">Open Shell</span></a>.</p>
-<p>Your shell should look some version of this -</p>
+<p>Your <strong>shell</strong> should look some version of this -</p>
 <div class="figure align-center">
 <img alt="_images/mTree_auction_examples_shell.png" src="_images/mTree_auction_examples_shell.png" />
 </div>
@@ -147,14 +161,15 @@ and <a class="reference internal" href="installation.html#mtree-container-cli"><
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> dir
 </pre></div>
 </div>
-<p>You should see the following subfolders in your command prompt -</p>
+<p>You should see the following subfolders-</p>
 <div class="figure align-center">
 <img alt="_images/quick_start_ls.png" src="_images/quick_start_ls.png" />
+</div>
 </div>
 <div class="section" id="tatonnement">
 <h3>Tatonnement<a class="headerlink" href="#tatonnement" title="Permalink to this headline"></a></h3>
 <p>One of the subfolders present should have the name <strong>tatonnement</strong> which refers to
-the famous <a class="reference internal" href="learning_paths.html#tatonnement"><span class="std std-ref">Tatonnement</span></a>  auction. Further information about the
+the famous <a class="reference external" href="https://en.wikipedia.org/wiki/Walrasian_auction">Tatonnement</a> auction. Further information about the
 auction style and description can be found in the <a class="reference internal" href="learning_paths.html"><span class="doc">Learning Paths</span></a>.</p>
 <p>In your <strong>mTree_auction_examples</strong> container shell type in the following command to set
 the current directory to <strong>tatonnement</strong>.</p>
@@ -171,9 +186,12 @@ you should see the following folders.</p>
 <li><p><a class="reference internal" href="reference.html#actors"><span class="std std-ref">mes</span></a></p></li>
 <li><p><a class="reference internal" href="reference.html#logs"><span class="std std-ref">logs</span></a></p></li>
 </ol>
+<div class="figure align-center">
+<img alt="_images/quick_start_tatonnement_ls.png" src="_images/quick_start_tatonnement_ls.png" />
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In order to properly run an mTree simulation you need to set the current
+<p>In order to properly run an <strong>mTree simulation</strong> you need to set the current
 directory to the folder which contains a <strong>config</strong>, <strong>mes</strong>, and a <strong>logs</strong> folder.
 <strong>mTree</strong> looks for these particular folders to run the simulation. For our example, this is the <strong>tatonnement</strong>
 folder inside <strong>mTree_auction_examples</strong>.</p>
@@ -182,22 +200,17 @@ folder inside <strong>mTree_auction_examples</strong>.</p>
 <p class="admonition-title">Tip</p>
 <p>In the future, when designing your own container, you can set the <strong>Host Path</strong>
 directly to the folder containing the <strong>config</strong> and <strong>mes</strong> folder. That way
-you don’t have to navigate to the desired directory within the docker shell.</p>
+you don’t have to navigate to the desired directory within the docker <strong>shell</strong>.</p>
 </div>
-<div class="section" id="config">
-<h4>config<a class="headerlink" href="#config" title="Permalink to this headline"></a></h4>
 <p>The <a class="reference internal" href="reference.html#config"><span class="std std-ref">config</span></a> folder contains your <strong>json config files</strong> which are used to instantiate <strong>mTree</strong> <a class="reference internal" href="reference.html#actors"><span class="std std-ref">Actors</span></a> defined in
 the <strong>mes</strong> folder.</p>
-</div>
-<div class="section" id="mes">
-<h4>mes<a class="headerlink" href="#mes" title="Permalink to this headline"></a></h4>
 <p>The <strong>mes</strong> folder (short for Microeconomic System) containes the python files where you define the different
 <a class="reference internal" href="reference.html#actors"><span class="std std-ref">Actor</span></a> classes, namely - the <a class="reference internal" href="reference.html#environment"><span class="std std-ref">Environment</span></a> , <a class="reference internal" href="reference.html#institution"><span class="std std-ref">Institution</span></a> and <a class="reference internal" href="reference.html#agent"><span class="std std-ref">Agent</span></a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>It is critical that your <strong>simulation folder</strong> contain a <strong>config</strong> folder with a <strong>json config file</strong> inside it
 and a separate <strong>mes</strong> folder with python files inside, which contain <a class="reference internal" href="reference.html#environment"><span class="std std-ref">Environment</span></a> , <a class="reference internal" href="reference.html#institution"><span class="std std-ref">Institution</span></a> and <a class="reference internal" href="reference.html#agent"><span class="std std-ref">Agent</span></a> code.
-<code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">the</span> <span class="pre">absence</span> <span class="pre">of</span> <span class="pre">any</span> <span class="pre">of</span> <span class="pre">these</span> <span class="pre">your</span> <span class="pre">mTree</span> <span class="pre">simulation</span> <span class="pre">will</span> <span class="pre">not</span> <span class="pre">run</span></code></p>
+<strong>In the absence of any of these your mTree simulation will not run.</strong></p>
 </div>
 <p>Inside the <strong>config</strong> folder in the <strong>tatonnement</strong> auction example, you should see a <strong>basic_simulation.json</strong> file.
 This is the config file which we will run.</p>
@@ -206,7 +219,6 @@ change the directory to <strong>config</strong> and view its contents, we want t
 we are in the right directory.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> ..
 </pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="running-simulation">

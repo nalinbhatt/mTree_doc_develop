@@ -117,9 +117,9 @@ Directives / Receiving Messages
 
 **Directives** are special class methods defined in Actor classes (contained in .py files inside your **mes** folder). 
 They are used to view messages sent to the Actor. 
-|
+
 | Actors need to have the following in their classes to recieve a particular message. 
-| 
+|
 
 .. code-block:: python 
 
@@ -138,9 +138,9 @@ They are used to view messages sent to the Actor.
     For the following example our Actor is set as the :ref:`Institution` type, however, the message receiving process is applicable
     for any type. 
 
-|
-| In this above example, the institution receives a message sent by the Environment in :ref:`send message <send_message>`.
-|
+
+| In this example below, the institution receives a message sent by the Environment in :ref:`send message <send_message>`.
+
 
 .. code-block:: python 
 
@@ -167,18 +167,6 @@ Your :ref:`log<log_message>` file should produce the following output -
 
     1645122024.0937853	message_sender_address = ActorAddr-(T|:43253)
 
-
-First Message - start
----------------------
-
-Sending a message 
------------------
-
-Receiving a message 
--------------------
-
-Reminder Messages
------------------
 
 .. _Actors:
 
@@ -222,6 +210,9 @@ running multiple
 
 address book 
 ============
+
+The **address_book** is an **mTree** object that stores addresses of all the Actors that are initialized in the :ref:`config` file.
+Access to it is limited to the :ref:`Environment` Actor at first, nevertheless, access can be controlled and passed on to different agents
 
 Structure
 ---------
