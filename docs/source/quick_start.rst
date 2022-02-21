@@ -57,6 +57,7 @@ present.
 
 .. figure:: _static/mTree_auction_examples_comp_setup.png
         :align: center
+|
 
 Running mTree_auction_examples container
 ----------------------------------------
@@ -69,7 +70,6 @@ Your **shell** should look some version of this -
 
 .. figure:: _static/mTree_auction_examples_shell.png
         :align: center
-
 | Run the following commands to view the underlying files in the folder.  
 
 | **Mac** 
@@ -89,6 +89,7 @@ You should see the following subfolders-
 .. figure:: _static/quick_start_ls.png
         :align: center
 |
+
 Tatonnement
 -----------
 
@@ -116,7 +117,6 @@ you should see the following folders.
 
 .. figure:: _static/quick_start_tatonnement_ls.png
         :align: center
-
 |
 
 .. note::
@@ -169,7 +169,6 @@ You should see something similar to this.
 
 .. figure:: _static/quick_start_mTree_runner.png
         :align: center
-
 | Enter the following to start the selection process for the config file.
 
 .. code-block:: console 
@@ -207,12 +206,11 @@ The first few lines of you ``.log`` file document the config file parameters whi
 
 .. figure:: _static/quick_start_log_config.png
         :align: center
-
 | The rest of your ``.log`` file should look as follows. 
+
 
 .. figure:: _static/quick_start_log_rest.png
         :align: center
-
 | Your ``.data``  file should look something like this - 
 
 .. figure:: _static/quick_start_data_log.png
