@@ -118,6 +118,7 @@ you should see the following folders.
 .. figure:: _static/quick_start_tatonnement_ls.png
         :align: center
 |
+
 .. note::
     In order to properly run an **mTree simulation** you need to set the current 
     directory to the folder which contains a **config**, **mes**, and a **logs** folder.
@@ -168,9 +169,8 @@ You should see something similar to this.
 
 .. figure:: _static/quick_start_mTree_runner.png
         :align: center
-|
 
-Enter the following to start the selection process for the config file.
+| Enter the following to start the selection process for the config file.
 
 .. code-block:: console 
 
