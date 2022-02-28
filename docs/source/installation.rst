@@ -28,7 +28,7 @@ in case the one below is out of date.
 
 .. code-block:: console
 
-    $ docker pull mtree/mtree:1.0.11a
+     docker pull mtree/mtree:1.0.11a
 
 .. note:: 
 
