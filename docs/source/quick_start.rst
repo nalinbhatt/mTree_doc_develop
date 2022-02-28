@@ -79,13 +79,13 @@ Your **shell** should look some version of this -
 
 .. code-block:: console
 
-     ls 
+    ls 
 
 | **Windows**
 
 .. code-block:: console
 
-     dir
+    dir
 
 You should see the following subfolders-
 
@@ -106,7 +106,7 @@ the current directory to **tatonnement**.
 
 .. code-block:: console
     
-     cd tatonnement
+    cd tatonnement
 
 File Structure
 --------------
@@ -157,7 +157,7 @@ we are in the right directory.
 
 .. code-block:: console 
 
-     cd .. 
+    cd .. 
 
 .. _run_config:
 
@@ -168,7 +168,7 @@ We can type the following command into the **shell** to start **mTree**.
 
 .. code-block:: console 
 
-     mTree_runner 
+    mTree_runner 
 
 You should see something similar to this.
 
@@ -179,7 +179,7 @@ You should see something similar to this.
 
 .. code-block:: console 
 
-     run_simulation
+    run_simulation
 
 | Your window should look like this. 
 
@@ -260,7 +260,7 @@ is used to kill all mTree processes as well as **delete** all :ref:`Actor <Actor
 
 .. code-block:: console 
 
-     quit
+    quit
 
 Your console should look like some version of this - 
 
