@@ -12,7 +12,7 @@ Cloning mTree_auction_examples
 
 
 We are going to clone the **mTree_auction_examples** repository, which can
-be found `here <https://github.com/gmucsn/mTree_learning_exercises>`_, and run one 
+be found `here <https://github.com/gmucsn/mTree_auction_examples>`_, and run one 
 of the examples to make sure **mTree** is running properly. 
 
 
