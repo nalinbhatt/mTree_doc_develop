@@ -267,6 +267,7 @@ Your console should look like some version of this -
 .. figure:: _static/quick_start_quitting_mTree.png
         :align: center
         
+        
 |
 
 Conclusion
