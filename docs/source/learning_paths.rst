@@ -3,6 +3,11 @@
 Learning Paths
 ==============
 
+
+Under development...
+
+
+
 .. _tatonnement:
 
 Tatonnement
@@ -22,3 +27,8 @@ Ascending Price Auction
 
 Descending Price Auction
 ========================
+
+.. _common_value_auction:
+
+Common Value Auction
+====================
