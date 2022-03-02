@@ -21,6 +21,7 @@ your computer before you can begin
 
 4. **VSCode** - We recommend using an Integrated Development Environment (**IDE**) to edit and view **mTree** simulation code. Although, `VSCode <https://code.visualstudio.com>`_ is versatile and great, however, any **IDE** of your choice should also work.
 
+.. _cloning_mTree_auction_examples:
 
 Cloning mTree_auction_examples
 ==============================
@@ -51,6 +52,7 @@ location.
     Although, the following resources provide a great background which might be helpful later, nevertheless, 
     for these next few steps, you only need to know how the ``cd`` command works.  
 
+.. _running_mTree_auction_examples:
 
 Running mTree_auction_examples 
 ==============================
@@ -58,6 +60,7 @@ Running mTree_auction_examples
 In order to run this simulation we need to create a **docker container** using 
 the **Docker Desktop** app that we downloaded in  :doc:`installation` section. 
 
+.. _mTree_auction_examples_container_setup:
 
 mTree_auction_examples container setup
 --------------------------------------
@@ -77,6 +80,7 @@ present.
 
         Your **Containers/Apps** section should display a container similar to this with the name you chose
 
+.. _running_mTree_auction_examples_container:
 
 Running mTree_auction_examples container
 ----------------------------------------
@@ -113,6 +117,7 @@ You should see the following subfolders-
 
         Folders inside mTree_auction_examples
 
+.. _cva:
 
 Common Value Auction
 --------------------
@@ -126,6 +131,8 @@ the current directory to **common_value_auction**.
 .. code-block:: console
     
     cd common_value_auction
+
+.. _file_structure:
 
 File Structure
 --------------
@@ -217,6 +224,8 @@ Your output should look something similar to this.
 
         Running basic_simulation.json file 
 
+.. _finished_sim:
+
 How to know your simulation has finished running? 
 -------------------------------------------------
 
@@ -248,6 +257,7 @@ Depending on the when you entered the ``check_status`` command, you should see a
 
 Once we have identified that our simulation has finished we can move on to the next step which involves 
 
+.. _sim_results:
 
 Simulation Results
 ------------------
@@ -301,6 +311,7 @@ Your ``.data``  file should look something like this -
     concurrent Agent-Based Modelling software, it is common for different :ref:`Actors <Actors>` to log asynchronously to the
     same ``.log`` and ``.data`` files, giving them an out of order look. 
     
+.. _check_errors:
 
 Checking for Errors
 -------------------
@@ -313,6 +324,8 @@ that your simulation has run properly. If there are instances of ``Error`` messa
     If you see no results for ``Error`` but your mTree log stops logging in the middle of the simulation, then it is still 
     possible you have logic errors that don't terminate the process. Luckily, you don't have to worry about that in the 
     **common_value_auction** auction example.
+
+.. _quitting:
 
 Quitting
 --------
@@ -331,6 +344,7 @@ Your console should look like some version of this -
 
         Quitting **mTree**
         
+.. _conclusion:
 
 Conclusion
 ----------
