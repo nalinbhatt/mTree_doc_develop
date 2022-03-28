@@ -547,15 +547,57 @@ You can also control the number of instances of each particular **Agent Actor** 
 ``"number"`` key. 
 
 
-Simulation Properties
-^^^^^^^^^^^^^^^^^^^^^
+Simulation Properties/ self.get_properties()
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Users are allowed to specify additional information that may be simulation specific and can be used to 
-initialize different agent types, distribute endowments, and much more. Check out one of the :doc:`quick_build`, 
-how properties are being used to 
-  
-running multiple
-----------------
+Users are allowed to specify additional information to the ``"properties"`` dictionary. This dictionary is 
+reserved for including information that is simulation specific and can be used to initialize different
+agent types, initialize different institutions, and much more. Check out one of the :doc:`learning_paths`
+to view how properties can be used to prevent hard coding Actors. 
+
+.. code-block:: json
+
+    {"mtree_type": "mes_simulation_description",
+     "name": "Basic Simulation", 
+     "id": "1" ,
+     "environment": "environment_file.EnvironmentClass",
+     "institution": "institutin_file.InstitutionClass", 
+     "agents": [{"agent": "agent_file.AgentClass", "number": 1}, 
+                     {"agent": "agent_file.DifferentAgentClass", "number": 1}],
+     "properties": {"agent_types": ["buyer", "seller"],
+                    "agent_endowment": 30,
+                    "institution_type": ["sealed_bid_auction", "common_value"]
+                      }
+    }
+
+Accessing Properties
+********************
+
+Information mentioned in the ``"properties"`` dictionary can be accessed by the **Environment** Actor using 
+the following code. 
+
+.. code-block:: python
+
+    self.get_properties() # this should return the entire properties dictionary. 
+
+
+**Example** 
+
+If we wanted to access the properties mentioned above, we could use the following code. 
+
+.. code-block:: python 
+
+    agent_type_list = self.get_properties()["agent_types"] #list, accessing the different agent types in the system
+    agent_endowment = self.get_properties()['agent_endowment'] #int, accesing the agent endowment 
+    institution_type_list = self.get_properties()['institution_type'] #list, institution_type_list 
+
+
+.. Note:: 
+
+    Only the **Environment** Actor has access to the ``self.get_properties()`` method and can choose to pass relevant 
+    information (defined in the config) regarding the an Actor's initial states to them. 
+
+
 
 
 .. _address_book:
@@ -563,8 +605,9 @@ running multiple
 address book 
 ============
 
-The **address_book** is an **mTree** object that stores addresses of all the Actors that are initialized in the :ref:`config` file.
-Access to it is limited to the :ref:`Environment` Actor at first, nevertheless, access can be controlled and passed on to different agents
+The **address_book** is an **mTree** object that stores and manages addresses of all the Actors that are initialized in the :ref:`config` file.
+Access to it is limited to the :ref:`Environment` Actor at first, nevertheless, access can be controlled and passed on to different agents by the 
+**Environment** as seen fit. 
 
 Methods 
 -------
