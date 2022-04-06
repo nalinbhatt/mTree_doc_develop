@@ -191,13 +191,13 @@ Actor Description
 Imports
 -------
 
-While coding **mTree** Actors, there are several features that mTree provides Actor classes the ability to interact with 
+While coding **mTree** Actors, there are several features that **mTree** provides Actor classes the ability to interact with 
 within the Actor world. 
 
 .. _necessary_imports:
 
 Necessary Imports 
-^^^^^^^^^^^^^^^^^
+-----------------
 Each file that contains the code for your mTree Actors (Environment/Institution/Agent) 
 **needs** to have the following imports in order to work properly. 
 These imports provide the Actors with a range of capabilities including but not limited to communicating via messages. 
@@ -209,11 +209,12 @@ These imports provide the Actors with a range of capabilities including but not 
     from mTree.microeconomic_system.institution import Institution #Parent class for Institutoin Actors 
     from mTree.microeconomic_system.agent import Agent #Parent class for Agent Actors 
     from mTree.microeconomic_system.directive_decorators import * 
-    from mTree.microeconomic_system.message import Message #Message class allows you to create and send messages 
+    from mTree.microeconomic_system.message import Message #Message class allows you to create and send messages
+    import logging #Allows you to log messages to log files
     
 
 Additional Imports
-^^^^^^^^^^^^^^^^^^
+------------------
 
 **mTree** also provides the following additional imports when running **mTree** in a container. 
 
@@ -221,11 +222,74 @@ Additional Imports
 
     import math
     import random
-    import logging
+    
     import time
     import datetime
     import sympy
 
+
+General Methods and Capabilities (better name under way)
+--------------------------------------------------------
+
+Each Actor comes with a general set of capabilities, often represented in the form of class variables and methods 
+available to the Actor. On top of that, there are Actor specific class variables and methods that **mTree** reserves 
+for the **Environment Actor**, which might not be available to **Institution** and **Agent Actors**. Some of these methods 
+have individual sections such as **Message Sending**, **address_boook**, and **logging**, however, some Actor specific methods
+have been listed under the different Actor sections. 
+
+The four main capabilities have been listed below - 
+
+1. :ref:`Message Sending<messages>`- covers how and what Actors can send to each other
+2. :ref:`Address Book<address_book>`- covers how to keep track of other Actor's address(without which you can't send messages)
+3. :ref:`Logging<Logs>`- covers how to output interactions taking place inside a simulation 
+4. :ref:`short_name<short_name>`- unique identifier of the Actor, used to navigate the **address_book** and keep track of Actors.
+
+
+.. _short_name: 
+
+short_name
+----------
+The **short_name** is a simple unique identifier created by **mTree** for each Actor within the system. The **short_name** 
+can be used for identifying which Actor :ref:`logged the data<log_data>` as well as for navigating the :ref:`address_book<address_book_structure>`.
+
+.. Note:: 
+    **short_name** was created to distinguish between multiple instances of the same **Actor Class** (an example of 
+    an Actor Class can be **InstitutionClass** from the message sending example above). Therefore, 
+    currently ``self.short_name`` is not accessible to the **Environment Actor** because there can only be one
+    and doesn't need distinguising. However, newer versions of **mTree** plan on instilling **short_name** identifier in all 
+    Actors for uniformity purposes. 
+
+The Actors can access their individual **short_name** the following way - 
+
+.. code-block:: python 
+
+    self.short_name #since it is a class variable, it can be called anywhere in the Actor class
+
+if we use the :ref:`log_message` method to log this variable we should observe the following output - 
+
+.. code-block:: python 
+
+    self.log_message(self.short_name) #more about this method can be found in the log_message section
+
+**Output**
+
+.. figure:: _static/reference_short_name_agent.png
+    :align: center 
+
+    If you log the ``self.short_name`` in an *Agent Actor* you would can see any one of the following 
+    outputs. 
+
+.. figure:: _static/reference_short_name_institution.png
+    :align: center 
+
+    If you log the ``self.short_name`` in an *Institution Actor* you would can see any one of the following 
+    outputs. 
+
+
+The **short_name** can identify where the Actor code is located in the **mes** folder, which **Actor Class** within
+that file was used to create the Actor, and, finally, which instance of the **Actor Class** is the current Actor. 
+The last part is useful because there can be multiple instances of the same **Actor Class** and the **short_name** allows 
+use to differentiate among them. 
 
 .. _environment:
 
@@ -598,25 +662,261 @@ If we wanted to access the properties mentioned above, we could use the followin
     information (defined in the config) regarding the an Actor's initial states to them. 
 
 
-
-
 .. _address_book:
 
 address book 
 ============
 
-The **address_book** is an **mTree** object that stores and manages addresses of all the Actors that are initialized in the :ref:`config` file.
-Access to it is limited to the :ref:`Environment` Actor at first, nevertheless, access can be controlled and passed on to different agents by the 
-**Environment** as seen fit. 
+The **address_book** is an **mTree** object that stores and manages addresses of all the Actors 
+that are initialized in the :ref:`config` file. Each Actor in the system has an **address_book** object 
+instantiated when they are spawned. However, at the beginning, only the :ref:`Environment` Actor's **address_book**
+has the complete list of Actor addresses in the system. 
 
-Methods 
--------
+The **Environment Actor** can then choose to pass the addresses to different **Institution** and **Agent** Actors 
+across the system. We have listed below the different methods that this **address_book** object has and how to 
+access them. 
 
-.. code:: python 
+.. _access_address_book:
 
-    self.address_book.get_agents()
+How to access the address_book 
+==============================
+
+The **address_book** object can be accessed by the Actors in the following ways 
+
+.. code-block:: python 
+    
+    self.address_book()
 
 
+``self.address_book`` is a class variable that gets set by **mTree** for each Actor prior to 
+sending the :ref:`start_environment` directive message and points to the Actor's own **address_book** object. 
+Since ``self.address_book`` is a class variable, it can be accessed everywhere.
+
+.. _address_book_structure:
+
+Structure
+=========
+Below we evaluate one of the key **address_book** methods and explore how addresses are stored
+
+.. code-block:: python 
+
+    all_addresses = self.address_book.get_addresses() #This code should return a dictionary of the following format
+    self.log_message(all_addresses) #since mTree suppresses print statements, logging is the only way to get info out
+
+    
+
+.. code-block:: python 
+
+    #The above message should output the following dictionary
+    #Notice all the keys are the different actor's short_names and the value of each
+    #key is another dictionary containing other important distinguishing information about the Actor
+    	{'institution_file.InstitutionClass 1': {'address_type': 'institution', #The Actor's type 
+                                                'address': <thespian.actors.ActorAddress object at 0x401aff5c70>, #The Actor's address
+                                                'component_class': 'institution_file.InstitutionClass', #Where the code for ActorClass is located 
+                                                'component_number': 1, #instance number of the Actor 
+                                                'short_name': 'institution_file.InstitutionClass 1'}, #Actor short_name
+        'agent_file.AgentClass 1': {'address_type': 'agent', 
+                                    'address': <thespian.actors.ActorAddress object at 0x401b0002e0>, 
+                                    'component_class': 'agent_file.AgentClass', 
+                                    'component_number': 1, 
+                                    'short_name': 'agent_file.AgentClass 1'}, 
+        'agent_file.AgentClass 2': {'address_type': 'agent', 
+                                    'address': <thespian.actors.ActorAddress object at 0x401b000460>, 
+                                    'component_class': 'agent_file.AgentClass', 
+                                    'component_number': 2, 
+                                    'short_name': 'agent_file.AgentClass 2'},
+        'agent_file.AgentClass 3': {'address_type': 'agent', 
+                                    'address': <thespian.actors.ActorAddress object at 0x401b0004f0>, 
+                                    'component_class': 'agent_file.AgentClass', 
+                                    'component_number': 3, 
+                                    'short_name': 'agent_file.AgentClass 3'}, 
+        'agent_file.AgentClass 4': {'address_type': 'agent', 
+                                    'address': <thespian.actors.ActorAddress object at 0x401b000580>,
+                                    'component_class': 'agent_file.AgentClass', 
+                                    'component_number': 4, 
+                                    'short_name': 'agent_file.AgentClass 4'}, 
+        'agent_file.AgentClass 5': {'address_type': 'agent', 
+                                    'address': <thespian.actors.ActorAddress object at 0x401b000610>, 
+                                    'component_class': 'agent_file.AgentClass', 
+                                    'component_number': 5, 
+                                    'short_name': 'agent_file.AgentClass 5'}
+                                    }
+
+We are going to evaluate a single in this **address_book** dictionary and explore what each information 
+means in the figure below. 
+
+.. figure:: _static/reference_address_book_dict.png
+    :align: center
+
+    More about **short_name** can be found in the :ref:`short_name` section. 
+
+.. Note:: 
+    For the rest of the **address_book** section, we will refer to keys in the dictionary 
+    above as **entries** and their corresponding value, which is another dictionary, as the 
+    **description dictionary**.
+
+.. Warning:: 
+    Currently all Actor Instances except the **Environment Actor** have an entry in the **address_book**. As a result, 
+    the only way to get the **Environment Actor's** address is to receive a message from it and 
+    access the **address** using ``message.get_sender()`` method inside the **directive** you receive a message from the 
+    **Environment Actor**.
+
+
+Methods
+=======
+
+The **address_book** object provides several methods. 
+
+self.address_book.get_addresses()
+---------------------------------
+
+The following returns a dictionary with all **address_book** elements exactly like the one explored in :ref:`address_book_structure` section 
+above. 
+
+.. code-block:: python 
+
+    self.address_book.get_addresses() #This code should return a dictionary of the following format
+
+    #the get_addresses() method returns all the elements stored in the .addresses variable inside the address_book object
+    #another way to access the same dictionary can be 
+    #self.address_book.addresses 
+
+self.address_book.get_agents()
+------------------------------
+
+The following returns a dictionary similar to the one in ``self.address_book.get_addresses()``, however,
+only includes **entries** whose **description dictionary** **"address_type"** key has the value - **"agent"**
+
+
+.. code-block:: python 
+
+    self.address_book.get_agents()#Only returns the addresses of Agent Actors
+
+**Output: float**  
+  
+The code above should return the following dictionary -
+
+.. code-block:: python 
+
+    {'agent_file.AgentClass 1': {'address_type': 'agent',  # all elements are 'agents'
+                                 'address': <thespian.actors.ActorAddress object at 0x401b0002e0>, 
+                                 'component_class': 'agent_file.AgentClass', 
+                                 'component_number': 1, 
+                                 'short_name': 'agent_file.AgentClass 1'}, 
+    'agent_file.AgentClass 2': {'address_type': 'agent', 
+                                'address': <thespian.actors.ActorAddress object at 0x401b000460>, 
+                                'component_class': 'agent_file.AgentClass', 
+                                'component_number': 2, 
+                                'short_name': 'agent_file.AgentClass 2'},
+                                 
+                                ... }
+
+self.address_book.get_institutions()
+------------------------------------
+
+The following returns a dictionary similar to the one in ``self.address_book.get_addresses()``, however,
+only includes entries whose **"address_type"** key has the value - **"institution"**
+
+
+.. code-block:: python 
+
+    self.address_book.get_institutions()#Only returns the addresses of Agent Actors
+
+**Output: dict**   
+
+The code above should return the following dictionary 
+
+.. code-block:: python 
+
+   {'institution_file.InstitutionClass 1': {'address_type': 'institution', 
+                                            'address': <thespian.actors.ActorAddress object at 0x401aff5c70>, 
+                                            'component_class': 'institution_file.InstitutionClass', 
+                                            'component_number': 1, 
+                                            'short_name': 'institution_file.InstitutionClass 1'},
+                                            ...
+                                            }
+
+self.address_book.num_agents()
+------------------------------
+
+The following sums up the number of entries with ``{"address_type":"agent"}`` in their 
+description. So if there are 5 Agent Actors in our simulation, the following code should 
+output- 
+
+.. code-block:: python
+
+    self.address_book.num_agents()
+
+**Output: float**
+
+.. code-block:: python 
+
+    5
+
+
+self.address_book.num_institutions()
+------------------------------------
+
+The following sums up the number of entries with ``{"address_type":"institution"}`` in their description. 
+So if there is a single **Institution Actor** in our simulation, the following code should 
+output- 
+
+.. code-block:: python
+
+    self.address_book.num_institutions()
+
+**Output: float**
+
+.. code-block:: python 
+
+    1
+
+
+self.address_book.select_addresses(selector)
+--------------------------------------------
+
+The ``self.address_book.select_addresses(selector)`` outputs a list of **mTree addresses**
+based on the **selector** that is provided. 
+
+**Input: dict**
+
+The **selector** is a dictionary that can only have one of the following key and value pairs. 
+
+.. list-table:: Selector 
+   :header-rows: 1
+
+   * - key 
+     - value
+   * - "address_type"
+     - "agent"/"institution"
+   * - "short_name"
+     - "file_name.ActorClass instance(int)"
+
+The purpose of the **selector** is to help **address_book** object select specific
+ **mTree addresses** from the **entries** that have the same **value** as the **selector** inside their 
+ description dictionaries. 
+
+ For example, the following code should 
+
+ .. code-block:: python
+    
+    #address_type selectors
+    agent_addresses_selector = {"address_type": "agent"}
+    institution_address_selector = {"address_type": "institution"}
+
+    #short_name selectors 
+    agent_short_name_selector = {"short_name": "agent_file.AgentClass 1"}
+
+    #if you pass any of these as an input to 
+    self.address_book.select_addresses(agent_addresses_selector)
+    #the above code would output either a list of addresses or a single address
+
+
+**Output: list/address** 
+
+Depending on the **selector** provided, ``self.address_book.select_addresses(selector)`` returns 
+a list of **mTree_addresses** or a single **mTree_address** depending on the number of **entries** in 
+the **address_book** that the **selector** applies to.
 
 
 
