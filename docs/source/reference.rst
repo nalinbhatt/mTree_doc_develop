@@ -416,6 +416,7 @@ There needs to be a  **config** folder inside each **mTree simulation folder**. 
 be a **.json** file that contains your simulation configurations. Although, the name of the **config** folder cannot be changed, nevertheless, 
 your **.json** config file, can have any name.
 
+.. _config_file:
 
 config file 
 -----------
@@ -679,7 +680,7 @@ access them.
 .. _access_address_book:
 
 How to access the address_book 
-==============================
+------------------------------
 
 The **address_book** object can be accessed by the Actors in the following ways 
 
@@ -695,8 +696,8 @@ Since ``self.address_book`` is a class variable, it can be accessed everywhere.
 .. _address_book_structure:
 
 Structure
-=========
-Below we evaluate one of the key **address_book** methods and explore how addresses are stored
+---------
+Below we evaluate one of the key **address_book** methods and explore how addresses are stored.
 
 .. code-block:: python 
 
@@ -742,7 +743,7 @@ Below we evaluate one of the key **address_book** methods and explore how addres
                                     'short_name': 'agent_file.AgentClass 5'}
                                     }
 
-We are going to evaluate a single in this **address_book** dictionary and explore what each information 
+We are going to evaluate a single entry in this **address_book** dictionary and explore what each information 
 means in the figure below. 
 
 .. figure:: _static/reference_address_book_dict.png
@@ -763,12 +764,14 @@ means in the figure below.
 
 
 Methods
-=======
+-------
 
 The **address_book** object provides several methods. 
 
+.. _get_addresses:
+
 self.address_book.get_addresses()
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following returns a dictionary with all **address_book** elements exactly like the one explored in :ref:`address_book_structure` section 
 above. 
@@ -781,8 +784,40 @@ above.
     #another way to access the same dictionary can be 
     #self.address_book.addresses 
 
+.. _merge_addresses:
+
+self.address_book.merge_addresses(addresses)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This method allows you to merge your **address_book** with another **address_book**. The goal of this 
+method is to append your personal **address_book** using the **addresses** provided as input.  
+
+**Input: dict**
+
+The **addresses** argument in ``self.address_book.merge_addresses(addresses)`` needs follow the **address_book**
+dictionary structure as shown in the :ref:`address_book_structure` section. 
+
+**Output: None** 
+
+Although,``self.address_book.merge_addresses(addresses`` method does not return anything, nevertheless, it updates 
+the Actor's personal **address_book** object to include the new **entries** mentioned in the **addresses** input dictionary. 
+
+
+.. Tip:: 
+    Since, at first, only the **Environment** Actor has a complete **address_book** with **entries** 
+    of all the **Actors** in the system. Consequentially,  the **Environment** can access the **address_book dictionary**
+    using :ref:`get_addresses` and pass this to other Actors 
+    by setting it as the :ref:`message<send_message>` **payload**. The Actor receiving the 
+    **address_book dictionary** can then add those addresses to its personal 
+    **address_book** using ``self.address_book.merge_addresses(address_book_dictionary)``
+
+**Example: Environment sends Institution the address_book** 
+
+
+.. _get_agents:
+
 self.address_book.get_agents()
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following returns a dictionary similar to the one in ``self.address_book.get_addresses()``, however,
 only includes **entries** whose **description dictionary** **"address_type"** key has the value - **"agent"**
@@ -811,8 +846,10 @@ The code above should return the following dictionary -
                                  
                                 ... }
 
+.. _get_institutions:
+
 self.address_book.get_institutions()
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following returns a dictionary similar to the one in ``self.address_book.get_addresses()``, however,
 only includes entries whose **"address_type"** key has the value - **"institution"**
@@ -836,8 +873,10 @@ The code above should return the following dictionary
                                             ...
                                             }
 
+.. _num_agents():
+
 self.address_book.num_agents()
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following sums up the number of entries with ``{"address_type":"agent"}`` in their 
 description. So if there are 5 Agent Actors in our simulation, the following code should 
@@ -853,9 +892,10 @@ output-
 
     5
 
+.. _num_institutions:
 
 self.address_book.num_institutions()
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following sums up the number of entries with ``{"address_type":"institution"}`` in their description. 
 So if there is a single **Institution Actor** in our simulation, the following code should 
@@ -871,14 +911,15 @@ output-
 
     1
 
+.. _select_addresses:
 
 self.address_book.select_addresses(selector)
---------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The ``self.address_book.select_addresses(selector)`` outputs a list of **mTree addresses**
 based on the **selector** that is provided. 
 
-**Input: dict**
+**Input: selector(dict)**
 
 The **selector** is a dictionary that can only have one of the following key and value pairs. 
 
@@ -893,12 +934,11 @@ The **selector** is a dictionary that can only have one of the following key and
      - "file_name.ActorClass instance(int)"
 
 The purpose of the **selector** is to help **address_book** object select specific
- **mTree addresses** from the **entries** that have the same **value** as the **selector** inside their 
- description dictionaries. 
+**mTree addresses** from the **entries** that have the same **value** as the **selector** inside their 
+description dictionaries. 
 
- For example, the following code should 
-
- .. code-block:: python
+ 
+.. code-block:: python
     
     #address_type selectors
     agent_addresses_selector = {"address_type": "agent"}
@@ -912,12 +952,258 @@ The purpose of the **selector** is to help **address_book** object select specif
     #the above code would output either a list of addresses or a single address
 
 
-**Output: list/address** 
+**Output: list or address** 
 
-Depending on the **selector** provided, ``self.address_book.select_addresses(selector)`` returns 
-a list of **mTree_addresses** or a single **mTree_address** depending on the number of **entries** in 
-the **address_book** that the **selector** applies to.
+Depending on the number of **entries** in the **address_book** that agree with the **selector**, ``self.address_book.select_addresses(selector)`` returns 
+either a list of **mTree_addresses** or a single **mTree_address**. 
 
+**Example: List of Addresses Returned** 
+
+.. code-block:: python 
+
+    #we want to select all mTree Actor addresses of those that have "address_type" as "agent" in their 
+    #description dictionaries 
+    selector = {"address_type": "agent"} #we create a selector dictionary
+    agent_addresses = self.address_book.select_addresses(selector) 
+
+    self.log_message(agent_addresses) #more about self.log_message can be found in the self.log_message section
+
+**Output** 
+
+.. code-block:: python 
+
+    #Assuming we use the same config for all examples 
+    #the above code should produce a similar list in the log file
+    #since we are using a config file with 5 Agent Actors, we get a list with 5 elements
+    [<thespian.actors.ActorAddress object at 0x40180f5a30>, <thespian.actors.ActorAddress object at 0x40180f5cd0>, <thespian.actors.ActorAddress object at 0x40180f6e80>, <thespian.actors.ActorAddress object at 0x40180f6e20>, <thespian.actors.ActorAddress object at 0x40180f6d90>]
+
+
+**Example: Single Address Returned** 
+
+.. code-block:: python 
+
+    #we want to select all mTree Actor addresses of those that have "address_type" as "institution" in their 
+    #description dictionaries 
+    #since we are using a config file with 1 Institution Actor, we get a single address returned 
+
+    selector = {"address_type": "institution"}
+    institution_address = self.address_book.select_addresses(selector)
+
+    self.log_message(institution_address) #more about self.log_message can be found in the self.log_message section
+
+**Output** 
+
+.. code-block:: python 
+    
+    #Assuming we use the same config for all examples,
+    #we know that there is only 1 Institution Actor in our system.
+    #Therefore the above code should produce a the following in the log file
+    
+    ActorAddr-LocalAddr.1 #This is mTree address for the institution and can be used in the message sending proceess 
+
+**Example: Using short_name selector** 
+
+The :ref:`short_name` selector is useful when the **Actor** wants to send a message specifically 
+to another Actor. Since, no two Actors, share a common **short_name**, ``self.address_book.select_addresses(selector)``
+should return a single address. 
+
+
+.. code-block:: python
+
+
+    #we want to select the mTree address of the Actor with the short_name - "institution_file.InstitutionClass 1"
+    #since short_names are unique to each Actor instance, the following should return a singe Actor address
+
+    selector = {"short_name": "institution_file.InstitutionClass 1"} # more on how short_names get assigned can be found in the short_name section
+    institution_address = self.address_book.selector(selector)
+
+    self.log_message(institution_address) #more about self.log_message can be found in the self.log_message section
+
+
+**Output**
+
+.. code-block:: python 
+
+    #Note this is should be the same as the output produced in the Example where our selector was {"address_type": "institution"}
+    ActorAddr-LocalAddr.1 #This is mTree address for the institution and can be used in the message sending proceess 
+
+
+.. Note::
+    In most cases, ``self.address_book.select_addresses(selector)`` produces a ``for loop`` compatible list 
+    of addresses(if there is more than one entry for which the **selector** applies to). Consequently, 
+    this method becomes useful when you want to send :ref:`message<send_message>` to multiple Actors with varying **payloads**. 
+    However, if you want to send the same message(with no change in directive or payload) to a group of Actor types, you 
+    might want to consider using :ref:`broadcast_message` instead.
+
+**Example: Combining .select_addresses(selector) and Message()**
+
+In the code example below, we try to send each Agent Actor slightly different **value estimates** for a common value good. 
+More about this code can be found in the :ref:`common_value_auction` section in :doc:`learning_paths`. 
+
+**Institution Code**
+Here the institution sends slightly different **value estimates** of a **common value good** to 
+all the Agent Actors in its **address_book** 
+
+.. code-block:: python 
+    
+    #This is an imagined directive that our institution finds itself in 
+   
+    @directive_decorator("institution_directive") 
+    def institution_directive(self, message: Message):
+
+        #We are assuming that the Institution Actor has already received a copy of the 
+        #Environment Actor's address_book which it has merged with its own using the
+        # .merge_addresses(addresses) method.
+        #We also assume we are using the same config with 5 Agent Actors. 
+        agent_address_list = self.address_book.select_addresses({"address_type": "agent"}) # produces a list of 5 Agent Actor addresses
+
+        for agent_address in agent_address_list: #we iterate over the addresses
+           
+            #Assume self.common_value and self.error are float values set in 
+            #a previous directive 
+            lower_bound = self.common_value - self.error  
+            upper_bound = self.common_value + self.error
+            
+            #random.uniform will produce a different value_estimate b/w [lower_bound, upper_bound] for each iteration of the for loop
+            value_estimate = random.uniform(lower_bound, self.common_value + self.error) #The random function should return a number between () and 20 with uniform probability
+            
+            #The dictionary we send to each agent
+            payload_dict = {"value_estimate": value_estimate, "error": self.error} 
+            
+            agent_message =  Message()#create a message object 
+            agent_message.set_directive("receive_value_estimate") #this is the directive where each Agent can receive messages
+            agent_message.set_sender(self.myAddress)#set the sender to the Actor's personal address
+            agent_message.set_payload(payload_dict) #pass the payload dict we just defined 
+            
+            self.send(agent_address, agent_message) #the agent_address would be new each time the for loop is run 
+
+    
+**Agent Message Receiving Code** 
+
+Here the Agent Actor receives the unique ``value_estimate`` that the **Institution** sent 
+along with the ubiquitous ``error`` key. 
+
+.. code-block:: python 
+    
+    @directive_decorator("receive_value_estimate")
+    def receive_value_estimate(self, message:Message): 
+
+        payload_dict = message.get_payload()#returns the payload dictionary that was set by the sender
+        #we define class variables using the keys of the payload dictionary
+        self.value_estimate = payload_dict["value_estimate"]
+        self.error  = payload_dict["error"]
+
+.. Note:: 
+    :ref:`select_addresses` is very useful method when sending a slightly unique message 
+    to all Actors of one type (Institution/Agent). Notice, the only aspect of the message that changed for each iteration of the ``for loop``
+    was the **value_estimate**. Moreover, in this example, we assume that all **Agent Actors** have a  :ref:`@directive_decorator("receive_value_estimate")<directive>` in their 
+    AgentClass. Although, this shouldn't be a problem if all Actors belong to the same **AgentClass**, however, if there is 
+    more than one **AgentClass** defined in the **mes** folder as well as referenced in the :ref:`config_file`, each AgentClass would 
+    need to have a :ref:`@directive_decorator("receive_value_estimate")<directive>` method. Otherwise, **mTree** would through 
+    an **ERROR**. 
+
+.. _broadcast_message:
+
+self.address_book.broadcast_message(selector, message)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This method broadcasts or sends a **message** to all **entries** in the Actor's personal 
+**address_book** that the **selector** agrees with. Unlike :ref:`select_addresses`, which returns a list of addresses, 
+the ``self.address_book.broadcast_message(selector, message)`` method does the message sending for the 
+Actor. 
+
+**Input: selector(dict), message**
+
+The **selector** is a dictionary that can only have one of the following key and value pairs. 
+
+.. list-table:: Selector 
+   :header-rows: 1
+
+   * - key 
+     - value
+   * - "address_type"
+     - "agent"/"institution"
+   * - "short_name"
+     - "file_name.ActorClass instance(int)"
+
+The purpose of the **selector** is to help **address_book** object select specific
+**mTree addresses** from the **entries** that have the same **value** as the **selector** inside their 
+**description dictionaries**. 
+
+
+The **message** argument takes in the :ref:`message<send_message>` object that needs to be passed 
+to all entries that the **selector** applies to. 
+
+
+**Output: None** 
+
+This method doesn't return anything, however, performs the important function of sending the **message**,
+that is submitted as an argument, to all the **address_book** **entries** that the **selector** applies to.
+
+
+**Example**
+
+The following code should send a message to all Agent Actor **entries** present in the **address_book** 
+
+.. code-block:: python 
+
+    new_message = Message()#we create a new message object
+    new_message.set_sender(self.myAddress)
+    new_message.set_directive("receive_message") #the directive_method where this message will be received
+    payload = None #you can choose this to be anything
+    new_message.set_payload(payload) 
+    
+    selector = {"address_type": "agent"} # you can change the selector 
+
+    self.address_book.broadcast_message(selector, new_message)#take note of how we pass the selector and the message object
+
+
+.. Note::
+    The :ref:`broadcast_message` is useful when you want to send the 
+    same message (no variation) to all Actors of one type (Institution/Agent). 
+
+**Example: Common Value Auction**
+
+The code example below is from :ref:`common_value_auction` section in :doc:`learning_paths`. 
+In this portion, the :ref:`Environment` Actor sends the :ref:`Agent` Actor their **endowment** which is
+constant for all Agents in the system. As a result, :ref:`broadcast_message` becomes valuable because we are 
+sending the same :ref:`message <send_message>` to all Agent Actors. 
+
+**Environment Code*
+
+.. code-block:: python 
+
+    #self.provide_endowment is a method that gets run in the start_environment method 
+    
+    def provide_endowment(self):
+        endowment = 30 #Agent endowment 
+        
+        #Defining a Message 
+        new_message = Message()  #declare message 
+        new_message.set_sender(self.myAddress)  # set the sender of message to this actor
+        new_message.set_directive("set_endowment")  #set the directive
+        payload_dict  = {"endowment": endowment}
+        new_message.set_payload(payload_dict) #set the payload as the payload_dict we defined in the line above
+        
+        #Broadcasting the message using the AddressBook 
+        selector = {"address_type": "agent"}
+        self.address_book.broadcast_message(selector, new_message) #this will send a message to all Agent Actors 
+
+        #Or the following should also work 
+        #self.address_book.broadcast_message({"address_type": "agent"}, new_message)
+
+**Agent Message Receiving Code**
+
+.. code-block:: python 
+
+    #this is a directive inside the AgentClass
+    @directive_decorator("set_endowment")
+    def set_endowment(self, message: Message):
+
+        payload_dict = message.get_payload() #we access the payload/content of the message that was sent
+        environment_address = message.get_sender() #we access the environment's address
+
+        self.endowment = payload_dict["endowment"]#we create a class variable self.endowment and set it equal to the amount sent by the environment
 
 
 .. _logs:
@@ -925,7 +1211,9 @@ the **address_book** that the **selector** applies to.
 Logs
 ====
 
-Logging is a way to output key data from a simulation in order to keep track of what the code is doing at various steps. 
+Logging is a way to output important information from a simulation in order 
+to keep track of what the code is doing at various steps in order to -
+
 mTree provides 2 types of logging capabilities.
 
 - Desription of the 2 types of logging capability that mTree provides 
