@@ -1447,6 +1447,7 @@ object using :ref:`merge_addresses`. We track the message attributes that are re
 more specifically the 
 
 .. code-block:: python 
+    :linenos:
 
     from mTree.microeconomic_system.environment import Environment
     from mTree.microeconomic_system.institution import Institution
@@ -1470,15 +1471,12 @@ more specifically the
             
             environment_address = message.get_sender() #since environment is the message sender, we can extract its address this way.
             address_dictionary = message.get_payload() #the Environment sends the address_dictionary (obtained using self.address_book.get_addresses())
-            
-            #Logging Initial State 
+
             self.log_message(f"Institution: environment_address = {environment_address}\n" # the environment's address
                             f"Institution: address_dictionary = {address_dictionary}\n" # the address_dictionary it received from the Environment 
                             f"Institution: Initial self.address_book.get_addresses = {self.address_book.get_addresses()} ") #logs the current addresses it has in its possession
 
             self.address_book.merge_addresses(address_dictionary)#we merge the addresses we received with our own address_book object 
-            
-            #Logging Final State
             self.log_message(f"Institution: Final self.address_book.get_addresses = {self.address_book.get_addresses()}")
 
 
