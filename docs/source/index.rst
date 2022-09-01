@@ -14,7 +14,7 @@
         
         `GMU_CSN <https://github.com/gmucsn>`_ |
         `Github <https://github.com/gmucsn/mTree>`_ | 
-        `Issues <https://github.com/gmucsn/mTree/issues>`_ |
+        `Issues <https://github.com/gmucsn/mTree/issues>`_
         
 ========
 Overview
