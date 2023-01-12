@@ -228,8 +228,8 @@ Additional Imports
     import sympy
 
 
-General Methods and Capabilities (better name under way)
---------------------------------------------------------
+General Methods and Capabilities
+--------------------------------
 
 Each Actor comes with a general set of capabilities, often represented in the form of class variables and methods 
 available to the Actor. On top of that, there are Actor specific class variables and methods that **mTree** reserves 

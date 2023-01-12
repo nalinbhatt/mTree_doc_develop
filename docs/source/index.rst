@@ -58,14 +58,11 @@ Contents
 ========
 .. toctree::
    :maxdepth: 2
-   
-   installation
-   quick_start
-   quick_build
-   reference
-   contributor_guide
-   learning_paths
+   :glob:
 
+   start_here/*
+   reference/*
+   learning/*
 
 Indices and tables
 ==================
