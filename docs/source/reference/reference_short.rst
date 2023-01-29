@@ -4,15 +4,11 @@
 Reference
 =========
 
-Several sections are under development...
+.. _actor_classes:
 
-Theory of Operations
-====================
-
-
-- Contains a description and background of Microeconomic Systems and how mTree allows you to define different actors 
-- Goes in depth as to why mTree. 
-- Need to define why messages are necessary 
+Actor Classes
+=============
+Actors are the basic compenents of the mTree MicroEconomic System (MES). Each Actor in the system represents either an Agent, an Institution, or the Environment, as described in the MES framework introduced by Leonid Hurwicz. A longer description of the theory can be found :ref:`here<mtree_theory>`.
 
 .. _messages: 
 

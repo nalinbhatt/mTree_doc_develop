@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath('/Users/nalin/opt/anaconda3/lib/python3.7/sit
 # -- Project information -----------------------------------------------------
 
 project = 'mTree'
-copyright = '2022, CSN'
+copyright = '2023, CSN'
 author = 'CSN'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -26,9 +26,9 @@ author = 'CSN'
 # built documents.
 #
 # The short X.Y version.
-version = '1.0'
+version = '1.2'
 # The full version, including alpha/beta/rc tags.
-release = '1.0'
+release = '1.2.1b'
 
 # -- General configuration ---------------------------------------------------
 
