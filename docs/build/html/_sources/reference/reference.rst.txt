@@ -1,12 +1,18 @@
+
+
 =========
 Reference
 =========
 
-.. _actor_classes:
+Several sections are under development...
 
-Actor Classes
-=============
-Actors are the basic compenents of the mTree MicroEconomic System (MES). Each Actor in the system represents either an Agent, an Institution, or the Environment, as described in the MES framework introduced by Leonid Hurwicz. A longer description of the theory can be found :ref:`here<mtree_theory>`.
+Theory of Operations
+====================
+
+
+- Contains a description and background of Microeconomic Systems and how mTree allows you to define different actors 
+- Goes in depth as to why mTree. 
+- Need to define why messages are necessary 
 
 .. _messages: 
 
@@ -222,8 +228,8 @@ Additional Imports
     import sympy
 
 
-General Methods and Capabilities (better name under way)
---------------------------------------------------------
+General Methods and Capabilities
+--------------------------------
 
 Each Actor comes with a general set of capabilities, often represented in the form of class variables and methods 
 available to the Actor. On top of that, there are Actor specific class variables and methods that **mTree** reserves 
