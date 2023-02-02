@@ -11,7 +11,7 @@ Theory
 Microeconomic Systems
 =====================
 
-In 1960 and 1972 Leonid Hurwicz presented a framework for studying microeconomic systems.  His framework consisted of four elements.  
+In 1960 and 1973 Leonid Hurwicz presented a framework for studying microeconomic systems.  His framework consisted of four elements.  
 
 1.  An environment which defines the initial state of the microeconomic system, $q^0 \in Q$ and described the agents who make decisions in order to change state.  
 
@@ -22,6 +22,13 @@ In 1960 and 1972 Leonid Hurwicz presented a framework for studying microeconomic
 4. Behavioral functions $b_k \in B$, such that, $m_k = b_k(e, I)$ 
 
 mTree projects use the microeconomic systems framework to run simulations and experiments a delimited sets of variables in a well-defined environment.
+This framework was first proposed and adapted to experimental economics by Vernon Smith in 1982.
 
 
+References
+==========
+Hurowicz, Leonid. "Optimality and Information Efficiency in Resource Allocation Processes," in Kenneth Arrow et al., eds., Mathematical Methods in the Social Sciences, Stanford: Stanford University, 1960, 27-46.
 
+_________________. "The Design of Mechanisms for Resource Allocation," *American Economic Review Proceedings*, May 1973, 63, 1-30.
+
+Smith, Vernon L. "Microeconomic Systems as an Experimental Science," *The American Economic Review*, Dec., 1982, Vol. 72, No 5, 923-955.
