@@ -1,5 +1,40 @@
 =================
-Quick Start Guide
+Quickstart Guide
+=================
+
+.. _quickstart_guide
+
+Novice Path
+===========
+
+Do this step by step
+
+1. :ref:`install-docker-desk`
+2. :ref:`install-mTree`
+3. :doc:`Get Started <start_here/quick_start>`
+4. :ref:`cloning_mTree_auction_examples`
+5. :ref:`running_mTree_auction_examples` 
+
+   a. :ref:`mTree_auction_examples_container_setup`
+
+      * :ref:`mTree-container-setup`
+
+   b. :ref:`running_mTree_auction_examples_container`
+
+      * :ref:`mTree-container-start`
+      * :ref:`mTree-container-cli`
+
+
+   c. :ref:`cva`
+   d. :ref:`file_structure`
+   e. :ref:`run_config`
+   f. :ref:`finished_sim`
+   g. :ref:`sim_results`
+   h. :ref:`check_errors`
+   i. :ref:`quitting`
+   j. :ref:`conclusion`
+
+Quickstart Guide
 =================
 
 In this **Quick Start Guide**, we are going to run a simple **mTree simulation**

@@ -9,12 +9,12 @@
     .. figure:: _static/mTree_logo.png
         :align: center
 
-        Agent Based Simulation and Experimental Economics Software
+        Agent-Based Simulation and Experimental Economics Software
 
         
-        `GMU_CSN <https://github.com/gmucsn>`_ |
+        `GMU CEELab (formerly CSN) <https://github.com/gmucsn>`_ |
         `Github <https://github.com/gmucsn/mTree>`_ | 
-        `Issues <https://github.com/gmucsn/mTree/issues>`_
+        `Report Issues <https://github.com/gmucsn/mTree/issues>`_
         
 ========
 Overview
