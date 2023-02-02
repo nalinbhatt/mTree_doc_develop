@@ -13,7 +13,8 @@ Microeconomic Systems
 
 In 1960 and 1973 Leonid Hurwicz presented a framework for studying microeconomic systems.  His framework consisted of four elements.  
 
-1.  An environment which defines the initial state of the microeconomic system, $q^0 \in Q$ and described the agents who make decisions in order to change state.  
+.. TODO: replace the $ stuff $ with images or mathjax 
+1.  An environment, $e in E$ which defines the initial state of the microeconomic system, $q^0 \in Q$ and described the agents who make decisions in order to change state.  
 
 2.  An institution, $I$, which defines a message space, $M$, that allow agents to coordinate their actions in order to change the state of the microeconomic system, and rules, $G = {g_1, ..., }$ which govern the admissibility of a message, and rules $H = {h_1, ..., }$ which change state based on the messages received.
 
@@ -32,3 +33,4 @@ Hurowicz, Leonid. "Optimality and Information Efficiency in Resource Allocation 
 _________________. "The Design of Mechanisms for Resource Allocation," *American Economic Review Proceedings*, May 1973, 63, 1-30.
 
 Smith, Vernon L. "Microeconomic Systems as an Experimental Science," *The American Economic Review*, Dec., 1982, Vol. 72, No 5, 923-955.
+
