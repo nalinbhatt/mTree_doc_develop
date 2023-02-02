@@ -157,14 +157,17 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="start_here/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="start_here/quick_build.html">Quick Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="start_here/quick_start.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="start_here/quick_start.html">Quickstart Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference/mtree_theory.html">Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference/reference.html">Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference/reference_short.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/reference_short.html">References Short</a></li>
 <li class="toctree-l1"><a class="reference internal" href="learning/contributor_guide.html">Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="learning/examples_guide.html">Examples Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="learning/learning_paths.html">Learning Paths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning/examples_guide.html#tatonnement">Tatonnement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning/examples_guide.html#sealed-bid-auction">Sealed Bid Auction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning/examples_guide.html#ascending-price-auction">Ascending Price Auction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning/examples_guide.html#descending-price-auction">Descending Price Auction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning/examples_guide.html#common-value-auction">Common Value Auction</a></li>
 </ul>
 
 </div>
@@ -202,51 +205,18 @@
           <figure class="align-center" id="id1">
 <img alt="_images/mTree_logo.png" src="_images/mTree_logo.png" />
 <figcaption>
-<p><span class="caption-text">Agent Based Simulation and Experimental Economics Software</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Agent-Based Simulation and Experimental Economics Software</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 <div class="legend">
-<p><a class="reference external" href="https://github.com/gmucsn">GMU_CSN</a> |
+<p><a class="reference external" href="https://github.com/gmucsn">GMU CEELab (formerly CSN)</a> |
 <a class="reference external" href="https://github.com/gmucsn/mTree">Github</a> |
-<a class="reference external" href="https://github.com/gmucsn/mTree/issues">Issues</a></p>
+<a class="reference external" href="https://github.com/gmucsn/mTree/issues">Report Issues</a></p>
 </div>
 </figcaption>
 </figure>
 <section id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h1>
-<p>Welcome to the <strong>mTree</strong> documentation! <strong>mTree</strong> is an Agent-Based Modelling software implemented in python. If this is your first time interacting with
-<strong>mTree</strong> follow the <strong>Novice path</strong> mentioned below in order to properly install and test the software.</p>
-<section id="novice-path">
-<h2>Novice Path<a class="headerlink" href="#novice-path" title="Permalink to this heading">#</a></h2>
-<p>Do this step by step</p>
-<ol class="arabic simple">
-<li><p><a class="reference internal" href="start_here/installation.html#install-docker-desk"><span class="std std-ref">Installing Docker Desktop</span></a></p></li>
-<li><p><a class="reference internal" href="start_here/installation.html#install-mtree"><span class="std std-ref">Installing mTree</span></a></p></li>
-<li><p><a class="reference internal" href="start_here/quick_start.html"><span class="doc">Get Started</span></a></p></li>
-<li><p><a class="reference internal" href="start_here/quick_start.html#cloning-mtree-auction-examples"><span class="std std-ref">Cloning mTree_auction_examples</span></a></p></li>
-<li><p><a class="reference internal" href="start_here/quick_start.html#running-mtree-auction-examples"><span class="std std-ref">Running mTree_auction_examples</span></a></p>
-<ol class="loweralpha simple">
-<li><p><a class="reference internal" href="start_here/quick_start.html#mtree-auction-examples-container-setup"><span class="std std-ref">mTree_auction_examples container setup</span></a></p>
-<ul class="simple">
-<li><p><a class="reference internal" href="start_here/installation.html#mtree-container-setup"><span class="std std-ref">mTree Container Setup</span></a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="start_here/quick_start.html#running-mtree-auction-examples-container"><span class="std std-ref">Running mTree_auction_examples container</span></a></p>
-<ul class="simple">
-<li><p><a class="reference internal" href="start_here/installation.html#mtree-container-start"><span class="std std-ref">Start</span></a></p></li>
-<li><p><a class="reference internal" href="start_here/installation.html#mtree-container-cli"><span class="std std-ref">Open Shell</span></a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="start_here/quick_start.html#cva"><span class="std std-ref">Common Value Auction</span></a></p></li>
-<li><p><a class="reference internal" href="start_here/quick_start.html#file-structure"><span class="std std-ref">File Structure</span></a></p></li>
-<li><p><a class="reference internal" href="start_here/quick_start.html#run-config"><span class="std std-ref">Running common_value_auction simulation</span></a></p></li>
-<li><p><a class="reference internal" href="start_here/quick_start.html#finished-sim"><span class="std std-ref">How to know your simulation has finished running?</span></a></p></li>
-<li><p><a class="reference internal" href="start_here/quick_start.html#sim-results"><span class="std std-ref">Simulation Results</span></a></p></li>
-<li><p><a class="reference internal" href="start_here/quick_start.html#check-errors"><span class="std std-ref">Checking for Errors</span></a></p></li>
-<li><p><a class="reference internal" href="start_here/quick_start.html#quitting"><span class="std std-ref">Quitting</span></a></p></li>
-<li><p><a class="reference internal" href="start_here/quick_start.html#conclusion"><span class="std std-ref">Conclusion</span></a></p></li>
-</ol>
-</li>
-</ol>
-</section>
+<p>Welcome to the <strong>mTree</strong> documentation! <strong>mTree</strong> is an Agent-Based Modelling software implemented in python, suitable for implementing simulations and running experiments.</p>
+<p>If this is your first time interacting with <strong>mTree</strong> follow the <a class="reference internal" href="start_here/quick_start.html#id1"><span class="std std-ref">Quickstart Guide</span></a> to install and get started with the software.</p>
 <section id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
@@ -257,8 +227,9 @@
 <li class="toctree-l2"><a class="reference internal" href="start_here/installation.html#mtree-container-setup">mTree Container Setup</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="start_here/quick_build.html">Quick Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="start_here/quick_start.html">Quick Start Guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="start_here/quick_start.html">Quickstart Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="start_here/quick_start.html#novice-path">Novice Path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start_here/quick_start.html#id2">Quickstart Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="start_here/quick_start.html#cloning-mtree-auction-examples">Cloning mTree_auction_examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="start_here/quick_start.html#running-mtree-auction-examples">Running mTree_auction_examples</a></li>
 </ul>
@@ -279,27 +250,14 @@
 <li class="toctree-l2"><a class="reference internal" href="reference/reference.html#mtree-simulation-state">mTree Simulation State</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="reference/reference_short.html">Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reference/reference_short.html#actor-classes">Actor Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/reference_short.html#messages">messages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/reference_short.html#actor-description">Actor Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/reference_short.html#config-folder">config folder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/reference_short.html#address-book">address book</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/reference_short.html#logs">Logs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/reference_short.html#error-handling">Error Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reference/reference_short.html#mtree-simulation-state">mTree Simulation State</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="reference/reference_short.html">References Short</a></li>
 <li class="toctree-l1"><a class="reference internal" href="learning/contributor_guide.html">Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="learning/examples_guide.html">Examples Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="learning/learning_paths.html">Learning Paths</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="learning/learning_paths.html#tatonnement">Tatonnement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="learning/learning_paths.html#sealed-bid-auction">Sealed Bid Auction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="learning/learning_paths.html#ascending-price-auction">Ascending Price Auction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="learning/learning_paths.html#descending-price-auction">Descending Price Auction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="learning/learning_paths.html#common-value-auction">Common Value Auction</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="learning/examples_guide.html#tatonnement">Tatonnement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning/examples_guide.html#sealed-bid-auction">Sealed Bid Auction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning/examples_guide.html#ascending-price-auction">Ascending Price Auction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning/examples_guide.html#descending-price-auction">Descending Price Auction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="learning/examples_guide.html#common-value-auction">Common Value Auction</a></li>
 </ul>
 </div>
 </section>
@@ -359,7 +317,6 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Overview</a><ul>
-<li><a class="reference internal" href="#novice-path">Novice Path</a></li>
 <li><a class="reference internal" href="#contents">Contents</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>

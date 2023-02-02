@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Theory" href="../reference/mtree_theory.html" /><link rel="prev" title="Quick Build" href="quick_build.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Theory" href="../reference/mtree_theory.html" /><link rel="prev" title="Installation" href="installation.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>Quick Start Guide - mTree 1.2.1b documentation</title>
+        <title>Quickstart Guide - mTree 1.2.1b documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -157,14 +157,17 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quick_build.html">Quick Build</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Quick Start Guide</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Quickstart Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/mtree_theory.html">Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/reference.html">Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/reference_short.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/reference_short.html">References Short</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../learning/contributor_guide.html">Contribute</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../learning/examples_guide.html">Examples Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../learning/learning_paths.html">Learning Paths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning/examples_guide.html#tatonnement">Tatonnement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning/examples_guide.html#sealed-bid-auction">Sealed Bid Auction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning/examples_guide.html#ascending-price-auction">Ascending Price Auction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning/examples_guide.html#descending-price-auction">Descending Price Auction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning/examples_guide.html#common-value-auction">Common Value Auction</a></li>
 </ul>
 
 </div>
@@ -199,8 +202,43 @@
           </label>
         </div>
         <article role="main">
-          <section id="quick-start-guide">
-<h1>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Permalink to this heading">#</a></h1>
+          <section id="quickstart-guide">
+<h1>Quickstart Guide<a class="headerlink" href="#quickstart-guide" title="Permalink to this heading">#</a></h1>
+<section id="novice-path">
+<span id="id1"></span><h2>Novice Path<a class="headerlink" href="#novice-path" title="Permalink to this heading">#</a></h2>
+<p>Do this step by step</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="installation.html#install-docker-desk"><span class="std std-ref">Installing Docker Desktop</span></a></p></li>
+<li><p><a class="reference internal" href="installation.html#install-mtree"><span class="std std-ref">Installing mTree</span></a></p></li>
+<li><p><span class="xref std std-doc">Get Started</span></p></li>
+<li><p><a class="reference internal" href="#cloning-mtree-auction-examples"><span class="std std-ref">Cloning mTree_auction_examples</span></a></p></li>
+<li><p><a class="reference internal" href="#running-mtree-auction-examples"><span class="std std-ref">Running mTree_auction_examples</span></a></p>
+<ol class="loweralpha simple">
+<li><p><a class="reference internal" href="#mtree-auction-examples-container-setup"><span class="std std-ref">mTree_auction_examples container setup</span></a></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="installation.html#mtree-container-setup"><span class="std std-ref">mTree Container Setup</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#running-mtree-auction-examples-container"><span class="std std-ref">Running mTree_auction_examples container</span></a></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="installation.html#mtree-container-start"><span class="std std-ref">Start</span></a></p></li>
+<li><p><a class="reference internal" href="installation.html#mtree-container-cli"><span class="std std-ref">Open Shell</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#cva"><span class="std std-ref">Common Value Auction</span></a></p></li>
+<li><p><a class="reference internal" href="#file-structure"><span class="std std-ref">File Structure</span></a></p></li>
+<li><p><a class="reference internal" href="#run-config"><span class="std std-ref">Running common_value_auction simulation</span></a></p></li>
+<li><p><a class="reference internal" href="#finished-sim"><span class="std std-ref">How to know your simulation has finished running?</span></a></p></li>
+<li><p><a class="reference internal" href="#sim-results"><span class="std std-ref">Simulation Results</span></a></p></li>
+<li><p><a class="reference internal" href="#check-errors"><span class="std std-ref">Checking for Errors</span></a></p></li>
+<li><p><a class="reference internal" href="#quitting"><span class="std std-ref">Quitting</span></a></p></li>
+<li><p><a class="reference internal" href="#conclusion"><span class="std std-ref">Conclusion</span></a></p></li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="id2">
+<h2>Quickstart Guide<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>In this <strong>Quick Start Guide</strong>, we are going to run a simple <strong>mTree simulation</strong>
 while giving an overview of key components that are necessary for <strong>mTree</strong> to execute
 without error. The goal of this guide is to show you how to run an <strong>mTree simulation</strong> from
@@ -233,8 +271,9 @@ your computer before you can begin</p>
 </li>
 <li><p><strong>VSCode</strong> - We recommend using an Integrated Development Environment (<strong>IDE</strong>) to edit and view <strong>mTree</strong> simulation code. Although, <a class="reference external" href="https://code.visualstudio.com">VSCode</a> is versatile and great, however, any <strong>IDE</strong> of your choice should also work.</p></li>
 </ol>
+</section>
 <section id="cloning-mtree-auction-examples">
-<span id="id1"></span><h2>Cloning mTree_auction_examples<a class="headerlink" href="#cloning-mtree-auction-examples" title="Permalink to this heading">#</a></h2>
+<span id="id3"></span><h2>Cloning mTree_auction_examples<a class="headerlink" href="#cloning-mtree-auction-examples" title="Permalink to this heading">#</a></h2>
 <p>We are going to clone the <a class="reference external" href="https://github.com/nalinbhatt/mTree_auction_examples.git">mTree_auction_examples</a> repository and run one
 of the examples to make sure <strong>mTree</strong> is running properly.</p>
 <p>Open your Command Prompt and navigate to an apporpriate place within your file system
@@ -260,11 +299,11 @@ for these next few steps, you only need to know how the <code class="docutils li
 </div>
 </section>
 <section id="running-mtree-auction-examples">
-<span id="id2"></span><h2>Running mTree_auction_examples<a class="headerlink" href="#running-mtree-auction-examples" title="Permalink to this heading">#</a></h2>
+<span id="id4"></span><h2>Running mTree_auction_examples<a class="headerlink" href="#running-mtree-auction-examples" title="Permalink to this heading">#</a></h2>
 <p>In order to run this simulation we need to create a <strong>docker container</strong> using
 the <strong>Docker Desktop</strong> app that we downloaded in  <a class="reference internal" href="installation.html"><span class="doc">Installation</span></a> section.</p>
 <section id="mtree-auction-examples-container-setup">
-<span id="id3"></span><h3>mTree_auction_examples container setup<a class="headerlink" href="#mtree-auction-examples-container-setup" title="Permalink to this heading">#</a></h3>
+<span id="id5"></span><h3>mTree_auction_examples container setup<a class="headerlink" href="#mtree-auction-examples-container-setup" title="Permalink to this heading">#</a></h3>
 <p>Follow all the steps highlighted in the <a class="reference internal" href="installation.html#mtree-container-setup"><span class="std std-ref">mTree Container Setup</span></a> section
 and set the <strong>Host Path</strong> to the <strong>mTree_auction_example folder</strong> (which you cloned in the previous step).</p>
 <ul class="simple">
@@ -274,23 +313,23 @@ and set the <strong>Host Path</strong> to the <strong>mTree_auction_example fold
 <p>After finishing the setup process, click <strong>Container/Apps</strong> on the sidebar of
 <strong>Docker Desktop</strong>. There should be a container by the name <strong>mTree_auction_examples</strong>
 present.</p>
-<figure class="align-center" id="id9">
-<img alt="start_here/_static/mTree_auction_examples_comp_setup.png" src="start_here/_static/mTree_auction_examples_comp_setup.png" />
+<figure class="align-center" id="id11">
+<img alt="../_images/mTree_auction_examples_comp_setup.png" src="../_images/mTree_auction_examples_comp_setup.png" />
 <figcaption>
-<p><span class="caption-text">Your <strong>Containers/Apps</strong> section should display a container similar to this with the name you chose</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Your <strong>Containers/Apps</strong> section should display a container similar to this with the name you chose</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="running-mtree-auction-examples-container">
-<span id="id4"></span><h3>Running mTree_auction_examples container<a class="headerlink" href="#running-mtree-auction-examples-container" title="Permalink to this heading">#</a></h3>
+<span id="id6"></span><h3>Running mTree_auction_examples container<a class="headerlink" href="#running-mtree-auction-examples-container" title="Permalink to this heading">#</a></h3>
 <p>Start the container and open the <strong>shell</strong>. More details on how to do this are
 covered in <a class="reference internal" href="installation.html#mtree-container-options"><span class="std std-ref">Container Options</span></a> under <a class="reference internal" href="installation.html#mtree-container-start"><span class="std std-ref">Start</span></a>
 and <a class="reference internal" href="installation.html#mtree-container-cli"><span class="std std-ref">Open Shell</span></a>.</p>
 <p>Your <strong>shell</strong> should look some version of this -</p>
-<figure class="align-center" id="id10">
-<img alt="start_here/_static/mTree_auction_examples_shell.png" src="start_here/_static/mTree_auction_examples_shell.png" />
+<figure class="align-center" id="id12">
+<img alt="../_images/mTree_auction_examples_shell.png" src="../_images/mTree_auction_examples_shell.png" />
 <figcaption>
-<p><span class="caption-text">mTree_auction_examples shell produced by clicking the CLI button</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">mTree_auction_examples shell produced by clicking the CLI button</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Run the following commands to view the underlying files in the folder.</p>
@@ -307,17 +346,17 @@ and <a class="reference internal" href="installation.html#mtree-container-cli"><
 </pre></div>
 </div>
 <p>You should see the following subfolders-</p>
-<figure class="align-center" id="id11">
+<figure class="align-center" id="id13">
 <img alt="../_images/quick_start_ls.png" src="../_images/quick_start_ls.png" />
 <figcaption>
-<p><span class="caption-text">Folders inside mTree_auction_examples</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Folders inside mTree_auction_examples</span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="common-value-auction">
 <span id="cva"></span><h3>Common Value Auction<a class="headerlink" href="#common-value-auction" title="Permalink to this heading">#</a></h3>
 <p>One of the subfolders present should have the name <strong>common_value_auction</strong>. Further information about the
-auction style and description can be found in the <a class="reference internal" href="../learning/learning_paths.html#common-value-auction"><span class="std std-ref">Common Value Auction</span></a> section of <span class="xref std std-doc">learning_paths</span>.</p>
+auction style and description can be found in the <a class="reference internal" href="../learning/examples_guide.html#common-value-auction"><span class="std std-ref">Common Value Auction</span></a> section of <span class="xref std std-doc">learning_paths</span>.</p>
 <p>In your <strong>mTree_auction_examples</strong> container <strong>shell</strong> type in the following command to set
 the current directory to <strong>common_value_auction</strong>.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd common_value_auction</span>
@@ -325,18 +364,18 @@ the current directory to <strong>common_value_auction</strong>.</p>
 </div>
 </section>
 <section id="file-structure">
-<span id="id5"></span><h3>File Structure<a class="headerlink" href="#file-structure" title="Permalink to this heading">#</a></h3>
+<span id="id7"></span><h3>File Structure<a class="headerlink" href="#file-structure" title="Permalink to this heading">#</a></h3>
 <p>After setting <strong>common_value_auction</strong> as the current directory, run <strong>ls</strong> or <strong>dir</strong> and
 you should see the following folders.</p>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="../reference/reference.html#config"><span class="std std-ref">config</span></a></p></li>
-<li><p><a class="reference internal" href="../reference/reference.html#actors"><span class="std std-ref">mes</span></a></p></li>
-<li><p><a class="reference internal" href="../reference/reference.html#logs"><span class="std std-ref">logs</span></a></p></li>
+<li><p><span class="xref std std-ref">config</span></p></li>
+<li><p><span class="xref std std-ref">mes</span></p></li>
+<li><p><span class="xref std std-ref">logs</span></p></li>
 </ol>
-<figure class="align-center" id="id12">
+<figure class="align-center" id="id14">
 <img alt="../_images/quick_start_cva_ls.png" src="../_images/quick_start_cva_ls.png" />
 <figcaption>
-<p><span class="caption-text">Folders inside common_value_auction</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Folders inside common_value_auction</span><a class="headerlink" href="#id14" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -352,14 +391,14 @@ folder inside <strong>mTree_auction_examples</strong>.</p>
 directly to the folder containing the <strong>config</strong> and <strong>mes</strong> folder. That way
 you don’t have to navigate to the desired directory within the docker <strong>shell</strong>.</p>
 </div>
-<p>The <a class="reference internal" href="../reference/reference.html#config"><span class="std std-ref">config folder</span></a> folder (short for configurations) contains your <strong>JSON config files</strong> which are used to instantiate <strong>mTree</strong> <a class="reference internal" href="../reference/reference.html#actors"><span class="std std-ref">Actors</span></a> defined in
+<p>The <span class="xref std std-ref">config</span> folder (short for configurations) contains your <strong>JSON config files</strong> which are used to instantiate <strong>mTree</strong> <span class="xref std std-ref">Actors</span> defined in
 the <strong>mes</strong> folder.</p>
 <p>The <strong>mes</strong> folder (short for Microeconomic System) containes the python files where you define the different
-<a class="reference internal" href="../reference/reference.html#actors"><span class="std std-ref">Actor</span></a> classes, namely - the <a class="reference internal" href="../reference/reference.html#environment"><span class="std std-ref">Environment</span></a> , <a class="reference internal" href="../reference/reference.html#institution"><span class="std std-ref">Institution</span></a> and <a class="reference internal" href="../reference/reference.html#agent"><span class="std std-ref">Agent</span></a>.</p>
+<span class="xref std std-ref">Actor</span> classes, namely - the <span class="xref std std-ref">environment</span> , <span class="xref std std-ref">institution</span> and <span class="xref std std-ref">agent</span>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>It is critical that your <strong>simulation folder</strong> contains a <strong>config</strong> folder, with a <strong>JSON config file</strong> inside,
-and a separate <strong>mes</strong> folder with python files inside, which contain <a class="reference internal" href="../reference/reference.html#environment"><span class="std std-ref">Environment</span></a> , <a class="reference internal" href="../reference/reference.html#institution"><span class="std std-ref">Institution</span></a> and <a class="reference internal" href="../reference/reference.html#agent"><span class="std std-ref">Agent</span></a> code.
+and a separate <strong>mes</strong> folder with python files inside, which contain <span class="xref std std-ref">environment</span> , <span class="xref std std-ref">institution</span> and <span class="xref std std-ref">agent</span> code.
 <strong>In the absence of any of these your mTree simulation will not run.</strong></p>
 </div>
 <p>Inside the <strong>config</strong> folder in the <strong>common_value_auction</strong> auction example, you should see a <strong>basic_simulation.json</strong> file.
@@ -378,10 +417,10 @@ we are in the right directory.</p>
 </pre></div>
 </div>
 <p>You should see something similar to this.</p>
-<figure class="align-center" id="id13">
+<figure class="align-center" id="id15">
 <img alt="../_images/quick_start_mTree_runner.png" src="../_images/quick_start_mTree_runner.png" />
 <figcaption>
-<p><span class="caption-text">mTree_runner window</span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">mTree_runner window</span><a class="headerlink" href="#id15" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Enter the following to start the selection process for the config file.</p>
@@ -389,25 +428,25 @@ we are in the right directory.</p>
 </pre></div>
 </div>
 <p>Your window should look like this.</p>
-<figure class="align-center" id="id14">
+<figure class="align-center" id="id16">
 <img alt="../_images/quick_start_run_simulation.png" src="../_images/quick_start_run_simulation.png" />
 <figcaption>
-<p><span class="caption-text">run_simulation window</span><a class="headerlink" href="#id14" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">run_simulation window</span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Click <strong>&lt;enter&gt;</strong> to select and run the <strong>basic_simulation.json</strong> file.
 Your output should look something similar to this.</p>
-<figure class="align-center" id="id15">
+<figure class="align-center" id="id17">
 <img alt="../_images/quick_start_run_config.png" src="../_images/quick_start_run_config.png" />
 <figcaption>
-<p><span class="caption-text">Running basic_simulation.json file</span><a class="headerlink" href="#id15" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Running basic_simulation.json file</span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="how-to-know-your-simulation-has-finished-running">
 <span id="finished-sim"></span><h3>How to know your simulation has finished running?<a class="headerlink" href="#how-to-know-your-simulation-has-finished-running" title="Permalink to this heading">#</a></h3>
 <p>mTree provides a <code class="docutils literal notranslate"><span class="pre">check_status</span></code> command that allows you to inquire the state of the simulation from the <strong>shell</strong> or <strong>console</strong>.
-Run the following command in your <strong>shell</strong> to see the state of the simulation. If you wish to know more about this command visit <a class="reference internal" href="../reference/reference.html#sim-state"><span class="std std-ref">mTree Simulation State</span></a>
+Run the following command in your <strong>shell</strong> to see the state of the simulation. If you wish to know more about this command visit <span class="xref std std-ref">sim_state</span>
 section.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">check_status</span>
 </pre></div>
@@ -417,32 +456,32 @@ section.</p>
 <p>You can enter the <code class="docutils literal notranslate"><span class="pre">check_status</span></code> command multiple times to view the state of your simulation.</p>
 </div>
 <p>Depending on the when you entered the <code class="docutils literal notranslate"><span class="pre">check_status</span></code> command, you should see any one of the following screens.</p>
-<figure class="align-center" id="id16">
+<figure class="align-center" id="id18">
 <img alt="../_images/quick_start_check_status_running.png" src="../_images/quick_start_check_status_running.png" />
 <figcaption>
-<p><span class="caption-text">This indicates our simulation is still running</span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">This indicates our simulation is still running</span><a class="headerlink" href="#id18" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id17">
+<figure class="align-center" id="id19">
 <img alt="../_images/quick_start_check_status_finished.png" src="../_images/quick_start_check_status_finished.png" />
 <figcaption>
 <p><span class="caption-text">This indicates our simulation has finished running and we can move
-to the next step and view our simulation results.</span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
+to the next step and view our simulation results.</span><a class="headerlink" href="#id19" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Once we have identified that our simulation has finished we can move on to the next step which involves</p>
 </section>
 <section id="simulation-results">
 <span id="sim-results"></span><h3>Simulation Results<a class="headerlink" href="#simulation-results" title="Permalink to this heading">#</a></h3>
-<p>Ideally when a simulation is run, you should setup <a class="reference internal" href="../reference/reference.html#actors"><span class="std std-ref">Actors</span></a> in such a way that
-they constantly <a class="reference internal" href="../reference/reference.html#logs"><span class="std std-ref">log</span></a>  their states to <a class="reference internal" href="../reference/reference.html#log-file"><span class="std std-ref">.log</span></a>  and  <a class="reference internal" href="../reference/reference.html#data-file"><span class="std std-ref">.data</span></a> files.
+<p>Ideally when a simulation is run, you should setup <span class="xref std std-ref">Actors</span> in such a way that
+they constantly <span class="xref std std-ref">log</span>  their states to <span class="xref std std-ref">.log</span>  and  <span class="xref std std-ref">.data</span> files.
 This allows us to analyze how Actors behaved in our system, what decisions they made, and what effects those decisions had on the
 system as whole.</p>
 <section id="logs">
 <h4>logs<a class="headerlink" href="#logs" title="Permalink to this heading">#</a></h4>
 <p>The <strong>logs</strong> folder, inside your simulation folder (which in our case is <strong>common_value_auction</strong>), is where the
 output from your simulation gets stored. You should see a file ending in <code class="docutils literal notranslate"><span class="pre">.log</span></code> and a file ending in <code class="docutils literal notranslate"><span class="pre">.data</span></code>.</p>
-<p>More on how these files are named can be found <a class="reference internal" href="../reference/reference.html#log-file"><span class="std std-ref">here</span></a>.</p>
+<p>More on how these files are named can be found <span class="xref std std-ref">here</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In the figure below, we use <a class="reference external" href="https://code.visualstudio.com">VSCode</a> to open the generated <strong>log files</strong>.
@@ -451,30 +490,30 @@ That being said, we still advise using an <strong>IDE</strong>, like <strong>VSC
 since they make viewing and editing files of different formats more intuitive.</p>
 </div>
 <p>The first few lines of you <code class="docutils literal notranslate"><span class="pre">.log</span></code> file document the config file parameters which were used to run the simulation</p>
-<figure class="align-center" id="id18">
+<figure class="align-center" id="id20">
 <img alt="../_images/quick_start_log_config.png" src="../_images/quick_start_log_config.png" />
 <figcaption>
-<p><span class="caption-text">basic_simulation-2022_02_28-09_32_04_PM-R1-experiment.log</span><a class="headerlink" href="#id18" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">basic_simulation-2022_02_28-09_32_04_PM-R1-experiment.log</span><a class="headerlink" href="#id20" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The rest of your <code class="docutils literal notranslate"><span class="pre">.log</span></code> file should look as follows.</p>
-<figure class="align-center" id="id19">
+<figure class="align-center" id="id21">
 <img alt="../_images/quick_start_log_rest.png" src="../_images/quick_start_log_rest.png" />
 <figcaption>
-<p><span class="caption-text">basic_simulation-2022_02_28-09_32_04_PM-R1-experiment.log</span><a class="headerlink" href="#id19" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">basic_simulation-2022_02_28-09_32_04_PM-R1-experiment.log</span><a class="headerlink" href="#id21" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Your <code class="docutils literal notranslate"><span class="pre">.data</span></code>  file should look something like this -</p>
-<figure class="align-center" id="id20">
+<figure class="align-center" id="id22">
 <img alt="../_images/quick_start_data_log.png" src="../_images/quick_start_data_log.png" />
 <figcaption>
-<p><span class="caption-text">basic_simulation-2022_02_28-09_32_04_PM-R1-experiment.data</span><a class="headerlink" href="#id20" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">basic_simulation-2022_02_28-09_32_04_PM-R1-experiment.data</span><a class="headerlink" href="#id22" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Don’t worry if the log files on your end don’t match the ones shown here word for word. Since <strong>mTree</strong> is a
-concurrent Agent-Based Modelling software, it is common for different <a class="reference internal" href="../reference/reference.html#actors"><span class="std std-ref">Actors</span></a> to log asynchronously to the
+concurrent Agent-Based Modelling software, it is common for different <span class="xref std std-ref">Actors</span> to log asynchronously to the
 same <code class="docutils literal notranslate"><span class="pre">.log</span></code> and <code class="docutils literal notranslate"><span class="pre">.data</span></code> files, giving them an out of order look.</p>
 </div>
 </section>
@@ -482,7 +521,7 @@ same <code class="docutils literal notranslate"><span class="pre">.log</span></c
 <section id="checking-for-errors">
 <span id="check-errors"></span><h3>Checking for Errors<a class="headerlink" href="#checking-for-errors" title="Permalink to this heading">#</a></h3>
 <p>You can use the <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">F</span></code> (Windows) or  <code class="docutils literal notranslate"><span class="pre">cmd</span> <span class="pre">F</span></code> (Mac) command to search for <code class="docutils literal notranslate"><span class="pre">Error</span></code> messages in the <code class="docutils literal notranslate"><span class="pre">.log</span></code> file. If there are no results then it is likely
-that your simulation has run properly. If there are instances of <code class="docutils literal notranslate"><span class="pre">Error</span></code> messages then check out the <a class="reference internal" href="../reference/reference.html#error"><span class="std std-ref">Error Handling</span></a> section.</p>
+that your simulation has run properly. If there are instances of <code class="docutils literal notranslate"><span class="pre">Error</span></code> messages then check out the <span class="xref std std-ref">error</span> section.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you see no results for <code class="docutils literal notranslate"><span class="pre">Error</span></code> but your mTree log stops logging in the middle of the simulation, then it is still
@@ -491,25 +530,25 @@ possible you have logic errors that don’t terminate the process. Luckily, you 
 </div>
 </section>
 <section id="quitting">
-<span id="id7"></span><h3>Quitting<a class="headerlink" href="#quitting" title="Permalink to this heading">#</a></h3>
+<span id="id9"></span><h3>Quitting<a class="headerlink" href="#quitting" title="Permalink to this heading">#</a></h3>
 <p>Once the simulation has ended, you can run <code class="docutils literal notranslate"><span class="pre">quit</span></code> command in the <strong>docker shell</strong> to kill mTree. The <code class="docutils literal notranslate"><span class="pre">quit</span></code> command
-is used to kill all mTree processes as well as <strong>delete</strong> all <a class="reference internal" href="../reference/reference.html#actors"><span class="std std-ref">Actor</span></a> instances previously created to run the simulation.</p>
+is used to kill all mTree processes as well as <strong>delete</strong> all <span class="xref std std-ref">Actor</span> instances previously created to run the simulation.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">quit</span>
 </pre></div>
 </div>
 <p>Your console should look like some version of this -</p>
-<figure class="align-center" id="id21">
+<figure class="align-center" id="id23">
 <img alt="../_images/quick_start_quitting_mTree.png" src="../_images/quick_start_quitting_mTree.png" />
 <figcaption>
-<p><span class="caption-text">Quitting <strong>mTree</strong></span><a class="headerlink" href="#id21" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Quitting <strong>mTree</strong></span><a class="headerlink" href="#id23" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="conclusion">
-<span id="id8"></span><h3>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h3>
+<span id="id10"></span><h3>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h3>
 <p>Congratulations on successfully running your first mTree simulation! If you want to know how this example was built
-or you want to find more projects like this, checkout <a class="reference internal" href="../learning/learning_paths.html#common-value-auction"><span class="std std-ref">Common Value Auction</span></a> or <span class="xref std std-doc">learning_paths</span> sections.
-If you want to view a more in-depth case which builds an mTree project from scratch, checkout <a class="reference internal" href="quick_build.html"><span class="doc">Quick Build</span></a>.</p>
+or you want to find more projects like this, checkout <a class="reference internal" href="../learning/examples_guide.html#common-value-auction"><span class="std std-ref">Common Value Auction</span></a> or <span class="xref std std-doc">learning_paths</span> sections.
+If you want to view a more in-depth case which builds an mTree project from scratch, checkout <span class="xref std std-doc">quick_build</span>.</p>
 </section>
 </section>
 </section>
@@ -528,14 +567,14 @@ If you want to view a more in-depth case which builds an mTree project from scra
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="quick_build.html">
+          <a class="prev-page" href="installation.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Quick Build</div>
+                <div class="title">Installation</div>
                 
               </div>
             </a>
@@ -569,7 +608,9 @@ If you want to view a more in-depth case which builds an mTree project from scra
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Quick Start Guide</a><ul>
+<li><a class="reference internal" href="#">Quickstart Guide</a><ul>
+<li><a class="reference internal" href="#novice-path">Novice Path</a></li>
+<li><a class="reference internal" href="#id2">Quickstart Guide</a></li>
 <li><a class="reference internal" href="#cloning-mtree-auction-examples">Cloning mTree_auction_examples</a></li>
 <li><a class="reference internal" href="#running-mtree-auction-examples">Running mTree_auction_examples</a><ul>
 <li><a class="reference internal" href="#mtree-auction-examples-container-setup">mTree_auction_examples container setup</a></li>

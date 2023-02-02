@@ -2,7 +2,7 @@
 Quickstart Guide
 =================
 
-.. _quickstart_guide
+.. _quickstart_guide:
 
 Novice Path
 ===========
@@ -384,6 +384,7 @@ Your console should look like some version of this -
 Conclusion
 ----------
 
+.. TODO: Revise this conclusion to link to the new pages
 Congratulations on successfully running your first mTree simulation! If you want to know how this example was built
 or you want to find more projects like this, checkout :ref:`common_value_auction` or :doc:`learning_paths` sections. 
 If you want to view a more in-depth case which builds an mTree project from scratch, checkout :doc:`quick_build`. 
