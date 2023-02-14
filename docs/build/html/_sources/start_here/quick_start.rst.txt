@@ -4,16 +4,13 @@ Quickstart Guide
 
 .. _quickstart_guide:
 
-Novice Path
-===========
+Contents
+========
 
-Do this step by step
-
-1. :ref:`install-docker-desk`
-2. :ref:`install-mTree`
-3. :doc:`Get Started <start_here/quick_start>`
-4. :ref:`cloning_mTree_auction_examples`
-5. :ref:`running_mTree_auction_examples` 
+1. :ref:`about_qs_guide`
+2. :ref:`getting_started`
+3. :ref:`cloning_mTree_auction_examples`
+4. :ref:`running_mTree_auction_examples` 
 
    a. :ref:`mTree_auction_examples_container_setup`
 
@@ -34,15 +31,18 @@ Do this step by step
    i. :ref:`quitting`
    j. :ref:`conclusion`
 
-Quickstart Guide
-=================
-
-In this **Quick Start Guide**, we are going to run a simple **mTree simulation**
+.. _about_qs_guide:
+About this Guide
+================
+In this **Quickstart Guide**, we are going to run a simple **mTree simulation**
 while giving an overview of key components that are necessary for **mTree** to execute 
 without error. The goal of this guide is to show you how to run an **mTree simulation** from 
 start to finish and point out the vital indicators that convey a simulation has run properly. 
 
-In order to complete this **Quick Start Guide**, you would need to the following installed on
+.. _getting_started:
+Getting Started
+===============
+In order to complete this **Quickstart Guide**, you would need to the following installed on
 your computer before you can begin 
 
 1.  **Docker Desktop** - The quick start guide assumes that you have finished :ref:`install-docker-desk` 
@@ -76,7 +76,7 @@ exists.
 
 This will create an **mTree_auction_examples** folder at your specified 
 location.
-
+.. TODO ADD LINUX
 .. tip:: 
     If you are new to **command line** you can check out the following links on 
     how to navigate your file system -
@@ -384,11 +384,13 @@ Your console should look like some version of this -
 Conclusion
 ----------
 
+.. TODO: Revise this conclusion to link to the new pages
 Congratulations on successfully running your first mTree simulation! If you want to know how this example was built
 or you want to find more projects like this, checkout :ref:`common_value_auction` or :doc:`learning_paths` sections. 
 If you want to view a more in-depth case which builds an mTree project from scratch, checkout :doc:`quick_build`. 
 
-
+.. TODO add a section similat to https://econwillow.sourceforge.net/manual.html#_lesson_0_wherein_we_install_willow
+.. TODO add section similar to https://docs.google.com/document/d/1kFkMUeHiWZ2PZgZXWYhMYC_AAv1BMN80_WOVxDVY3Sg/edit
 
 
 

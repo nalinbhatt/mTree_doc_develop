@@ -4,16 +4,14 @@ Quickstart Guide
 
 .. _quickstart_guide:
 
-Novice Path
-===========
+.. TODO merge the contents and about sections -add the contents links functionality into the about part 
+Contents
+========
 
-Do this step by step
-
-1. :ref:`install-docker-desk`
-2. :ref:`install-mTree`
-3. :doc:`Get Started <start_here/quick_start>`
-4. :ref:`cloning_mTree_auction_examples`
-5. :ref:`running_mTree_auction_examples` 
+1. :ref:`about_qs_guide`
+2. :ref:`setting_up_mtree`
+3. :ref:`cloning_mTree_auction_examples`
+4. :ref:`running_mTree_auction_examples` 
 
    a. :ref:`mTree_auction_examples_container_setup`
 
@@ -34,27 +32,51 @@ Do this step by step
    i. :ref:`quitting`
    j. :ref:`conclusion`
 
-Quickstart Guide
-=================
+.. _about_qs_guide:
+About this Guide
+================
+By the end of this **Quickstart Guide** you should be able to:
+* set up mTree on your machine
+* download examples mTree's functionality
+* run an example simulation
+* set up your own mTree project
+* implement the main functionalities of mTree
+* debug mTree projects
+* use the reference guide
+* continue learning mTree with further examples
 
-In this **Quick Start Guide**, we are going to run a simple **mTree simulation**
-while giving an overview of key components that are necessary for **mTree** to execute 
-without error. The goal of this guide is to show you how to run an **mTree simulation** from 
-start to finish and point out the vital indicators that convey a simulation has run properly. 
+.. _setting_up_mtree:
+Setting Up
+==========
+.. Subtitle? Completing this section provides you with the software tools to complete the rest of the guide.
+.. TODO think about incorporating the image guide below.
 
-In order to complete this **Quick Start Guide**, you would need to the following installed on
-your computer before you can begin 
+**mTree**
+The user version of mTree is distributed as a Docker image, so in order to use the latest version of mTree 
+you need both Docker and the latest mTree image. Refer to the following guides if you need to install either:
+.. TODO check if there is some version of Windows on which docker cannot be installed (<10 AFAIK)
+1.  **Docker Desktop** - :ref:`install-docker-desk` 
+2.  **Latest mTree Image** - :ref:`install-mTree` 
 
-1.  **Docker Desktop** - The quick start guide assumes that you have finished :ref:`install-docker-desk` 
-2.  **Latest mTree Image** - This should be covered in the :ref:`install-mTree` section.
-3.  **Git** - We are going to use **git** to run a simple **mTree simulation** later in this section. A simple way to check if you have **git** installed is to run :code:`git --version` in your Command Prompt/ Terminal/ PowerShell.
+**Git**
+In order to download the examples used in this guide, you will need git. Even if you are unfamiliar with git, there is a good chance it is 
+already installed on your computer.
+.. TODO find a good beginner git guide and recommend it
+.. TODO check if you can clone public github repos without a github account ??
+Verify git is installed by running the following commands:
+1.  **Git** - We are going to use **git** to run a simple **mTree simulation** later in this section. A simple way to check if you have **git** installed is to run :code:`git --version` in your Command Prompt/ Terminal/ PowerShell.
         * *Mac Users*  
              * If your Terminal says it doesn't recognize the command, which is very unlikely, visit the `Git Download for macOS <https://git-scm.com/download/mac>`_ website to download git. 
              * You'll have several options on how to install **git**, however, it is recommended to use **homebrew** route, check out this `git homebrew download video <https://www.youtube.com/watch?v=ZM3I16Z-lxI>`_ on how to do this. 
         * *Windows Users* 
              * If it doesn't recognize the command, suggesting you don't have git, visit the `Git Download for Windows <https://git-scm.com/download/win>`_ website and follow the directions highlighted in this `windows git download video <https://www.youtube.com/watch?v=4xqVv2lTo40>`_ .
 
-4. **VSCode** - We recommend using an Integrated Development Environment (**IDE**) to edit and view **mTree** simulation code. Although, `VSCode <https://code.visualstudio.com>`_ is versatile and great, however, any **IDE** of your choice should also work.
+**IDE and Python**
+While not strictly required, we using an Integrated Development Environment (IDE) to edit and view **mTree** simulation code. If you are 
+unfamiliar with any IDE, `VSCode <https://code.visualstudio.com>`_ and `Spider <https://spider.com>` are great IDEs for python.
+
+Similarly, installing python directly is not strictly required to be able to run or develop mTree simulations, it is highly recommended 
+for unit testing. Get the latest Python distribution `here <python.com>` or install it with a suite of science-oriented packages through `Anaconda <anaconda.com>`.
 
 .. _cloning_mTree_auction_examples:
 
@@ -76,7 +98,7 @@ exists.
 
 This will create an **mTree_auction_examples** folder at your specified 
 location.
-
+.. TODO ADD LINUX
 .. tip:: 
     If you are new to **command line** you can check out the following links on 
     how to navigate your file system -
@@ -389,7 +411,8 @@ Congratulations on successfully running your first mTree simulation! If you want
 or you want to find more projects like this, checkout :ref:`common_value_auction` or :doc:`learning_paths` sections. 
 If you want to view a more in-depth case which builds an mTree project from scratch, checkout :doc:`quick_build`. 
 
-
+.. TODO add a section similat to https://econwillow.sourceforge.net/manual.html#_lesson_0_wherein_we_install_willow
+.. TODO add section similar to https://docs.google.com/document/d/1kFkMUeHiWZ2PZgZXWYhMYC_AAv1BMN80_WOVxDVY3Sg/edit
 
 
 
