@@ -4,110 +4,91 @@ Quickstart Guide
 
 .. _quickstart_guide:
 
-.. TODO merge the contents and about sections -add the contents links functionality into the about part 
-Contents
-========
-
-1. :ref:`about_qs_guide`
-2. :ref:`setting_up_mtree`
-3. :ref:`cloning_mTree_auction_examples`
-4. :ref:`running_mTree_auction_examples` 
-
-   a. :ref:`mTree_auction_examples_container_setup`
-
-      * :ref:`mTree-container-setup`
-
-   b. :ref:`running_mTree_auction_examples_container`
-
-      * :ref:`mTree-container-start`
-      * :ref:`mTree-container-cli`
-
-
-   c. :ref:`cva`
-   d. :ref:`file_structure`
-   e. :ref:`run_config`
-   f. :ref:`finished_sim`
-   g. :ref:`sim_results`
-   h. :ref:`check_errors`
-   i. :ref:`quitting`
-   j. :ref:`conclusion`
-
 .. _about_qs_guide:
 About this Guide
 ================
-By the end of this **Quickstart Guide** you should be able to:
+This guide will lead you through the required installations, configurations, and steps to download and use **mTree** on your machine. It 
+will also show you the main functionalities of **mTree** and should serve as a jumping-off point for further learning. This guide is meant 
+to be understandable to complete beginners, and currently documents processes for Windows and Mac users. **mTree** is however compatible 
+with major Linux distributions.
+
+By the end of this **Quickstart Guide** you should be able to:  
+
 * set up mTree on your machine
-* download examples mTree's functionality
+* download examples 
 * run an example simulation
 * set up your own mTree project
 * implement the main functionalities of mTree
 * debug mTree projects
 * use the reference guide
 * continue learning mTree with further examples
+.. TODO add hyperlinks
 
 .. _setting_up_mtree:
-Setting Up
-==========
+Installation and Setup
+======================
 .. Subtitle? Completing this section provides you with the software tools to complete the rest of the guide.
 .. TODO think about incorporating the image guide below.
 
-**mTree**
-The user version of mTree is distributed as a Docker image, so in order to use the latest version of mTree 
-you need both Docker and the latest mTree image. Refer to the following guides if you need to install either:
-.. TODO check if there is some version of Windows on which docker cannot be installed (<10 AFAIK)
-1.  **Docker Desktop** - :ref:`install-docker-desk` 
-2.  **Latest mTree Image** - :ref:`install-mTree` 
+Docker and mTree
+----------------
+The user version of mTree is distributed as a **Docker** image, so in order to use the latest version of mTree 
+you need both Docker and the latest mTree image. **Docker** is a way to package code so that is runs the same way on 
+any system, to install it follow this guide: :ref:`install-docker-desk`. The guide specifically shows you how to install 
+**Docker Desktop**, which is also used for the **mTree** installation guide.
 
-**Git**
+Once you have **Docker** installed, you can download the latest **mTree** image, following this guide: :ref:`install-mTree`. This guide will 
+show you how to both download the image and set up a container to be able to execute **mTree** code on your computer.
+
+.. TODO check if there is some version of Windows on which docker cannot be installed (<10 AFAIK)
+
+Git
+---
 In order to download the examples used in this guide, you will need git. Even if you are unfamiliar with git, there is a good chance it is 
-already installed on your computer.
+already installed on your computer. Depending on your operating system, git installation will differ slightly.
+
 .. TODO find a good beginner git guide and recommend it
 .. TODO check if you can clone public github repos without a github account ??
-Verify git is installed by running the following commands:
-1.  **Git** - We are going to use **git** to run a simple **mTree simulation** later in this section. A simple way to check if you have **git** installed is to run :code:`git --version` in your Command Prompt/ Terminal/ PowerShell.
-        * *Mac Users*  
-             * If your Terminal says it doesn't recognize the command, which is very unlikely, visit the `Git Download for macOS <https://git-scm.com/download/mac>`_ website to download git. 
-             * You'll have several options on how to install **git**, however, it is recommended to use **homebrew** route, check out this `git homebrew download video <https://www.youtube.com/watch?v=ZM3I16Z-lxI>`_ on how to do this. 
-        * *Windows Users* 
-             * If it doesn't recognize the command, suggesting you don't have git, visit the `Git Download for Windows <https://git-scm.com/download/win>`_ website and follow the directions highlighted in this `windows git download video <https://www.youtube.com/watch?v=4xqVv2lTo40>`_ .
+.. TODO formatting
 
-**IDE and Python**
+*Mac Users*  
+    * Open up Terminal and run :code:`git --version`.
+    * If the command is not recognized, follow this link to `Download Git for macOS <https://git-scm.com/download/mac>`_. 
+    * You have several options on how to install **git**. The **homebrew** route is a good option, for which you can follow this tutorial video: `Git Homebrew Installation <https://www.youtube.com/watch?v=ZM3I16Z-lxI>`_. 
+*Windows Users* 
+    * Open up Command Prompt or PowerShell and run :code:`git --version`.
+    * If the command is not recognized, follow this link to `Download Git for Windows <https://git-scm.com/download/win>`_.
+    * And follow this tutorial video `Intall Git for Windows <https://www.youtube.com/watch?v=4xqVv2lTo40>`_.
+
+IDE and Python
+--------------
 While not strictly required, we using an Integrated Development Environment (IDE) to edit and view **mTree** simulation code. If you are 
-unfamiliar with any IDE, `VSCode <https://code.visualstudio.com>`_ and `Spider <https://spider.com>` are great IDEs for python.
+unfamiliar with any IDE, `VSCode <https://code.visualstudio.com>`_ and `Spyder <https://docs.spyder-ide.org/3/installation.html>`_ are great IDEs for python.
 
-Similarly, installing python directly is not strictly required to be able to run or develop mTree simulations, it is highly recommended 
-for unit testing. Get the latest Python distribution `here <python.com>` or install it with a suite of science-oriented packages through `Anaconda <anaconda.com>`.
+Similarly, installing python natively is not strictly required to be able to run or develop mTree simulations, it is highly recommended 
+for unit testing. Get the latest `Python distribution <https://www.python.org/downloads/>`_ or install it with a suite of science-oriented 
+packages through `Anaconda <https://www.anaconda.com/products/distribution>`_.
 
 .. _cloning_mTree_auction_examples:
 
-Cloning mTree_auction_examples
+Cloning mTree_auction_examples Folder
 ==============================
 
-We are going to clone the `mTree_auction_examples <https://github.com/nalinbhatt/mTree_auction_examples.git>`_ repository and run one 
-of the examples to make sure **mTree** is running properly. 
+We are going to clone (download a copy) the `mTree_auction_examples <https://github.com/nalinbhatt/mTree_auction_examples.git>`_ repository and run one 
+of the examples to make sure **mTree** is running properly on your machine.
 
-Open your Command Prompt and navigate to an apporpriate place within your file system  
-using the ``cd`` command and run the following code. If you have not used **Command Line** before 
-you can check out the **tip** below or you could simply run the following code
-and it will create an **mTree_auction_examples** folder in your **home directory** where the **Desktop** folder 
-exists. 
+Open your **Command Line** (Command Prompt or Power Shell on Windows, Terminal on macOS) at the place in your file system where you would 
+like to download the **mTree Examples**. 
+.. tip:: 
+    If you opened the **Command Line** in a different place, you can navigate your file system using the ``cd`` command. If you are new to 
+    **Command Line** you can check out these tutorials:
+    | `Terminal for Beginners <https://medium.com/@grace.m.nolan/terminal-for-beginners-e492ba10902a>`_ (macOS) 
+    | `A Beginner's Guide to the Windows Command Prompt <https://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line/>`_ (Windows)
 
+Once at your desired location, run the following code to create a local copy of the **mTree_auction_examples** folder.
 .. code-block:: console
 
     git clone https://github.com/nalinbhatt/mTree_auction_examples.git
-
-This will create an **mTree_auction_examples** folder at your specified 
-location.
-.. TODO ADD LINUX
-.. tip:: 
-    If you are new to **command line** you can check out the following links on 
-    how to navigate your file system -
-
-    | `Terminal for Beginners <https://medium.com/@grace.m.nolan/terminal-for-beginners-e492ba10902a>`_ (Macs) 
-    | `A Beginner's Guide to the Windows Command Prompt <https://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line/>`_ (Windows)
-
-    Although, the following resources provide a great background which might be helpful later, nevertheless, 
-    for these next few steps, you only need to know how the ``cd`` command works.  
 
 .. _running_mTree_auction_examples:
 

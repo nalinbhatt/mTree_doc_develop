@@ -1,208 +1,158 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Reference" href="reference_short.html" /><link rel="prev" title="Theory" href="mtree_theory.html" />
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
-        <title>Reference - mTree 1.2.1b documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
-    
-    
-
-
-<style>
-  body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reference &mdash; mTree 1.2.1b documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-  }
-  @media not print {
-    body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-    }
-    @media (prefers-color-scheme: dark) {
-      body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-      }
-    }
-  }
-</style></head>
-  <body>
-    
-    <script>
-      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
-    </script>
-    
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="References Short" href="reference_short.html" />
+    <link rel="prev" title="Theory" href="mtree_theory.html" /> 
+</head>
 
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="svg-toc" viewBox="0 0 24 24">
-    <title>Contents</title>
-    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
-      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-menu" viewBox="0 0 24 24">
-    <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
-    <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </symbol>
-  <symbol id="svg-sun" viewBox="0 0 24 24">
-    <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-moon" viewBox="0 0 24 24">
-    <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-    </svg>
-  </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
-    </svg>
-  </symbol>
-</svg>
-
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
-
-
-
-<div class="page">
-  <header class="mobile-header">
-    <div class="header-left">
-      <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
-      </label>
-    </div>
-    <div class="header-center">
-      <a href="../index.html"><div class="brand">mTree 1.2.1b documentation</div></a>
-    </div>
-    <div class="header-right">
-      <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-        </button>
-      </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-      </label>
-    </div>
-  </header>
-  <aside class="sidebar-drawer">
-    <div class="sidebar-container">
-      
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
-  
-  
-  <span class="sidebar-brand-text">mTree 1.2.1b documentation</span>
-  
-</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul class="current">
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> mTree
+          </a>
+              <div class="version">
+                1.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../start_here/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../start_here/quick_build.html">Quick Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../start_here/quick_start.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../start_here/quick_start.html">Quickstart Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mtree_theory.html">Theory</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference_short.html">Reference</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#theory-of-operations">Theory of Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#messages">messages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#start-environment">start_environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-send-a-message">How to send a message</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#directives-receiving-messages">Directives / Receiving Messages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#actor-description">Actor Description</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#imports">Imports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#necessary-imports">Necessary Imports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-imports">Additional Imports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#general-methods-and-capabilities">General Methods and Capabilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#short-name">short_name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#environment">Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#institution">Institution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#agent">Agent</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#config-folder">config folder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#config-file">config file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mtree-use">mTree use</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#referencing-different-actors">Referencing different actors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simulation-properties-self-get-properties">Simulation Properties/ self.get_properties()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#address-book">address book</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-access-the-address-book">How to access the address_book</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#self-address-book-get-addresses">self.address_book.get_addresses()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#self-address-book-merge-addresses-addresses">self.address_book.merge_addresses(addresses)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#self-address-book-get-agents">self.address_book.get_agents()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#self-address-book-get-institutions">self.address_book.get_institutions()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#self-address-book-num-agents">self.address_book.num_agents()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#self-address-book-num-institutions">self.address_book.num_institutions()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#self-address-book-select-addresses-selector">self.address_book.select_addresses(selector)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#self-address-book-broadcast-message-selector-message">self.address_book.broadcast_message(selector, message)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#logs">Logs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#naming">Naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#experiment-logging">Experiment Logging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#self-log-message-content">self.log_message(content)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#log-file">Log File</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#data-logging">Data Logging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#self-log-data-content">self.log_data(content)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-file">Data File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interpret-into-jupyter-notebook">Interpret into Jupyter notebook</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#error-handling">Error Handling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#directive-name-error">Directive name error</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mtree-simulation-state">mTree Simulation State</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference_short.html">References Short</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../learning/contributor_guide.html">Contribute</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../learning/learning_paths.html">Learning Paths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning/examples_guide.html">Examples Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning/examples_guide.html#tatonnement">Tatonnement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning/examples_guide.html#sealed-bid-auction">Sealed Bid Auction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning/examples_guide.html#ascending-price-auction">Ascending Price Auction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning/examples_guide.html#descending-price-auction">Descending Price Auction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning/examples_guide.html#common-value-auction">Common Value Auction</a></li>
 </ul>
 
-</div>
-</div>
-
-      </div>
-      
-    </div>
-  </aside>
-  <div class="main">
-    <div class="content">
-      <div class="article-container">
-        <a href="#" class="back-to-top muted-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
-          </svg>
-          <span>Back to top</span>
-        </a>
-        <div class="content-icon-container">
-          
-<div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-            </button>
-          </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-          </label>
         </div>
-        <article role="main">
-          <section id="reference">
-<h1>Reference<a class="headerlink" href="#reference" title="Permalink to this heading">#</a></h1>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mTree</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/reference/reference.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="reference">
+<h1>Reference<a class="headerlink" href="#reference" title="Permalink to this heading"></a></h1>
 <p>Several sections are under development…</p>
 <section id="theory-of-operations">
-<h2>Theory of Operations<a class="headerlink" href="#theory-of-operations" title="Permalink to this heading">#</a></h2>
+<h2>Theory of Operations<a class="headerlink" href="#theory-of-operations" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Contains a description and background of Microeconomic Systems and how mTree allows you to define different actors</p></li>
 <li><p>Goes in depth as to why mTree.</p></li>
@@ -210,15 +160,15 @@
 </ul>
 </section>
 <section id="messages">
-<span id="id1"></span><h2>messages<a class="headerlink" href="#messages" title="Permalink to this heading">#</a></h2>
-<p>In the <a class="reference internal" href="#actors"><span class="std std-ref">Actor</span></a> system, Actors only have access to their personal states. As a result,
+<span id="id1"></span><h2>messages<a class="headerlink" href="#messages" title="Permalink to this heading"></a></h2>
+<p>In the <span class="xref std std-ref">Actor</span> system, Actors only have access to their personal states. As a result,
 the only way Actors can change their state is through some constant design or by recieving new
 information from a different Actor.</p>
-<p>In <strong>mTree</strong>, Actors send <strong>messages</strong> using the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class which needs to be <a class="reference internal" href="#necessary-imports"><span class="std std-ref">imported</span></a> at the top
-of each file that includes the code for your <strong>mTree</strong> <a class="reference internal" href="#actors"><span class="std std-ref">Actor</span></a>.</p>
+<p>In <strong>mTree</strong>, Actors send <strong>messages</strong> using the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class which needs to be <span class="xref std std-ref">imported</span> at the top
+of each file that includes the code for your <strong>mTree</strong> <span class="xref std std-ref">Actor</span>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Message</span></code> class is used to create a <code class="docutils literal notranslate"><span class="pre">Message</span></code> object, which is then used to send a <strong>message</strong>
 to another Actor. The following code snippet shows how crafting and sending a basic <strong>message</strong> looks like.
-To know more about the neccessary contents of messages check out <a class="reference internal" href="#send-message"><span class="std std-ref">How to send a message</span></a>.</p>
+To know more about the neccessary contents of messages check out <span class="xref std std-ref">send_message</span>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_message</span> <span class="o">=</span> <span class="n">Message</span><span class="p">()</span> <span class="c1">#creates a message object</span>
 <span class="n">new_message</span><span class="o">.</span><span class="n">set_sender</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">myAddress</span><span class="p">)</span> <span class="c1">#self.myAddress is the agent&#39;s personal mTree Actor address</span>
 <span class="n">new_message</span><span class="o">.</span><span class="n">set_directive</span><span class="p">(</span><span class="s2">&quot;institution_message&quot;</span><span class="p">)</span> <span class="c1">#directives are used by message receiving agents to recieve specific messages</span>
@@ -229,8 +179,8 @@ To know more about the neccessary contents of messages check out <a class="refer
 </pre></div>
 </div>
 <section id="start-environment">
-<span id="id2"></span><h3>start_environment<a class="headerlink" href="#start-environment" title="Permalink to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">start_environment</span></code> message is the very first message that gets sent by the <strong>mTree_runner</strong> to the <a class="reference internal" href="#environment"><span class="std std-ref">Environment</span></a> Actor (specified in the <a class="reference internal" href="#config"><span class="std std-ref">config folder</span></a> file)
+<span id="id2"></span><h3>start_environment<a class="headerlink" href="#start-environment" title="Permalink to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">start_environment</span></code> message is the very first message that gets sent by the <strong>mTree_runner</strong> to the <span class="xref std std-ref">environment</span> Actor (specified in the <span class="xref std std-ref">config</span> file)
 after <strong>mTree</strong> initializes everything.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#inside simulation_folder/mes/environment_file.py</span>
 
@@ -252,19 +202,19 @@ used to initialize the environment state as well as send important state informa
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>All mTree simulation need to have a <code class="docutils literal notranslate"><span class="pre">start_environment</span></code> <a class="reference internal" href="#directive"><span class="std std-ref">directive</span></a> specified in
+<p>All mTree simulation need to have a <code class="docutils literal notranslate"><span class="pre">start_environment</span></code> <span class="xref std std-ref">directive</span> specified in
 the Environment Actor in order to start their simulation. However, messages sent in the <code class="docutils literal notranslate"><span class="pre">start_environment</span></code>
 directive as well as other directives can be based on your design.</p>
 </div>
 </section>
 <section id="how-to-send-a-message">
-<span id="send-message"></span><h3>How to send a message<a class="headerlink" href="#how-to-send-a-message" title="Permalink to this heading">#</a></h3>
-<p>In order to send a message, the Actor must first receive a message in a <a class="reference internal" href="#directive"><span class="std std-ref">directive</span></a> first.
+<span id="send-message"></span><h3>How to send a message<a class="headerlink" href="#how-to-send-a-message" title="Permalink to this heading"></a></h3>
+<p>In order to send a message, the Actor must first receive a message in a <span class="xref std std-ref">directive</span> first.
 Once in a <strong>directive</strong>, the key elements for a message are -</p>
 <ul class="simple">
 <li><p><strong>Sending Actor’s address</strong>: Usually accessed by <code class="code docutils literal notranslate"><span class="pre">self.myAddress</span></code></p></li>
 <li><p><strong>Content</strong>: This could be any python data type message (None types also work) that you want the other Actor to recieve.</p></li>
-<li><p><strong>Receiving Actor’s address</strong>: This could be accessed several ways, see code example in <a class="reference internal" href="#directive"><span class="std std-ref">directive</span></a> or checkout <a class="reference internal" href="#address-book"><span class="std std-ref">address book</span></a></p></li>
+<li><p><strong>Receiving Actor’s address</strong>: This could be accessed several ways, see code example in <span class="xref std std-ref">directive</span> or checkout <span class="xref std std-ref">address_book</span></p></li>
 </ul>
 <p>Here is how you can define and send a message-</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_message</span> <span class="o">=</span> <span class="n">Message</span><span class="p">()</span> <span class="c1">#creates a message object</span>
@@ -301,7 +251,7 @@ Once in a <strong>directive</strong>, the key elements for a message are -</p>
 </pre></div>
 </div>
 <section id="directives-receiving-messages">
-<span id="directive"></span><h4>Directives / Receiving Messages<a class="headerlink" href="#directives-receiving-messages" title="Permalink to this heading">#</a></h4>
+<span id="directive"></span><h4>Directives / Receiving Messages<a class="headerlink" href="#directives-receiving-messages" title="Permalink to this heading"></a></h4>
 <p><strong>Directives</strong> are special class methods defined in Actor classes (contained in .py files inside your <strong>mes</strong> folder).
 They are used to view messages sent to the Actor.</p>
 <div class="line-block">
@@ -318,15 +268,15 @@ They are used to view messages sent to the Actor.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>In order to recieve a messsage your directive name and your method name need to be the same, otherwise,
-mTree throws the following <a class="reference internal" href="#directive-error"><span class="std std-ref">error</span></a>.</p>
+mTree throws the following <span class="xref std std-ref">error</span>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For the following example our Actor is set as the <a class="reference internal" href="#institution"><span class="std std-ref">Institution</span></a> type, however, the message receiving process is applicable
+<p>For the following example our Actor is set as the <span class="xref std std-ref">Institution</span> type, however, the message receiving process is applicable
 for any type.</p>
 </div>
 <div class="line-block">
-<div class="line">In this example below, the institution receives a message sent by the Environment in <a class="reference internal" href="#send-message"><span class="std std-ref">send message</span></a>.</div>
+<div class="line">In this example below, the institution receives a message sent by the Environment in <span class="xref std std-ref">send message</span>.</div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@directive_enabled_class</span>
 <span class="k">class</span> <span class="nc">InstitutionClass</span><span class="p">(</span><span class="n">Institution</span><span class="p">):</span>
@@ -344,7 +294,7 @@ for any type.</p>
                         <span class="sa">f</span><span class="s2">&quot;message_sender_address = </span><span class="si">{</span><span class="n">message_sender_address</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Your <a class="reference internal" href="#log-message"><span class="std std-ref">log</span></a> file should produce the following output -</p>
+<p>Your <span class="xref std std-ref">log</span> file should produce the following output -</p>
 <div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="mi">1645122024</span><span class="o">.</span><span class="mi">0900638</span><span class="w">  </span><span class="n">message_payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">any_python_data_type_would_do</span>
 
 <span class="mi">1645122024</span><span class="o">.</span><span class="mi">0937853</span><span class="w">  </span><span class="n">message_sender_address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">ActorAddr</span><span class="o">-</span><span class="p">(</span><span class="n">T</span><span class="o">|</span><span class="p">:</span><span class="mi">43253</span><span class="p">)</span>
@@ -354,14 +304,14 @@ for any type.</p>
 </section>
 </section>
 <section id="actor-description">
-<span id="actors"></span><h2>Actor Description<a class="headerlink" href="#actor-description" title="Permalink to this heading">#</a></h2>
+<span id="actors"></span><h2>Actor Description<a class="headerlink" href="#actor-description" title="Permalink to this heading"></a></h2>
 <section id="imports">
-<h3>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h3>
+<h3>Imports<a class="headerlink" href="#imports" title="Permalink to this heading"></a></h3>
 <p>While coding <strong>mTree</strong> Actors, there are several features that <strong>mTree</strong> provides Actor classes the ability to interact with
 within the Actor world.</p>
 </section>
 <section id="necessary-imports">
-<span id="id3"></span><h3>Necessary Imports<a class="headerlink" href="#necessary-imports" title="Permalink to this heading">#</a></h3>
+<span id="id3"></span><h3>Necessary Imports<a class="headerlink" href="#necessary-imports" title="Permalink to this heading"></a></h3>
 <p>Each file that contains the code for your mTree Actors (Environment/Institution/Agent)
 <strong>needs</strong> to have the following imports in order to work properly.
 These imports provide the Actors with a range of capabilities including but not limited to communicating via messages.</p>
@@ -375,7 +325,7 @@ These imports provide the Actors with a range of capabilities including but not 
 </div>
 </section>
 <section id="additional-imports">
-<h3>Additional Imports<a class="headerlink" href="#additional-imports" title="Permalink to this heading">#</a></h3>
+<h3>Additional Imports<a class="headerlink" href="#additional-imports" title="Permalink to this heading"></a></h3>
 <p><strong>mTree</strong> also provides the following additional imports when running <strong>mTree</strong> in a container.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">random</span>
@@ -387,7 +337,7 @@ These imports provide the Actors with a range of capabilities including but not 
 </div>
 </section>
 <section id="general-methods-and-capabilities">
-<h3>General Methods and Capabilities<a class="headerlink" href="#general-methods-and-capabilities" title="Permalink to this heading">#</a></h3>
+<h3>General Methods and Capabilities<a class="headerlink" href="#general-methods-and-capabilities" title="Permalink to this heading"></a></h3>
 <p>Each Actor comes with a general set of capabilities, often represented in the form of class variables and methods
 available to the Actor. On top of that, there are Actor specific class variables and methods that <strong>mTree</strong> reserves
 for the <strong>Environment Actor</strong>, which might not be available to <strong>Institution</strong> and <strong>Agent Actors</strong>. Some of these methods
@@ -395,16 +345,16 @@ have individual sections such as <strong>Message Sending</strong>, <strong>addre
 have been listed under the different Actor sections.</p>
 <p>The four main capabilities have been listed below -</p>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="#messages"><span class="std std-ref">Message Sending</span></a>- covers how and what Actors can send to each other</p></li>
-<li><p><a class="reference internal" href="#address-book"><span class="std std-ref">Address Book</span></a>- covers how to keep track of other Actor’s address(without which you can’t send messages)</p></li>
-<li><p><a class="reference internal" href="#logs"><span class="std std-ref">Logging</span></a>- covers how to output interactions taking place inside a simulation</p></li>
-<li><p><a class="reference internal" href="#short-name"><span class="std std-ref">short_name</span></a>- unique identifier of the Actor, used to navigate the <strong>address_book</strong> and keep track of Actors.</p></li>
+<li><p><span class="xref std std-ref">Message Sending</span>- covers how and what Actors can send to each other</p></li>
+<li><p><span class="xref std std-ref">Address Book</span>- covers how to keep track of other Actor’s address(without which you can’t send messages)</p></li>
+<li><p><span class="xref std std-ref">Logging</span>- covers how to output interactions taking place inside a simulation</p></li>
+<li><p><span class="xref std std-ref">short_name</span>- unique identifier of the Actor, used to navigate the <strong>address_book</strong> and keep track of Actors.</p></li>
 </ol>
 </section>
 <section id="short-name">
-<span id="id4"></span><h3>short_name<a class="headerlink" href="#short-name" title="Permalink to this heading">#</a></h3>
+<span id="id4"></span><h3>short_name<a class="headerlink" href="#short-name" title="Permalink to this heading"></a></h3>
 <p>The <strong>short_name</strong> is a simple unique identifier created by <strong>mTree</strong> for each Actor within the system. The <strong>short_name</strong>
-can be used for identifying which Actor <a class="reference internal" href="#log-data"><span class="std std-ref">logged the data</span></a> as well as for navigating the <a class="reference internal" href="#address-book-structure"><span class="std std-ref">address_book</span></a>.</p>
+can be used for identifying which Actor <span class="xref std std-ref">logged the data</span> as well as for navigating the <span class="xref std std-ref">address_book</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>short_name</strong> was created to distinguish between multiple instances of the same <strong>Actor Class</strong> (an example of
@@ -417,7 +367,7 @@ Actors for uniformity purposes.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">short_name</span> <span class="c1">#since it is a class variable, it can be called anywhere in the Actor class</span>
 </pre></div>
 </div>
-<p>if we use the <a class="reference internal" href="#log-message"><span class="std std-ref">self.log_message(content)</span></a> method to log this variable we should observe the following output -</p>
+<p>if we use the <span class="xref std std-ref">log_message</span> method to log this variable we should observe the following output -</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">log_message</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">short_name</span><span class="p">)</span> <span class="c1">#more about this method can be found in the log_message section</span>
 </pre></div>
 </div>
@@ -426,14 +376,14 @@ Actors for uniformity purposes.</p>
 <img alt="../_images/reference_short_name_agent.png" src="../_images/reference_short_name_agent.png" />
 <figcaption>
 <p><span class="caption-text">If you log the <code class="docutils literal notranslate"><span class="pre">self.short_name</span></code> in an <em>Agent Actor</em> you would can see any one of the following
-outputs.</span><a class="headerlink" href="#id18" title="Permalink to this image">#</a></p>
+outputs.</span><a class="headerlink" href="#id18" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id19">
 <img alt="../_images/reference_short_name_institution.png" src="../_images/reference_short_name_institution.png" />
 <figcaption>
 <p><span class="caption-text">If you log the <code class="docutils literal notranslate"><span class="pre">self.short_name</span></code> in an <em>Institution Actor</em> you would can see any one of the following
-outputs.</span><a class="headerlink" href="#id19" title="Permalink to this image">#</a></p>
+outputs.</span><a class="headerlink" href="#id19" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The <strong>short_name</strong> can identify where the Actor code is located in the <strong>mes</strong> folder, which <strong>Actor Class</strong> within
@@ -442,7 +392,7 @@ The last part is useful because there can be multiple instances of the same <str
 use to differentiate among them.</p>
 </section>
 <section id="environment">
-<span id="id5"></span><h3>Environment<a class="headerlink" href="#environment" title="Permalink to this heading">#</a></h3>
+<span id="id5"></span><h3>Environment<a class="headerlink" href="#environment" title="Permalink to this heading"></a></h3>
 <p>Here is a code snippet that you can modify to construct your <strong>mTree</strong> <code class="docutils literal notranslate"><span class="pre">Environment</span></code> Actor.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#NOTE: this python file needs to be inside the /mes folder</span>
 
@@ -479,7 +429,7 @@ the parent class <code class="docutils literal notranslate"><span class="pre">En
 </div>
 </section>
 <section id="institution">
-<span id="id6"></span><h3>Institution<a class="headerlink" href="#institution" title="Permalink to this heading">#</a></h3>
+<span id="id6"></span><h3>Institution<a class="headerlink" href="#institution" title="Permalink to this heading"></a></h3>
 <p>Here is a code snippet that you can modify to construct your <strong>mTree</strong> <code class="docutils literal notranslate"><span class="pre">Institution</span></code> Actor.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#NOTE: this python file needs to be inside the /mes folder</span>
 
@@ -511,7 +461,7 @@ the parent class <code class="docutils literal notranslate"><span class="pre">In
 </div>
 </section>
 <section id="agent">
-<span id="id7"></span><h3>Agent<a class="headerlink" href="#agent" title="Permalink to this heading">#</a></h3>
+<span id="id7"></span><h3>Agent<a class="headerlink" href="#agent" title="Permalink to this heading"></a></h3>
 <p>Here is a code snippet that you can modify to construct your <strong>mTree</strong> <code class="docutils literal notranslate"><span class="pre">Agent</span></code> Actor.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#NOTE: this python file needs to be inside the /mes folder</span>
 
@@ -545,14 +495,14 @@ the parent class <code class="docutils literal notranslate"><span class="pre">Ag
 </section>
 </section>
 <section id="config-folder">
-<span id="config"></span><h2>config folder<a class="headerlink" href="#config-folder" title="Permalink to this heading">#</a></h2>
+<span id="config"></span><h2>config folder<a class="headerlink" href="#config-folder" title="Permalink to this heading"></a></h2>
 <p>There needs to be a  <strong>config</strong> folder inside each <strong>mTree simulation folder</strong>. Within the <strong>config</strong> folder there needs to
 be a <strong>.json</strong> file that contains your simulation configurations. Although, the name of the <strong>config</strong> folder cannot be changed, nevertheless,
 your <strong>.json</strong> config file, can have any name.</p>
 <section id="config-file">
-<span id="id8"></span><h3>config file<a class="headerlink" href="#config-file" title="Permalink to this heading">#</a></h3>
+<span id="id8"></span><h3>config file<a class="headerlink" href="#config-file" title="Permalink to this heading"></a></h3>
 <p>Your config file is a <strong>.json</strong> file containing a <strong>json dictionary</strong>. Inside this <strong>json dictionary</strong> we define the
-key parameters that <strong>mTree</strong> uses to instantiate the various <a class="reference internal" href="#actors"><span class="std std-ref">Actors</span></a> as well as any simulation specific
+key parameters that <strong>mTree</strong> uses to instantiate the various <span class="xref std std-ref">Actors</span> as well as any simulation specific
 variables that our Actors might need.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;mtree_type&quot;</span><span class="p">:</span> <span class="s2">&quot;mes_simulation_description&quot;</span><span class="p">,</span>
 <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;Basic Simulation Run&quot;</span><span class="p">,</span>
@@ -567,7 +517,7 @@ variables that our Actors might need.</p>
 </pre></div>
 </div>
 <section id="mtree-use">
-<h4>mTree use<a class="headerlink" href="#mtree-use" title="Permalink to this heading">#</a></h4>
+<h4>mTree use<a class="headerlink" href="#mtree-use" title="Permalink to this heading"></a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;mtree_type&quot;</span><span class="p">:</span> <span class="s2">&quot;mes_simulation_description&quot;</span><span class="p">,</span>
  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;any name should do&quot;</span><span class="p">,</span>
  <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
@@ -579,16 +529,16 @@ the three keys, <strong>mTree</strong> assigns default values for them. More imp
 pass some values for them, even the ones suggested above.</p>
 </section>
 <section id="referencing-different-actors">
-<h4>Referencing different actors<a class="headerlink" href="#referencing-different-actors" title="Permalink to this heading">#</a></h4>
+<h4>Referencing different actors<a class="headerlink" href="#referencing-different-actors" title="Permalink to this heading"></a></h4>
 <p>Within the <strong>config file</strong> we inform <strong>mTree</strong> which code we want to use to spawn Actors.</p>
 <figure class="align-center" id="id20">
 <img alt="../_images/reference_config_referencing.png" src="../_images/reference_config_referencing.png" />
 <figcaption>
-<p><span class="caption-text">The figure shows how an Environmnet Actor(EnvironmentClass) is referenced within a config file.</span><a class="headerlink" href="#id20" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">The figure shows how an Environmnet Actor(EnvironmentClass) is referenced within a config file.</span><a class="headerlink" href="#id20" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <section id="id9">
-<h5>Environment<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h5>
+<h5>Environment<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h5>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;mtree_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mes_simulation_description&quot;</span><span class="p">,</span>
 <span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Basic Simulation&quot;</span><span class="p">,</span>
 <span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="p">,</span>
@@ -607,7 +557,7 @@ sent by the system is the <code class="docutils literal notranslate"><span class
 </div>
 </section>
 <section id="id10">
-<h5>Institution<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h5>
+<h5>Institution<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h5>
 <p><strong>Single Instance</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;mtree_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mes_simulation_description&quot;</span><span class="p">,</span>
 <span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Basic Simulation&quot;</span><span class="p">,</span>
@@ -654,7 +604,7 @@ in your microeconomic system.</p>
 <code class="docutils literal notranslate"><span class="pre">&quot;number&quot;</span></code> key.</p>
 </section>
 <section id="agents">
-<h5>Agents<a class="headerlink" href="#agents" title="Permalink to this heading">#</a></h5>
+<h5>Agents<a class="headerlink" href="#agents" title="Permalink to this heading"></a></h5>
 <p>The reference for <strong>Agents</strong> works exactly like references for <strong>Institutions</strong>.</p>
 <p><strong>Single Instances</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;mtree_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mes_simulation_description&quot;</span><span class="p">,</span>
@@ -706,7 +656,7 @@ in your microeconomic system.</p>
 </section>
 </section>
 <section id="simulation-properties-self-get-properties">
-<h4>Simulation Properties/ self.get_properties()<a class="headerlink" href="#simulation-properties-self-get-properties" title="Permalink to this heading">#</a></h4>
+<h4>Simulation Properties/ self.get_properties()<a class="headerlink" href="#simulation-properties-self-get-properties" title="Permalink to this heading"></a></h4>
 <p>Users are allowed to specify additional information to the <code class="docutils literal notranslate"><span class="pre">&quot;properties&quot;</span></code> dictionary. This dictionary is
 reserved for including information that is simulation specific and can be used to initialize different
 agent types, initialize different institutions, and much more. Check out one of the <span class="xref std std-doc">learning_paths</span>
@@ -726,7 +676,7 @@ to view how properties can be used to prevent hard coding Actors.</p>
 </pre></div>
 </div>
 <section id="accessing-properties">
-<h5>Accessing Properties<a class="headerlink" href="#accessing-properties" title="Permalink to this heading">#</a></h5>
+<h5>Accessing Properties<a class="headerlink" href="#accessing-properties" title="Permalink to this heading"></a></h5>
 <p>Information mentioned in the <code class="docutils literal notranslate"><span class="pre">&quot;properties&quot;</span></code> dictionary can be accessed by the <strong>Environment</strong> Actor using
 the following code.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">get_properties</span><span class="p">()</span> <span class="c1"># this should return the entire properties dictionary.</span>
@@ -749,26 +699,26 @@ information (defined in the config) regarding the an Actor’s initial states to
 </section>
 </section>
 <section id="address-book">
-<span id="id11"></span><h2>address book<a class="headerlink" href="#address-book" title="Permalink to this heading">#</a></h2>
+<span id="id11"></span><h2>address book<a class="headerlink" href="#address-book" title="Permalink to this heading"></a></h2>
 <p>The <strong>address_book</strong> is an <strong>mTree</strong> object that stores and manages addresses of all the Actors
-that are initialized in the <a class="reference internal" href="#config"><span class="std std-ref">config folder</span></a> file. Each Actor in the system has an <strong>address_book</strong> object
-instantiated when they are spawned. However, at the beginning, only the <a class="reference internal" href="#environment"><span class="std std-ref">Environment</span></a> Actor’s <strong>address_book</strong>
+that are initialized in the <span class="xref std std-ref">config</span> file. Each Actor in the system has an <strong>address_book</strong> object
+instantiated when they are spawned. However, at the beginning, only the <span class="xref std std-ref">Environment</span> Actor’s <strong>address_book</strong>
 has the complete list of Actor addresses in the system.</p>
 <p>The <strong>Environment Actor</strong> can then choose to pass the addresses to different <strong>Institution</strong> and <strong>Agent</strong> Actors
 across the system. We have listed below the different methods that this <strong>address_book</strong> object has and how to
 access them.</p>
 <section id="how-to-access-the-address-book">
-<span id="access-address-book"></span><h3>How to access the address_book<a class="headerlink" href="#how-to-access-the-address-book" title="Permalink to this heading">#</a></h3>
+<span id="access-address-book"></span><h3>How to access the address_book<a class="headerlink" href="#how-to-access-the-address-book" title="Permalink to this heading"></a></h3>
 <p>The <strong>address_book</strong> object can be accessed by the Actors in the following ways</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">address_book</span><span class="p">()</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">self.address_book</span></code> is a class variable that gets set by <strong>mTree</strong> for each Actor prior to
-sending the <a class="reference internal" href="#start-environment"><span class="std std-ref">start_environment</span></a> directive message and points to the Actor’s own <strong>address_book</strong> object.
+sending the <span class="xref std std-ref">start_environment</span> directive message and points to the Actor’s own <strong>address_book</strong> object.
 Since <code class="docutils literal notranslate"><span class="pre">self.address_book</span></code> is a class variable, it can be accessed everywhere.</p>
 </section>
 <section id="structure">
-<span id="address-book-structure"></span><h3>Structure<a class="headerlink" href="#structure" title="Permalink to this heading">#</a></h3>
+<span id="address-book-structure"></span><h3>Structure<a class="headerlink" href="#structure" title="Permalink to this heading"></a></h3>
 <p>Below we evaluate one of the key <strong>address_book</strong> methods and explore how addresses are stored.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">all_addresses</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">address_book</span><span class="o">.</span><span class="n">get_addresses</span><span class="p">()</span> <span class="c1">#This code should return a dictionary of the following format</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">log_message</span><span class="p">(</span><span class="n">all_addresses</span><span class="p">)</span> <span class="c1">#since mTree suppresses print statements, logging is the only way to get info out</span>
@@ -815,7 +765,7 @@ means in the figure below.</p>
 <figure class="align-center" id="id21">
 <img alt="../_images/reference_address_book_dict.png" src="../_images/reference_address_book_dict.png" />
 <figcaption>
-<p><span class="caption-text">More about <strong>short_name</strong> can be found in the <a class="reference internal" href="#short-name"><span class="std std-ref">short_name</span></a> section.</span><a class="headerlink" href="#id21" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">More about <strong>short_name</strong> can be found in the <span class="xref std std-ref">short_name</span> section.</span><a class="headerlink" href="#id21" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -833,11 +783,11 @@ access the <strong>address</strong> using <code class="docutils literal notransl
 </div>
 </section>
 <section id="methods">
-<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h3>
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this heading"></a></h3>
 <p>The <strong>address_book</strong> object provides several methods.</p>
 <section id="self-address-book-get-addresses">
-<span id="get-addresses"></span><h4>self.address_book.get_addresses()<a class="headerlink" href="#self-address-book-get-addresses" title="Permalink to this heading">#</a></h4>
-<p>The following returns a dictionary with all <strong>address_book</strong> elements exactly like the one explored in <a class="reference internal" href="#address-book-structure"><span class="std std-ref">Structure</span></a> section
+<span id="get-addresses"></span><h4>self.address_book.get_addresses()<a class="headerlink" href="#self-address-book-get-addresses" title="Permalink to this heading"></a></h4>
+<p>The following returns a dictionary with all <strong>address_book</strong> elements exactly like the one explored in <span class="xref std std-ref">address_book_structure</span> section
 above.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">address_book</span><span class="o">.</span><span class="n">get_addresses</span><span class="p">()</span> <span class="c1">#This code should return a dictionary of the following format</span>
 
@@ -848,12 +798,12 @@ above.</p>
 </div>
 </section>
 <section id="self-address-book-merge-addresses-addresses">
-<span id="merge-addresses"></span><h4>self.address_book.merge_addresses(addresses)<a class="headerlink" href="#self-address-book-merge-addresses-addresses" title="Permalink to this heading">#</a></h4>
+<span id="merge-addresses"></span><h4>self.address_book.merge_addresses(addresses)<a class="headerlink" href="#self-address-book-merge-addresses-addresses" title="Permalink to this heading"></a></h4>
 <p>This method allows you to merge your <strong>address_book</strong> with another <strong>address_book</strong>. The goal of this
 method is to append your personal <strong>address_book</strong> using the <strong>addresses</strong> provided as input.</p>
 <p><strong>Input: dict</strong></p>
 <p>The <strong>addresses</strong> argument in <code class="docutils literal notranslate"><span class="pre">self.address_book.merge_addresses(addresses)</span></code> needs follow the <strong>address_book</strong>
-dictionary structure as shown in the <a class="reference internal" href="#address-book-structure"><span class="std std-ref">Structure</span></a> section.</p>
+dictionary structure as shown in the <span class="xref std std-ref">address_book_structure</span> section.</p>
 <p><strong>Output: None</strong></p>
 <p>Although,``self.address_book.merge_addresses(addresses`` method does not return anything, nevertheless, it updates
 the Actor’s personal <strong>address_book</strong> object to include the new <strong>entries</strong> mentioned in the <strong>addresses</strong> input dictionary.</p>
@@ -861,15 +811,15 @@ the Actor’s personal <strong>address_book</strong> object to include the new <
 <p class="admonition-title">Tip</p>
 <p>Since, at first, only the <strong>Environment</strong> Actor has a complete <strong>address_book</strong> with <strong>entries</strong>
 of all the <strong>Actors</strong> in the system. Consequentially,  the <strong>Environment</strong> can access the <strong>address_book dictionary</strong>
-using <a class="reference internal" href="#get-addresses"><span class="std std-ref">self.address_book.get_addresses()</span></a> and pass this to other Actors
-by setting it as the <a class="reference internal" href="#send-message"><span class="std std-ref">message</span></a> <strong>payload</strong>. The Actor receiving the
+using <span class="xref std std-ref">get_addresses</span> and pass this to other Actors
+by setting it as the <span class="xref std std-ref">message</span> <strong>payload</strong>. The Actor receiving the
 <strong>address_book dictionary</strong> can then add those addresses to its personal
 <strong>address_book</strong> using <code class="docutils literal notranslate"><span class="pre">self.address_book.merge_addresses(address_book_dictionary)</span></code></p>
 </div>
 <p><strong>Example: Environment sends Institution the address_book</strong></p>
 </section>
 <section id="self-address-book-get-agents">
-<span id="get-agents"></span><h4>self.address_book.get_agents()<a class="headerlink" href="#self-address-book-get-agents" title="Permalink to this heading">#</a></h4>
+<span id="get-agents"></span><h4>self.address_book.get_agents()<a class="headerlink" href="#self-address-book-get-agents" title="Permalink to this heading"></a></h4>
 <p>The following returns a dictionary similar to the one in <code class="docutils literal notranslate"><span class="pre">self.address_book.get_addresses()</span></code>, however,
 only includes <strong>entries</strong> whose <strong>description dictionary</strong> <strong>“address_type”</strong> key has the value - <strong>“agent”</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">address_book</span><span class="o">.</span><span class="n">get_agents</span><span class="p">()</span><span class="c1">#Only returns the addresses of Agent Actors</span>
@@ -893,7 +843,7 @@ only includes <strong>entries</strong> whose <strong>description dictionary</str
 </div>
 </section>
 <section id="self-address-book-get-institutions">
-<span id="get-institutions"></span><h4>self.address_book.get_institutions()<a class="headerlink" href="#self-address-book-get-institutions" title="Permalink to this heading">#</a></h4>
+<span id="get-institutions"></span><h4>self.address_book.get_institutions()<a class="headerlink" href="#self-address-book-get-institutions" title="Permalink to this heading"></a></h4>
 <p>The following returns a dictionary similar to the one in <code class="docutils literal notranslate"><span class="pre">self.address_book.get_addresses()</span></code>, however,
 only includes entries whose <strong>“address_type”</strong> key has the value - <strong>“institution”</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">address_book</span><span class="o">.</span><span class="n">get_institutions</span><span class="p">()</span><span class="c1">#Only returns the addresses of Agent Actors</span>
@@ -912,7 +862,7 @@ only includes entries whose <strong>“address_type”</strong> key has the valu
 </div>
 </section>
 <section id="self-address-book-num-agents">
-<span id="num-agents"></span><h4>self.address_book.num_agents()<a class="headerlink" href="#self-address-book-num-agents" title="Permalink to this heading">#</a></h4>
+<span id="num-agents"></span><h4>self.address_book.num_agents()<a class="headerlink" href="#self-address-book-num-agents" title="Permalink to this heading"></a></h4>
 <p>The following sums up the number of entries with <code class="docutils literal notranslate"><span class="pre">{&quot;address_type&quot;:&quot;agent&quot;}</span></code> in their
 description. So if there are 5 Agent Actors in our simulation, the following code should
 output-</p>
@@ -925,7 +875,7 @@ output-</p>
 </div>
 </section>
 <section id="self-address-book-num-institutions">
-<span id="num-institutions"></span><h4>self.address_book.num_institutions()<a class="headerlink" href="#self-address-book-num-institutions" title="Permalink to this heading">#</a></h4>
+<span id="num-institutions"></span><h4>self.address_book.num_institutions()<a class="headerlink" href="#self-address-book-num-institutions" title="Permalink to this heading"></a></h4>
 <p>The following sums up the number of entries with <code class="docutils literal notranslate"><span class="pre">{&quot;address_type&quot;:&quot;institution&quot;}</span></code> in their description.
 So if there is a single <strong>Institution Actor</strong> in our simulation, the following code should
 output-</p>
@@ -938,14 +888,13 @@ output-</p>
 </div>
 </section>
 <section id="self-address-book-select-addresses-selector">
-<span id="select-addresses"></span><h4>self.address_book.select_addresses(selector)<a class="headerlink" href="#self-address-book-select-addresses-selector" title="Permalink to this heading">#</a></h4>
+<span id="select-addresses"></span><h4>self.address_book.select_addresses(selector)<a class="headerlink" href="#self-address-book-select-addresses-selector" title="Permalink to this heading"></a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">self.address_book.select_addresses(selector)</span></code> outputs a list of <strong>mTree addresses</strong>
 based on the <strong>selector</strong> that is provided.</p>
 <p><strong>Input: selector(dict)</strong></p>
 <p>The <strong>selector</strong> is a dictionary that can only have one of the following key and value pairs.</p>
-<div class="table-wrapper docutils container" id="id22">
 <table class="docutils align-default" id="id22">
-<caption><span class="caption-text">Selector</span><a class="headerlink" href="#id22" title="Permalink to this table">#</a></caption>
+<caption><span class="caption-text">Selector</span><a class="headerlink" href="#id22" title="Permalink to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>key</p></th>
 <th class="head"><p>value</p></th>
@@ -960,7 +909,6 @@ based on the <strong>selector</strong> that is provided.</p>
 </tr>
 </tbody>
 </table>
-</div>
 <p>The purpose of the <strong>selector</strong> is to help <strong>address_book</strong> object select specific
 <strong>mTree addresses</strong> from the <strong>entries</strong> that have the same <strong>value</strong> as the <strong>selector</strong> inside their
 description dictionaries.</p>
@@ -1015,7 +963,7 @@ either a list of <strong>mTree_addresses</strong> or a single <strong>mTree_addr
 </pre></div>
 </div>
 <p><strong>Example: Using short_name selector</strong></p>
-<p>The <a class="reference internal" href="#short-name"><span class="std std-ref">short_name</span></a> selector is useful when the <strong>Actor</strong> wants to send a message specifically
+<p>The <span class="xref std std-ref">short_name</span> selector is useful when the <strong>Actor</strong> wants to send a message specifically
 to another Actor. Since, no two Actors, share a common <strong>short_name</strong>, <code class="docutils literal notranslate"><span class="pre">self.address_book.select_addresses(selector)</span></code>
 should return a single address.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#we want to select the mTree address of the Actor with the short_name - &quot;institution_file.InstitutionClass 1&quot;</span>
@@ -1036,13 +984,13 @@ should return a single address.</p>
 <p class="admonition-title">Note</p>
 <p>In most cases, <code class="docutils literal notranslate"><span class="pre">self.address_book.select_addresses(selector)</span></code> produces a <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">loop</span></code> compatible list
 of addresses(if there is more than one entry for which the <strong>selector</strong> applies to). Consequently,
-this method becomes useful when you want to send <a class="reference internal" href="#send-message"><span class="std std-ref">message</span></a> to multiple Actors with varying <strong>payloads</strong>.
+this method becomes useful when you want to send <span class="xref std std-ref">message</span> to multiple Actors with varying <strong>payloads</strong>.
 However, if you want to send the same message(with no change in directive or payload) to a group of Actor types, you
-might want to consider using <a class="reference internal" href="#broadcast-message"><span class="std std-ref">self.address_book.broadcast_message(selector, message)</span></a> instead.</p>
+might want to consider using <span class="xref std std-ref">broadcast_message</span> instead.</p>
 </div>
 <p><strong>Example: Combining .select_addresses(selector) and Message()</strong></p>
 <p>In the code example below, we try to send each Agent Actor slightly different <strong>value estimates</strong> for a common value good.
-More about this code can be found in the <a class="reference internal" href="../learning/learning_paths.html#common-value-auction"><span class="std std-ref">Common Value Auction</span></a> section in <span class="xref std std-doc">learning_paths</span>.</p>
+More about this code can be found in the <a class="reference internal" href="../learning/examples_guide.html#common-value-auction"><span class="std std-ref">Common Value Auction</span></a> section in <span class="xref std std-doc">learning_paths</span>.</p>
 <p><strong>Institution Code</strong>
 Here the institution sends slightly different <strong>value estimates</strong> of a <strong>common value good</strong> to
 all the Agent Actors in its <strong>address_book</strong></p>
@@ -1092,26 +1040,25 @@ along with the ubiquitous <code class="docutils literal notranslate"><span class
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><a class="reference internal" href="#select-addresses"><span class="std std-ref">self.address_book.select_addresses(selector)</span></a> is very useful method when sending a slightly unique message
+<p><span class="xref std std-ref">select_addresses</span> is very useful method when sending a slightly unique message
 to all Actors of one type (Institution/Agent). Notice, the only aspect of the message that changed for each iteration of the <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">loop</span></code>
-was the <strong>value_estimate</strong>. Moreover, in this example, we assume that all <strong>Agent Actors</strong> have a  <a class="reference internal" href="#directive"><span class="std std-ref">&#64;directive_decorator(“receive_value_estimate”)</span></a> in their
+was the <strong>value_estimate</strong>. Moreover, in this example, we assume that all <strong>Agent Actors</strong> have a  <span class="xref std std-ref">&#64;directive_decorator(“receive_value_estimate”)</span> in their
 AgentClass. Although, this shouldn’t be a problem if all Actors belong to the same <strong>AgentClass</strong>, however, if there is
-more than one <strong>AgentClass</strong> defined in the <strong>mes</strong> folder as well as referenced in the <a class="reference internal" href="#config-file"><span class="std std-ref">config file</span></a>, each AgentClass would
-need to have a <a class="reference internal" href="#directive"><span class="std std-ref">&#64;directive_decorator(“receive_value_estimate”)</span></a> method. Otherwise, <strong>mTree</strong> would through
+more than one <strong>AgentClass</strong> defined in the <strong>mes</strong> folder as well as referenced in the <span class="xref std std-ref">config_file</span>, each AgentClass would
+need to have a <span class="xref std std-ref">&#64;directive_decorator(“receive_value_estimate”)</span> method. Otherwise, <strong>mTree</strong> would through
 an <strong>ERROR</strong>.</p>
 </div>
 </section>
 <section id="self-address-book-broadcast-message-selector-message">
-<span id="broadcast-message"></span><h4>self.address_book.broadcast_message(selector, message)<a class="headerlink" href="#self-address-book-broadcast-message-selector-message" title="Permalink to this heading">#</a></h4>
+<span id="broadcast-message"></span><h4>self.address_book.broadcast_message(selector, message)<a class="headerlink" href="#self-address-book-broadcast-message-selector-message" title="Permalink to this heading"></a></h4>
 <p>This method broadcasts or sends a <strong>message</strong> to all <strong>entries</strong> in the Actor’s personal
-<strong>address_book</strong> that the <strong>selector</strong> agrees with. Unlike <a class="reference internal" href="#select-addresses"><span class="std std-ref">self.address_book.select_addresses(selector)</span></a>, which returns a list of addresses,
+<strong>address_book</strong> that the <strong>selector</strong> agrees with. Unlike <span class="xref std std-ref">select_addresses</span>, which returns a list of addresses,
 the <code class="docutils literal notranslate"><span class="pre">self.address_book.broadcast_message(selector,</span> <span class="pre">message)</span></code> method does the message sending for the
 Actor.</p>
 <p><strong>Input: selector(dict), message</strong></p>
 <p>The <strong>selector</strong> is a dictionary that can only have one of the following key and value pairs.</p>
-<div class="table-wrapper docutils container" id="id23">
 <table class="docutils align-default" id="id23">
-<caption><span class="caption-text">Selector</span><a class="headerlink" href="#id23" title="Permalink to this table">#</a></caption>
+<caption><span class="caption-text">Selector</span><a class="headerlink" href="#id23" title="Permalink to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>key</p></th>
 <th class="head"><p>value</p></th>
@@ -1126,11 +1073,10 @@ Actor.</p>
 </tr>
 </tbody>
 </table>
-</div>
 <p>The purpose of the <strong>selector</strong> is to help <strong>address_book</strong> object select specific
 <strong>mTree addresses</strong> from the <strong>entries</strong> that have the same <strong>value</strong> as the <strong>selector</strong> inside their
 <strong>description dictionaries</strong>.</p>
-<p>The <strong>message</strong> argument takes in the <a class="reference internal" href="#send-message"><span class="std std-ref">message</span></a> object that needs to be passed
+<p>The <strong>message</strong> argument takes in the <span class="xref std std-ref">message</span> object that needs to be passed
 to all entries that the <strong>selector</strong> applies to.</p>
 <p><strong>Output: None</strong></p>
 <p>This method doesn’t return anything, however, performs the important function of sending the <strong>message</strong>,
@@ -1150,14 +1096,14 @@ that is submitted as an argument, to all the <strong>address_book</strong> <stro
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <a class="reference internal" href="#broadcast-message"><span class="std std-ref">self.address_book.broadcast_message(selector, message)</span></a> is useful when you want to send the
+<p>The <span class="xref std std-ref">broadcast_message</span> is useful when you want to send the
 same message (no variation) to all Actors of one type (Institution/Agent).</p>
 </div>
 <p><strong>Example: Common Value Auction</strong></p>
-<p>The code example below is from <a class="reference internal" href="../learning/learning_paths.html#common-value-auction"><span class="std std-ref">Common Value Auction</span></a> section in <span class="xref std std-doc">learning_paths</span>.
-In this portion, the <a class="reference internal" href="#environment"><span class="std std-ref">Environment</span></a> Actor sends the <a class="reference internal" href="#agent"><span class="std std-ref">Agent</span></a> Actor their <strong>endowment</strong> which is
-constant for all Agents in the system. As a result, <a class="reference internal" href="#broadcast-message"><span class="std std-ref">self.address_book.broadcast_message(selector, message)</span></a> becomes valuable because we are
-sending the same <a class="reference internal" href="#send-message"><span class="std std-ref">message</span></a> to all Agent Actors.</p>
+<p>The code example below is from <a class="reference internal" href="../learning/examples_guide.html#common-value-auction"><span class="std std-ref">Common Value Auction</span></a> section in <span class="xref std std-doc">learning_paths</span>.
+In this portion, the <span class="xref std std-ref">Environment</span> Actor sends the <span class="xref std std-ref">Agent</span> Actor their <strong>endowment</strong> which is
+constant for all Agents in the system. As a result, <span class="xref std std-ref">broadcast_message</span> becomes valuable because we are
+sending the same <span class="xref std std-ref">message</span> to all Agent Actors.</p>
 <p><strong>Environment Code</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#self.provide_endowment is a method that gets run in the start_environment method</span>
 
@@ -1194,18 +1140,18 @@ sending the same <a class="reference internal" href="#send-message"><span class=
 </section>
 </section>
 <section id="logs">
-<span id="id12"></span><h2>Logs<a class="headerlink" href="#logs" title="Permalink to this heading">#</a></h2>
+<span id="id12"></span><h2>Logs<a class="headerlink" href="#logs" title="Permalink to this heading"></a></h2>
 <p><strong>Logging</strong> is a way to output important information from a simulation in order
 to keep track of what the code is doing at various steps, as well as collect data
 for analysis.</p>
 <p>There are 2 types of logging that <strong>mTree</strong> allows -</p>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="#experiment-logging"><span class="std std-ref">Experiment Logging</span></a> - Appears in the <code class="docutils literal notranslate"><span class="pre">.log</span></code> files.</p></li>
-<li><p><a class="reference internal" href="#data-logging"><span class="std std-ref">Data Logging</span></a>- Appears in the <code class="docutils literal notranslate"><span class="pre">.data</span></code> files.</p></li>
+<li><p><span class="xref std std-ref">experiment_logging</span> - Appears in the <code class="docutils literal notranslate"><span class="pre">.log</span></code> files.</p></li>
+<li><p><span class="xref std std-ref">data_logging</span>- Appears in the <code class="docutils literal notranslate"><span class="pre">.data</span></code> files.</p></li>
 </ol>
-<p>Each run of an <strong>mTree</strong> <a class="reference internal" href="#config-file"><span class="std std-ref">config file</span></a> creates a <code class="docutils literal notranslate"><span class="pre">.log</span></code> file which
+<p>Each run of an <strong>mTree</strong> <span class="xref std std-ref">config file</span> creates a <code class="docutils literal notranslate"><span class="pre">.log</span></code> file which
 gets placed inside the <strong>logs</strong> folder inside your <strong>simulation_folder</strong>
-(where your <a class="reference internal" href="#config"><span class="std std-ref">config folder</span></a> and <strong>mes</strong> folders are stored).</p>
+(where your <span class="xref std std-ref">config</span> and <strong>mes</strong> folders are stored).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you have already created a <strong>logs</strong> folder prior to running your <strong>mTree</strong> simulation,
@@ -1216,34 +1162,34 @@ it.</p>
 <figure class="align-center" id="id24">
 <img alt="../_images/reference_logsfolder.png" src="../_images/reference_logsfolder.png" />
 <figcaption>
-<p><span class="caption-text">Inside the <strong>logs</strong> folder</span><a class="headerlink" href="#id24" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Inside the <strong>logs</strong> folder</span><a class="headerlink" href="#id24" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Although, each run of a <a class="reference internal" href="#config-file"><span class="std std-ref">config file</span></a> creates a <code class="docutils literal notranslate"><span class="pre">.log</span></code> file, however,
-a <code class="docutils literal notranslate"><span class="pre">.data</span></code> file only gets created when one of the <strong>ActorClasses</strong> uses the <a class="reference internal" href="#log-data"><span class="std std-ref">self.log_data(content)</span></a> method
+<p>Although, each run of a <span class="xref std std-ref">config file</span> creates a <code class="docutils literal notranslate"><span class="pre">.log</span></code> file, however,
+a <code class="docutils literal notranslate"><span class="pre">.data</span></code> file only gets created when one of the <strong>ActorClasses</strong> uses the <span class="xref std std-ref">log_data</span> method
 somewhere in one of its methods.</p>
 </div>
 <section id="naming">
-<h3>Naming<a class="headerlink" href="#naming" title="Permalink to this heading">#</a></h3>
-<p>Each <code class="docutils literal notranslate"><span class="pre">.log</span></code> and <code class="docutils literal notranslate"><span class="pre">.data</span></code> file associated with a <a class="reference internal" href="#config-file"><span class="std std-ref">config file</span></a> get named the following way -</p>
+<h3>Naming<a class="headerlink" href="#naming" title="Permalink to this heading"></a></h3>
+<p>Each <code class="docutils literal notranslate"><span class="pre">.log</span></code> and <code class="docutils literal notranslate"><span class="pre">.data</span></code> file associated with a <span class="xref std std-ref">config_file</span> get named the following way -</p>
 <figure class="align-center" id="id25">
 <img alt="../_images/reference_logs_filenaming.png" src="../_images/reference_logs_filenaming.png" />
 <figcaption>
-<p><span class="caption-text">Each run of the same <a class="reference internal" href="#config-file"><span class="std std-ref">config file</span></a> should generate its own set of <a class="reference internal" href="#log-file"><span class="std std-ref">.log</span></a> and <a class="reference internal" href="#data-file"><span class="std std-ref">.data</span></a> files</span><a class="headerlink" href="#id25" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Each run of the same <span class="xref std std-ref">config_file</span> should generate its own set of <span class="xref std std-ref">.log</span> and <span class="xref std std-ref">.data</span> files</span><a class="headerlink" href="#id25" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<p>The following figure shows how different runs of the same <a class="reference internal" href="#config-file"><span class="std std-ref">config file</span></a> are named -</p>
+<p>The following figure shows how different runs of the same <span class="xref std std-ref">config_file</span> are named -</p>
 <figure class="align-center" id="id26">
 <img alt="../_images/reference_logs_multipleruns.png" src="../_images/reference_logs_multipleruns.png" />
 <figcaption>
-<p><span class="caption-text">Snapshot of the files that get generated inside the <strong>logs</strong> folder.</span><a class="headerlink" href="#id26" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Snapshot of the files that get generated inside the <strong>logs</strong> folder.</span><a class="headerlink" href="#id26" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="experiment-logging">
-<span id="id13"></span><h3>Experiment Logging<a class="headerlink" href="#experiment-logging" title="Permalink to this heading">#</a></h3>
+<span id="id13"></span><h3>Experiment Logging<a class="headerlink" href="#experiment-logging" title="Permalink to this heading"></a></h3>
 <p><strong>Experiment Logging</strong> can be used to keep track of</p>
 <ol class="arabic simple">
 <li><p>The messages Actors send or receive.</p></li>
@@ -1252,9 +1198,9 @@ somewhere in one of its methods.</p>
 <p>As a result, <strong>Experiment Logging</strong> can be used to <strong>monitor</strong> whether our simulation/experiment
 is behaving according to our <strong>microeconomic system</strong> design.</p>
 <section id="self-log-message-content">
-<span id="log-message"></span><h4>self.log_message(content)<a class="headerlink" href="#self-log-message-content" title="Permalink to this heading">#</a></h4>
+<span id="log-message"></span><h4>self.log_message(content)<a class="headerlink" href="#self-log-message-content" title="Permalink to this heading"></a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">self.log_message(content)</span></code> is a method that gets setup for each Actor during initialization and allows
-them to output information from various points within the <strong>ActorClass</strong> to the <a class="reference internal" href="#log-file"><span class="std std-ref">.log</span></a>.</p>
+them to output information from various points within the <strong>ActorClass</strong> to the <span class="xref std std-ref">.log</span>.</p>
 <p>Since <strong>mTree</strong> suppresses <code class="docutils literal notranslate"><span class="pre">print()</span></code> statements, <code class="docutils literal notranslate"><span class="pre">self.log_message(content)</span></code> is the closest method we
 have to monitor how the internal state of the Actors is changing in response to received messages.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">self.log_message(content)</span></code> logs to the <cite>.log</cite> file present in the <cite>logs</cite> folder.</p>
@@ -1273,14 +1219,14 @@ argument and you have tried to pass in two.</p>
 </pre></div>
 </div>
 <p><strong>Output</strong></p>
-<p>The output generated in your <a class="reference internal" href="#log-file"><span class="std std-ref">.log file</span></a> should look like the following.</p>
+<p>The output generated in your <span class="xref std std-ref">.log file</span> should look like the following.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">1649966264.0786786</span>  <span class="n">Anything</span> <span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">printed</span> <span class="n">can</span> <span class="n">be</span> <span class="n">logged</span>
 </pre></div>
 </div>
 <figure class="align-center" id="id27">
 <img alt="../_images/reference_logmessage_output.png" src="../_images/reference_logmessage_output.png" />
 <figcaption>
-<p><span class="caption-text">A <code class="docutils literal notranslate"><span class="pre">.log</span></code> file entry</span><a class="headerlink" href="#id27" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">A <code class="docutils literal notranslate"><span class="pre">.log</span></code> file entry</span><a class="headerlink" href="#id27" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>Each time <code class="docutils literal notranslate"><span class="pre">self.log_message(content)</span></code> gets called by one of the Actors,
@@ -1289,32 +1235,32 @@ entry is the <strong>UTC timestamp</strong> of when the <code class="docutils li
 part (separated by a space) is the <strong>content</strong> you passed into the method.</p>
 </section>
 <section id="log-file">
-<span id="id14"></span><h4>Log File<a class="headerlink" href="#log-file" title="Permalink to this heading">#</a></h4>
-<p>The <code class="docutils literal notranslate"><span class="pre">.log</span></code> file for each run of an <strong>mTree</strong> <a class="reference internal" href="#config-file"><span class="std std-ref">config file</span></a> should appear
+<span id="id14"></span><h4>Log File<a class="headerlink" href="#log-file" title="Permalink to this heading"></a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">.log</span></code> file for each run of an <strong>mTree</strong> <span class="xref std std-ref">config file</span> should appear
 in the <strong>logs</strong> folder.</p>
 <section id="id15">
-<h5>Structure<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h5>
+<h5>Structure<a class="headerlink" href="#id15" title="Permalink to this heading"></a></h5>
 <p>The first few lines of the <code class="docutils literal notranslate"><span class="pre">.log</span></code> file that gets generated from the simulation run consists of
-the <strong>json dictionary</strong> that was used as the <a class="reference internal" href="#config-file"><span class="std std-ref">configurations dictionary</span></a>
+the <strong>json dictionary</strong> that was used as the <span class="xref std std-ref">configurations dictionary</span>
 for the run.</p>
 <figure class="align-center" id="id28">
 <img alt="../_images/reference_logfile_config.png" src="../_images/reference_logfile_config.png" />
 <figcaption>
-<p><span class="caption-text">This is the same as the <strong>json dictionary</strong> inside the <a class="reference internal" href="#config-file"><span class="std std-ref">config file</span></a> you ran.</span><a class="headerlink" href="#id28" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">This is the same as the <strong>json dictionary</strong> inside the <span class="xref std std-ref">config_file</span> you ran.</span><a class="headerlink" href="#id28" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The second part of the <code class="docutils literal notranslate"><span class="pre">.log</span></code> file consists of a series of <strong>timestamped</strong> log outputs made
-by both <strong>mTree</strong> and <a class="reference internal" href="#log-message"><span class="std std-ref">self.log_message(content)</span></a> calls (inside different message passing/receiving <strong>Actors</strong>).</p>
+by both <strong>mTree</strong> and <span class="xref std std-ref">log_message</span> calls (inside different message passing/receiving <strong>Actors</strong>).</p>
 </section>
 <section id="mtree-logging">
-<h5>mTree logging<a class="headerlink" href="#mtree-logging" title="Permalink to this heading">#</a></h5>
-<p><strong>mTree</strong> logs each time an <strong>Actor</strong> enters and exits a <a class="reference internal" href="#directive"><span class="std std-ref">directive method</span></a>. In other words,
+<h5>mTree logging<a class="headerlink" href="#mtree-logging" title="Permalink to this heading"></a></h5>
+<p><strong>mTree</strong> logs each time an <strong>Actor</strong> enters and exits a <span class="xref std std-ref">directive method</span>. In other words,
 <strong>mTree</strong> logs each time an <strong>Actor</strong> -</p>
 <ol class="arabic simple">
-<li><p>Receives a message - denoted by <strong>entering</strong> the <a class="reference internal" href="#directive"><span class="std std-ref">directive method</span></a> where the message was sent to.</p></li>
-<li><p>Is finished processing the message - denotend by <strong>exiting</strong> the <a class="reference internal" href="#directive"><span class="std std-ref">directive method</span></a> where the message was sent to.</p></li>
+<li><p>Receives a message - denoted by <strong>entering</strong> the <span class="xref std std-ref">directive method</span> where the message was sent to.</p></li>
+<li><p>Is finished processing the message - denotend by <strong>exiting</strong> the <span class="xref std std-ref">directive method</span> where the message was sent to.</p></li>
 </ol>
-<p><strong>mTree logging</strong> also informs us <strong>who</strong> (<a class="reference internal" href="#short-name"><span class="std std-ref">short_name</span></a>) received the message as well.</p>
+<p><strong>mTree logging</strong> also informs us <strong>who</strong> (<span class="xref std std-ref">short_name</span>) received the message as well.</p>
 <p>The following figure evaluates how an <strong>Institution Actor</strong> logs when a message is sent to it by the
 <strong>Environment</strong>.</p>
 <figure class="align-center">
@@ -1334,18 +1280,18 @@ before the <strong>exit</strong> statement.</p>
 </div>
 </section>
 <section id="actor-logging">
-<h5>Actor logging<a class="headerlink" href="#actor-logging" title="Permalink to this heading">#</a></h5>
-<p>Actor logging refers to the logging done by different Actors using the <a class="reference internal" href="#log-message"><span class="std std-ref">self.log_message(content)</span></a> method inside the Actor.
+<h5>Actor logging<a class="headerlink" href="#actor-logging" title="Permalink to this heading"></a></h5>
+<p>Actor logging refers to the logging done by different Actors using the <span class="xref std std-ref">log_message</span> method inside the Actor.
 This can be used in conjunction with that <strong>mTree</strong> does automatically for both debugging the code and tracking whether
 internal states of <strong>Actors</strong> is changing according to our design.</p>
 </section>
 <section id="example">
-<h5>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h5>
+<h5>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h5>
 <p>The following code shows the log output generated by the <strong>Institution Actor</strong> when it receives
-a copy of the <a class="reference internal" href="#address-book-structure"><span class="std std-ref">addresses</span></a> from the <strong>Environment</strong> and adds it to
+a copy of the <span class="xref std std-ref">addresses</span> from the <strong>Environment</strong> and adds it to
 its own version of address_book. During the process, we try to track the following values -</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#get-addresses"><span class="std std-ref">self.address_book.get_addresses()</span></a> - before and after <a class="reference internal" href="#merge-addresses"><span class="std std-ref">self.address_book.merge_addresses(addresses)</span></a> is called.</p></li>
+<li><p><span class="xref std std-ref">get_addresses</span> - before and after <span class="xref std std-ref">merge_addresses</span> is called.</p></li>
 <li><p>message.payload() - The content of the message that gets sent.</p></li>
 <li><p>message.get_sender() - The <strong>mTree</strong> address of the message sending Actor.</p></li>
 </ul>
@@ -1386,8 +1332,8 @@ Environment sends the <strong>addresses dictionary</strong> to Institution in st
 </pre></div>
 </div>
 <p><strong>Institution Code</strong>
-Institution receives the <strong>addresses dictionary</strong> and adds it to its <a class="reference internal" href="#address-book"><span class="std std-ref">address_book</span></a>
-object using <a class="reference internal" href="#merge-addresses"><span class="std std-ref">self.address_book.merge_addresses(addresses)</span></a>. We track the message attributes that are received and
+Institution receives the <strong>addresses dictionary</strong> and adds it to its <span class="xref std std-ref">address_book</span>
+object using <span class="xref std std-ref">merge_addresses</span>. We track the message attributes that are received and
 more specifically the</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mTree.microeconomic_system.environment</span> <span class="kn">import</span> <span class="n">Environment</span>
 <span class="kn">from</span> <span class="nn">mTree.microeconomic_system.institution</span> <span class="kn">import</span> <span class="n">Institution</span>
@@ -1441,182 +1387,72 @@ that takes place in line 5.</p>
 </section>
 </section>
 <section id="data-logging">
-<span id="id16"></span><h3>Data Logging<a class="headerlink" href="#data-logging" title="Permalink to this heading">#</a></h3>
+<span id="id16"></span><h3>Data Logging<a class="headerlink" href="#data-logging" title="Permalink to this heading"></a></h3>
 <section id="self-log-data-content">
-<span id="log-data"></span><h4>self.log_data(content)<a class="headerlink" href="#self-log-data-content" title="Permalink to this heading">#</a></h4>
+<span id="log-data"></span><h4>self.log_data(content)<a class="headerlink" href="#self-log-data-content" title="Permalink to this heading"></a></h4>
 </section>
 <section id="data-file">
-<span id="id17"></span><h4>Data File<a class="headerlink" href="#data-file" title="Permalink to this heading">#</a></h4>
+<span id="id17"></span><h4>Data File<a class="headerlink" href="#data-file" title="Permalink to this heading"></a></h4>
 </section>
 <section id="interpret-into-jupyter-notebook">
-<h4>Interpret into Jupyter notebook<a class="headerlink" href="#interpret-into-jupyter-notebook" title="Permalink to this heading">#</a></h4>
+<h4>Interpret into Jupyter notebook<a class="headerlink" href="#interpret-into-jupyter-notebook" title="Permalink to this heading"></a></h4>
 <p>Simple suggestions on how to log data using dictionaries and little code on how pandas could
 be used to read the dataframe.</p>
 </section>
 </section>
 </section>
 <section id="error-handling">
-<span id="error"></span><h2>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this heading">#</a></h2>
+<span id="error"></span><h2>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this heading"></a></h2>
 <section id="directive-name-error">
-<span id="directive-error"></span><h3>Directive name error<a class="headerlink" href="#directive-name-error" title="Permalink to this heading">#</a></h3>
+<span id="directive-error"></span><h3>Directive name error<a class="headerlink" href="#directive-name-error" title="Permalink to this heading"></a></h3>
 </section>
 </section>
 <section id="mtree-simulation-state">
-<span id="sim-state"></span><h2>mTree Simulation State<a class="headerlink" href="#mtree-simulation-state" title="Permalink to this heading">#</a></h2>
+<span id="sim-state"></span><h2>mTree Simulation State<a class="headerlink" href="#mtree-simulation-state" title="Permalink to this heading"></a></h2>
 </section>
 </section>
 
-        </article>
-      </div>
-      <footer>
-        
-        <div class="related-pages">
-          <a class="next-page" href="reference_short.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Reference</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="mtree_theory.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Theory</div>
-                
-              </div>
-            </a>
-        </div>
-        <div class="bottom-of-page">
-          <div class="left-details">
-            <div class="copyright">
-                Copyright &#169; 2023, CEE Lab
-            </div>
-            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-            
-            <a href="https://github.com/pradyunsg/furo">Furo</a>
-            
+
+           </div>
           </div>
-          <div class="right-details">
-            
-          </div>
-        </div>
-        
-      </footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mtree_theory.html" class="btn btn-neutral float-left" title="Theory" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="reference_short.html" class="btn btn-neutral float-right" title="References Short" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-    <aside class="toc-drawer">
-      
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Reference</a><ul>
-<li><a class="reference internal" href="#theory-of-operations">Theory of Operations</a></li>
-<li><a class="reference internal" href="#messages">messages</a><ul>
-<li><a class="reference internal" href="#start-environment">start_environment</a></li>
-<li><a class="reference internal" href="#how-to-send-a-message">How to send a message</a><ul>
-<li><a class="reference internal" href="#directives-receiving-messages">Directives / Receiving Messages</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#actor-description">Actor Description</a><ul>
-<li><a class="reference internal" href="#imports">Imports</a></li>
-<li><a class="reference internal" href="#necessary-imports">Necessary Imports</a></li>
-<li><a class="reference internal" href="#additional-imports">Additional Imports</a></li>
-<li><a class="reference internal" href="#general-methods-and-capabilities">General Methods and Capabilities</a></li>
-<li><a class="reference internal" href="#short-name">short_name</a></li>
-<li><a class="reference internal" href="#environment">Environment</a></li>
-<li><a class="reference internal" href="#institution">Institution</a></li>
-<li><a class="reference internal" href="#agent">Agent</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#config-folder">config folder</a><ul>
-<li><a class="reference internal" href="#config-file">config file</a><ul>
-<li><a class="reference internal" href="#mtree-use">mTree use</a></li>
-<li><a class="reference internal" href="#referencing-different-actors">Referencing different actors</a><ul>
-<li><a class="reference internal" href="#id9">Environment</a></li>
-<li><a class="reference internal" href="#id10">Institution</a></li>
-<li><a class="reference internal" href="#agents">Agents</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#simulation-properties-self-get-properties">Simulation Properties/ self.get_properties()</a><ul>
-<li><a class="reference internal" href="#accessing-properties">Accessing Properties</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#address-book">address book</a><ul>
-<li><a class="reference internal" href="#how-to-access-the-address-book">How to access the address_book</a></li>
-<li><a class="reference internal" href="#structure">Structure</a></li>
-<li><a class="reference internal" href="#methods">Methods</a><ul>
-<li><a class="reference internal" href="#self-address-book-get-addresses">self.address_book.get_addresses()</a></li>
-<li><a class="reference internal" href="#self-address-book-merge-addresses-addresses">self.address_book.merge_addresses(addresses)</a></li>
-<li><a class="reference internal" href="#self-address-book-get-agents">self.address_book.get_agents()</a></li>
-<li><a class="reference internal" href="#self-address-book-get-institutions">self.address_book.get_institutions()</a></li>
-<li><a class="reference internal" href="#self-address-book-num-agents">self.address_book.num_agents()</a></li>
-<li><a class="reference internal" href="#self-address-book-num-institutions">self.address_book.num_institutions()</a></li>
-<li><a class="reference internal" href="#self-address-book-select-addresses-selector">self.address_book.select_addresses(selector)</a></li>
-<li><a class="reference internal" href="#self-address-book-broadcast-message-selector-message">self.address_book.broadcast_message(selector, message)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#logs">Logs</a><ul>
-<li><a class="reference internal" href="#naming">Naming</a></li>
-<li><a class="reference internal" href="#experiment-logging">Experiment Logging</a><ul>
-<li><a class="reference internal" href="#self-log-message-content">self.log_message(content)</a></li>
-<li><a class="reference internal" href="#log-file">Log File</a><ul>
-<li><a class="reference internal" href="#id15">Structure</a></li>
-<li><a class="reference internal" href="#mtree-logging">mTree logging</a></li>
-<li><a class="reference internal" href="#actor-logging">Actor logging</a></li>
-<li><a class="reference internal" href="#example">Example</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#data-logging">Data Logging</a><ul>
-<li><a class="reference internal" href="#self-log-data-content">self.log_data(content)</a></li>
-<li><a class="reference internal" href="#data-file">Data File</a></li>
-<li><a class="reference internal" href="#interpret-into-jupyter-notebook">Interpret into Jupyter notebook</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#error-handling">Error Handling</a><ul>
-<li><a class="reference internal" href="#directive-name-error">Directive name error</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#mtree-simulation-state">mTree Simulation State</a></li>
-</ul>
-</li>
-</ul>
 
-          </div>
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, CEE Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      
-      
-    </aside>
+    </section>
   </div>
-</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/scripts/furo.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    </body>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #105a04;
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      background: #105a04;
+    }
+  </style>
+
+
+</body>
 </html>
