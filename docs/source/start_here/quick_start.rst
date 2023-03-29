@@ -7,6 +7,7 @@ Quickstart Guide
 .. _about_qs_guide:
 About this Guide
 ================
+
 This guide will lead you through the required installations, configurations, and steps to download and use **mTree** on your machine. It 
 will also show you the main functionalities of **mTree** and should serve as a jumping-off point for further learning. This guide is meant 
 to be understandable to complete beginners, and currently documents processes for Windows and Mac users. **mTree** is however compatible 
@@ -21,29 +22,30 @@ By the end of this **Quickstart Guide** you should be able to:
 * implement the main functionalities of mTree
 * debug mTree projects
 * use the reference guide
-* continue learning mTree with further examples
+* continue learning mTree with further examples.
 .. TODO add hyperlinks
 
 .. _setting_up_mtree:
-Installation and Setup
-======================
+Installation
+============
 .. Subtitle? Completing this section provides you with the software tools to complete the rest of the guide.
 .. TODO think about incorporating the image guide below.
 
 Docker and mTree
 ----------------
+
 The user version of mTree is distributed as a **Docker** image, so in order to use the latest version of mTree 
 you need both Docker and the latest mTree image. **Docker** is a way to package code so that is runs the same way on 
 any system, to install it follow this guide: :ref:`install-docker-desk`. The guide specifically shows you how to install 
-**Docker Desktop**, which is also used for the **mTree** installation guide.
+**Docker Desktop**, which is also used in **mTree** installation and configuration guide.
 
-Once you have **Docker** installed, you can download the latest **mTree** image, following this guide: :ref:`install-mTree`. This guide will 
-show you how to both download the image and set up a container to be able to execute **mTree** code on your computer.
+Once you have **Docker** installed, you can download the latest **mTree** image, following this guide: :ref:`install-mTree`.
 
 .. TODO check if there is some version of Windows on which docker cannot be installed (<10 AFAIK)
 
 Git
 ---
+
 In order to download the examples used in this guide, you will need git. Even if you are unfamiliar with git, there is a good chance it is 
 already installed on your computer. Depending on your operating system, git installation will differ slightly.
 
@@ -54,7 +56,8 @@ already installed on your computer. Depending on your operating system, git inst
 *Mac Users*  
     * Open up Terminal and run :code:`git --version`.
     * If the command is not recognized, follow this link to `Download Git for macOS <https://git-scm.com/download/mac>`_. 
-    * You have several options on how to install **git**. The **homebrew** route is a good option, for which you can follow this tutorial video: `Git Homebrew Installation <https://www.youtube.com/watch?v=ZM3I16Z-lxI>`_. 
+    * You have several options on how to install **git**. The **homebrew** route is a good option, for which you can follow this tutorial 
+    video: `Git Homebrew Installation <https://www.youtube.com/watch?v=ZM3I16Z-lxI>`_. 
 *Windows Users* 
     * Open up Command Prompt or PowerShell and run :code:`git --version`.
     * If the command is not recognized, follow this link to `Download Git for Windows <https://git-scm.com/download/win>`_.
@@ -62,8 +65,10 @@ already installed on your computer. Depending on your operating system, git inst
 
 IDE and Python
 --------------
+
 While not strictly required, we using an Integrated Development Environment (IDE) to edit and view **mTree** simulation code. If you are 
-unfamiliar with any IDE, `VSCode <https://code.visualstudio.com>`_ and `Spyder <https://docs.spyder-ide.org/3/installation.html>`_ are great IDEs for python.
+unfamiliar with any IDE, `VSCode <https://code.visualstudio.com>`_ and `Spyder <https://docs.spyder-ide.org/3/installation.html>`_ are 
+great IDEs for python.
 
 Similarly, installing python natively is not strictly required to be able to run or develop mTree simulations, it is highly recommended 
 for unit testing. Get the latest `Python distribution <https://www.python.org/downloads/>`_ or install it with a suite of science-oriented 
@@ -74,96 +79,93 @@ packages through `Anaconda <https://www.anaconda.com/products/distribution>`_.
 Cloning mTree_auction_examples Folder
 ==============================
 
-We are going to clone (download a copy) the `mTree_auction_examples <https://github.com/nalinbhatt/mTree_auction_examples.git>`_ repository and run one 
-of the examples to make sure **mTree** is running properly on your machine.
+We are going to clone (download a copy) the `mTree_auction_examples <https://github.com/nalinbhatt/mTree_auction_examples.git>`_ repository 
+and run one of the examples to make sure **mTree** is running properly on your machine.
 
 Open your **Command Line** (Command Prompt or Power Shell on Windows, Terminal on macOS) at the place in your file system where you would 
 like to download the **mTree Examples**. 
+
 .. tip:: 
     If you opened the **Command Line** in a different place, you can navigate your file system using the ``cd`` command. If you are new to 
-    **Command Line** you can check out these tutorials:
+    **Command Line** you can check out these video tutorials:
+
     | `Terminal for Beginners <https://medium.com/@grace.m.nolan/terminal-for-beginners-e492ba10902a>`_ (macOS) 
     | `A Beginner's Guide to the Windows Command Prompt <https://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line/>`_ (Windows)
 
-Once at your desired location, run the following code to create a local copy of the **mTree_auction_examples** folder.
+Once at your desired location, run the following code to create a local copy of the **mTree_auction_examples** folder:
+
 .. code-block:: console
 
     git clone https://github.com/nalinbhatt/mTree_auction_examples.git
 
 .. _running_mTree_auction_examples:
 
-Running mTree_auction_examples 
-==============================
+Running an Example 
+==================
 
-In order to run this simulation we need to create a **docker container** using 
-the **Docker Desktop** app that we downloaded in  :doc:`installation` section. 
+Because **mTree** is containerized, to run it we need to create a **Docker** container based on the image. This 
+is easy using the **Docker Desktop** app that we downloaded in  :doc:`installation` section. 
 
 .. _mTree_auction_examples_container_setup:
 
-mTree_auction_examples container setup
---------------------------------------
+Container Setup
+---------------
 
-Follow all the steps highlighted in the :ref:`mTree-container-setup` section 
-and set the **Host Path** to the **mTree_auction_example folder** (which you cloned in the previous step). 
+Follow the steps in the :ref:`mTree-container-setup` guide, setting the **Host Path** to your **mTree_auction_example** folder. 
 
-* If you installed **mTree_auction_example** by navigating to somewhere in your file system, you are going to have to locate your folder in finder window by reviewing the steps you took. 
-* If you did a simple **git clone** without ever using the ``cd`` command then you need navigate to your **home folder** (the folder which contains your Desktop) and select the **mTree_auction_examples** folder. 
-
-After finishing the setup process, click **Container/Apps** on the sidebar of 
-**Docker Desktop**. There should be a container by the name **mTree_auction_examples**
-present. 
+After finishing the setup process, click **Container/Apps** on the sidebar of **Docker Desktop** and select your  **mTree_auction_examples** 
+container.
 
 .. figure:: _static/mTree_auction_examples_comp_setup.png
         :align: center
 
-        Your **Containers/Apps** section should display a container similar to this with the name you chose
+        In your **Containers/Apps** section, you should see a container similar to this with the name you chose.
 
 .. _running_mTree_auction_examples_container:
 
-Running mTree_auction_examples container
-----------------------------------------
+Running the Container
+---------------------
 
-Start the container and open the **shell**. More details on how to do this are 
-covered in :ref:`mTree-container-options` under :ref:`mTree-container-start`
-and :ref:`mTree-container-cli`. 
+Start the container and open the **Command Line Interface** (**CLI**) from inside your **Docker Desktop** by clicking the **CLI** button. 
+A more in-depth look can be found in :ref:`mTree-container-options` under :ref:`mTree-container-start` and :ref:`mTree-container-cli`. 
 
-Your **shell** should look some version of this - 
+Your **CLI** should look something like this:
 
 .. figure:: _static/mTree_auction_examples_shell.png
         :align: center
 
-        mTree_auction_examples shell produced by clicking the CLI button
+        mTree_auction_examples **CLI** window produced by clicking the **CLI** button.
 
-Run the following commands to view the underlying files in the folder.  
+Double check that the shell is running in the appropriate folder by running the following commands:
 
-| **Mac** 
+*Mac*
 
 .. code-block:: console
 
     ls 
 
-| **Windows**
+*Windows*
 
 .. code-block:: console
 
     dir
 
-You should see the following subfolders-
+You should see the following output:
 
 .. figure:: _static/quick_start_ls.png
         :align: center
 
-        Folders inside mTree_auction_examples
+        Folders inside mTree_auction_examples.
 
 .. _cva:
 
-Common Value Auction
---------------------
+Example: Common Value Auction
+-----------------------------
 
 One of the subfolders present should have the name **common_value_auction**. Further information about the 
-auction style and description can be found in the :ref:`common_value_auction` section of :doc:`learning_paths`.
+auction style and description can be found here: :ref:`common_value_auction`.
 
-In your **mTree_auction_examples** container **shell** type in the following command to set 
+In your **mTree_auction_examples** container **CLI** type in the following command to set 
 the current directory to **common_value_auction**.
 
 .. code-block:: console
@@ -175,8 +177,7 @@ the current directory to **common_value_auction**.
 File Structure
 --------------
 
-After setting **common_value_auction** as the current directory, run **ls** or **dir** and 
-you should see the following folders. 
+After setting **common_value_auction** as the current directory, run **ls** (Mac) or **dir** (Windows). You should see the following folders. 
 
 1. :ref:`config <config>`
 2. :ref:`mes <Actors>`
@@ -189,26 +190,29 @@ you should see the following folders.
         Folders inside common_value_auction
 
 .. note::
-    In order to properly run an **mTree simulation** you need to set the current 
-    directory to the folder which contains a **config**, **mes**, and a **logs** folder.
-    **mTree** looks for these particular folders to run the simulation. For our example, this is the **common_value_auction**
-    folder inside **mTree_auction_examples**.
+    In order to run an **mTree** simulation, you need to set the current 
+    directory to the folder which contains the **config**, **mes**, and **logs** folders.
+    **mTree** looks for the config and mes folders in particular to run the simulation. In our example, this 
+    folder is called **common_value_auction**.
 
 .. tip:: 
-    In the future, when designing your own container, you can set the **Host Path**
-    directly to the folder containing the **config** and **mes** folder. That way 
-    you don't have to navigate to the desired directory within the docker **shell**. 
+    If you want, you can also set the container's **Host Path** directly to the folder containing the **config** 
+    and **mes** folders. You would no longer have to navigate using the CLI but you would need to create a 
+    container for each simulation project.
 
-The :ref:`config` folder (short for configurations) contains your **JSON config files** which are used to instantiate **mTree** :ref:`Actors <Actors>` defined in 
-the **mes** folder. 
+The :ref:`config` folder (short for configurations) contains your configuration files, in a .JSON fomrat which 
+describe the way in which your simulation will be run by mTree. The config files describe the types and number 
+of actors to be used in the simulation, the number of runs to perform, and allow passing of experimental constants
+into the actors.
 
-The **mes** folder (short for Microeconomic System) containes the python files where you define the different
-:ref:`Actor <Actors>` classes, namely - the :ref:`environment` , :ref:`institution` and :ref:`agent`. 
+The **mes** :ref:`mes_folder` folder (short for Microeconomic System) containes the python files where you define the different
+:ref:`Actor <Actors>` classes to be used in your microeconomic system. It should contain an :ref:`environment`, 
+and at least one :ref:`institution` and :ref:`agent`. 
 
 .. warning:: 
 
-    It is critical that your **simulation folder** contains a **config** folder, with a **JSON config file** inside,
-    and a separate **mes** folder with python files inside, which contain :ref:`environment` , :ref:`institution` and :ref:`agent` code.
+    It is critical that the mTree working directory contains a **config** folder with a **JSON config file** inside
+    and a separate **mes** folder with python files inside, containing at least one each of: :ref:`environment` , :ref:`institution` and :ref:`agent`.
     **In the absence of any of these your mTree simulation will not run.**
 
 
